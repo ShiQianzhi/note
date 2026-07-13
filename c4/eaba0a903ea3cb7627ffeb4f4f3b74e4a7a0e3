@@ -1,0 +1,85 @@
+"计算机科学/编程语言/Python/Python 快速入门.md"
+  h_318b0e42409ad8 1-529
+"计算机科学/编程语言/Python/Python 装饰器（Decorator）总结.md"
+  h_318b0e42409ad8 1-360
+"思考笔记/Python @staticmethod 的静态方法和普通函数的区别.md"
+  h_318b0e42409ad8 2
+  s_b7fee51fd4e936::t_22e67b77f143fa 1
+  s_0c4c7f7e9f5501::t_bea64a213d5855 3-271 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a545fdbab64461fc6f9fba8","tool_type":"agent","tool_id":"Edit","line_ranges":[{"Range":[3,271]}]}]}
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "c4eaba0a903ea3cb7627ffeb4f4f3b74e4a7a0e3",
+  "prompts": {},
+  "humans": {
+    "h_318b0e42409ad8": {
+      "author": "ShiQianzhi <shiqianzhi.flgh@bytedance.com>"
+    }
+  },
+  "sessions": {
+    "s_0c4c7f7e9f5501": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a545f0dab64461fc6f9fb87",
+        "model": "Doubao_1_6__dev"
+      },
+      "human_author": "ShiQianzhi <shiqianzhi.flgh@bytedance.com>"
+    },
+    "s_b7fee51fd4e936": {
+      "agent_id": {
+        "tool": "trae-cue",
+        "id": "ai_tab-icr-ce6762d7-0124-476f-858d-1b2792ef9031",
+        "model": "default"
+      },
+      "human_author": "ShiQianzhi <shiqianzhi.flgh@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "思考笔记/Python @staticmethod 的静态方法和普通函数的区别.md": [
+      {
+        "hash": "s_0c4c7f7e9f5501::t_bea64a213d5855",
+        "line_ranges": [
+          {
+            "Range": [
+              3,
+              271
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a545fdbab64461fc6f9fba8",
+            "tool_type": "agent",
+            "tool_id": "Edit",
+            "line_ranges": [
+              {
+                "Range": [
+                  3,
+                  271
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_0c4c7f7e9f5501": {
+      "tool": "trae",
+      "conversation_id": "6a545f0dab64461fc6f9fb87",
+      "session_id": "6a545f0dab64461fc6f9fb87",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_0c4c7f7e9f5501::t_bea64a213d5855": {
+      "tool": "trae",
+      "conversation_id": "6a545f0dab64461fc6f9fb87",
+      "session_id": "6a545f0dab64461fc6f9fb87",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
