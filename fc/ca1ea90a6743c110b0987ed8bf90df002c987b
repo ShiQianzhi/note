@@ -1,0 +1,758 @@
+process_images.py
+  s_fc986f4ab1158b::t_6469aca0db4886 35,41-42 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a57044333592b4b627a4074","tool_type":"agent","tool_id":"Edit","line_ranges":[{"Single":35},{"Range":[41,42]}]}]}
+  s_fc986f4ab1158b::t_b627e7253701a4 65,90,98,120 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a57045033592b4b627a4077","tool_type":"agent","tool_id":"Edit","line_ranges":[{"Single":65},{"Single":90},{"Single":98},{"Single":120}]}]}
+  s_fc986f4ab1158b::t_c4e581de856325 1-34,36-40,43-64,66-89,91-97,99-119,121-177 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a57040033592b4b627a4062","tool_type":"agent","tool_id":"Write","line_ranges":[{"Range":[1,34]},{"Range":[36,40]},{"Range":[43,64]},{"Range":[66,89]},{"Range":[91,97]},{"Range":[99,119]},{"Range":[121,177]}]}]}
+计算机科学/高性能服务开发与架构最佳实战经验/高性能服务架构可行性方案.md
+  s_1c34592f79ef79::t_ff1a6f22ac345c 1-603 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a56f6ce33592b4b627a3fe4","tool_type":"agent","tool_id":"Write","line_ranges":[{"Range":[1,603]}]}]}
+计算机科学/高性能服务开发与架构最佳实战经验/后端服务安全方案.md
+  s_1c34592f79ef79::t_8c9980d323e7d0 1-1020 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a56fae333592b4b627a4001","tool_type":"agent","tool_id":"Write","line_ranges":[{"Range":[1,1020]}]}]}
+计算机科学/高性能服务开发与架构最佳实战经验/性能指标说明.md
+  s_1c34592f79ef79::t_9f60d86b196df9 1,3,5-38,41-44,46,48,50-61,64-67,69,75-86,88,90-104,107-131,133,137-139,141,143-146,149-150,152,154-156,158,160-167,169-199,204,207,210,213,217,219,221-226,228-232,234-240,242,244,246-249 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a56f31f33592b4b627a3fce","tool_type":"agent","tool_id":"Write","line_ranges":[{"Single":1},{"Single":3},{"Range":[5,38]},{"Range":[41,44]},{"Single":46},{"Single":48},{"Range":[50,61]},{"Range":[64,67]},{"Single":69},{"Range":[75,86]},{"Single":88},{"Range":[90,104]},{"Range":[107,131]},{"Single":133},{"Range":[137,139]},{"Single":141},{"Range":[143,146]},{"Range":[149,150]},{"Single":152},{"Range":[154,156]},{"Single":158},{"Range":[160,167]},{"Range":[169,199]},{"Single":204},{"Single":207},{"Single":210},{"Single":213},{"Single":217},{"Single":219},{"Range":[221,226]},{"Range":[228,232]},{"Range":[234,240]},{"Single":242},{"Single":244},{"Range":[246,249]}]}]}
+  h_318b0e42409ad8 2,4,39-40,45,47,49,62-63,68,70-74,87,89,105-106,132,134-136,140,142,147-148,151,153,157,159,168,200-203,205-206,208-209,211-212,214-216,218,220,227,233,241,243,245
+时间胶囊.md
+  h_318b0e42409ad8 1-8 gitai:{"mixed_line_ranges":[{"Range":[5,7]}],"operations":[]}
+计算机科学/高性能服务开发与架构最佳实战经验/限流方案设计.md
+  s_1c34592f79ef79::t_9f002e904163a0 1-1180 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a56f95133592b4b627a3ff4","tool_type":"agent","tool_id":"Write","line_ranges":[{"Range":[1,1180]}]}]}
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "fcca1ea90a6743c110b0987ed8bf90df002c987b",
+  "prompts": {},
+  "humans": {
+    "h_318b0e42409ad8": {
+      "author": "ShiQianzhi <shiqianzhi.flgh@bytedance.com>"
+    }
+  },
+  "sessions": {
+    "s_1c34592f79ef79": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "696d925956af85cb7e7f8cb6",
+        "model": "Doubao_1_6__dev"
+      },
+      "human_author": "ShiQianzhi <shiqianzhi.flgh@bytedance.com>"
+    },
+    "s_fc986f4ab1158b": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "696defd756af85cb7e7f8cbc",
+        "model": "Doubao_1_6__dev"
+      },
+      "human_author": "ShiQianzhi <shiqianzhi.flgh@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "process_images.py": [
+      {
+        "hash": "s_fc986f4ab1158b::t_6469aca0db4886",
+        "line_ranges": [
+          {
+            "Single": 35
+          },
+          {
+            "Range": [
+              41,
+              42
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a57044333592b4b627a4074",
+            "tool_type": "agent",
+            "tool_id": "Edit",
+            "line_ranges": [
+              {
+                "Single": 35
+              },
+              {
+                "Range": [
+                  41,
+                  42
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "s_fc986f4ab1158b::t_b627e7253701a4",
+        "line_ranges": [
+          {
+            "Single": 65
+          },
+          {
+            "Single": 90
+          },
+          {
+            "Single": 98
+          },
+          {
+            "Single": 120
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a57045033592b4b627a4077",
+            "tool_type": "agent",
+            "tool_id": "Edit",
+            "line_ranges": [
+              {
+                "Single": 65
+              },
+              {
+                "Single": 90
+              },
+              {
+                "Single": 98
+              },
+              {
+                "Single": 120
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "s_fc986f4ab1158b::t_c4e581de856325",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              34
+            ]
+          },
+          {
+            "Range": [
+              36,
+              40
+            ]
+          },
+          {
+            "Range": [
+              43,
+              64
+            ]
+          },
+          {
+            "Range": [
+              66,
+              89
+            ]
+          },
+          {
+            "Range": [
+              91,
+              97
+            ]
+          },
+          {
+            "Range": [
+              99,
+              119
+            ]
+          },
+          {
+            "Range": [
+              121,
+              177
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a57040033592b4b627a4062",
+            "tool_type": "agent",
+            "tool_id": "Write",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  34
+                ]
+              },
+              {
+                "Range": [
+                  36,
+                  40
+                ]
+              },
+              {
+                "Range": [
+                  43,
+                  64
+                ]
+              },
+              {
+                "Range": [
+                  66,
+                  89
+                ]
+              },
+              {
+                "Range": [
+                  91,
+                  97
+                ]
+              },
+              {
+                "Range": [
+                  99,
+                  119
+                ]
+              },
+              {
+                "Range": [
+                  121,
+                  177
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "时间胶囊.md": [
+      {
+        "hash": "h_318b0e42409ad8",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              8
+            ]
+          }
+        ],
+        "mixed_line_ranges": [
+          {
+            "Range": [
+              5,
+              7
+            ]
+          }
+        ],
+        "operations": []
+      }
+    ],
+    "计算机科学/高性能服务开发与架构最佳实战经验/后端服务安全方案.md": [
+      {
+        "hash": "s_1c34592f79ef79::t_8c9980d323e7d0",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              1020
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a56fae333592b4b627a4001",
+            "tool_type": "agent",
+            "tool_id": "Write",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  1020
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "计算机科学/高性能服务开发与架构最佳实战经验/性能指标说明.md": [
+      {
+        "hash": "s_1c34592f79ef79::t_9f60d86b196df9",
+        "line_ranges": [
+          {
+            "Single": 1
+          },
+          {
+            "Single": 3
+          },
+          {
+            "Range": [
+              5,
+              38
+            ]
+          },
+          {
+            "Range": [
+              41,
+              44
+            ]
+          },
+          {
+            "Single": 46
+          },
+          {
+            "Single": 48
+          },
+          {
+            "Range": [
+              50,
+              61
+            ]
+          },
+          {
+            "Range": [
+              64,
+              67
+            ]
+          },
+          {
+            "Single": 69
+          },
+          {
+            "Range": [
+              75,
+              86
+            ]
+          },
+          {
+            "Single": 88
+          },
+          {
+            "Range": [
+              90,
+              104
+            ]
+          },
+          {
+            "Range": [
+              107,
+              131
+            ]
+          },
+          {
+            "Single": 133
+          },
+          {
+            "Range": [
+              137,
+              139
+            ]
+          },
+          {
+            "Single": 141
+          },
+          {
+            "Range": [
+              143,
+              146
+            ]
+          },
+          {
+            "Range": [
+              149,
+              150
+            ]
+          },
+          {
+            "Single": 152
+          },
+          {
+            "Range": [
+              154,
+              156
+            ]
+          },
+          {
+            "Single": 158
+          },
+          {
+            "Range": [
+              160,
+              167
+            ]
+          },
+          {
+            "Range": [
+              169,
+              199
+            ]
+          },
+          {
+            "Single": 204
+          },
+          {
+            "Single": 207
+          },
+          {
+            "Single": 210
+          },
+          {
+            "Single": 213
+          },
+          {
+            "Single": 217
+          },
+          {
+            "Single": 219
+          },
+          {
+            "Range": [
+              221,
+              226
+            ]
+          },
+          {
+            "Range": [
+              228,
+              232
+            ]
+          },
+          {
+            "Range": [
+              234,
+              240
+            ]
+          },
+          {
+            "Single": 242
+          },
+          {
+            "Single": 244
+          },
+          {
+            "Range": [
+              246,
+              249
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a56f31f33592b4b627a3fce",
+            "tool_type": "agent",
+            "tool_id": "Write",
+            "line_ranges": [
+              {
+                "Single": 1
+              },
+              {
+                "Single": 3
+              },
+              {
+                "Range": [
+                  5,
+                  38
+                ]
+              },
+              {
+                "Range": [
+                  41,
+                  44
+                ]
+              },
+              {
+                "Single": 46
+              },
+              {
+                "Single": 48
+              },
+              {
+                "Range": [
+                  50,
+                  61
+                ]
+              },
+              {
+                "Range": [
+                  64,
+                  67
+                ]
+              },
+              {
+                "Single": 69
+              },
+              {
+                "Range": [
+                  75,
+                  86
+                ]
+              },
+              {
+                "Single": 88
+              },
+              {
+                "Range": [
+                  90,
+                  104
+                ]
+              },
+              {
+                "Range": [
+                  107,
+                  131
+                ]
+              },
+              {
+                "Single": 133
+              },
+              {
+                "Range": [
+                  137,
+                  139
+                ]
+              },
+              {
+                "Single": 141
+              },
+              {
+                "Range": [
+                  143,
+                  146
+                ]
+              },
+              {
+                "Range": [
+                  149,
+                  150
+                ]
+              },
+              {
+                "Single": 152
+              },
+              {
+                "Range": [
+                  154,
+                  156
+                ]
+              },
+              {
+                "Single": 158
+              },
+              {
+                "Range": [
+                  160,
+                  167
+                ]
+              },
+              {
+                "Range": [
+                  169,
+                  199
+                ]
+              },
+              {
+                "Single": 204
+              },
+              {
+                "Single": 207
+              },
+              {
+                "Single": 210
+              },
+              {
+                "Single": 213
+              },
+              {
+                "Single": 217
+              },
+              {
+                "Single": 219
+              },
+              {
+                "Range": [
+                  221,
+                  226
+                ]
+              },
+              {
+                "Range": [
+                  228,
+                  232
+                ]
+              },
+              {
+                "Range": [
+                  234,
+                  240
+                ]
+              },
+              {
+                "Single": 242
+              },
+              {
+                "Single": 244
+              },
+              {
+                "Range": [
+                  246,
+                  249
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "计算机科学/高性能服务开发与架构最佳实战经验/限流方案设计.md": [
+      {
+        "hash": "s_1c34592f79ef79::t_9f002e904163a0",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              1180
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a56f95133592b4b627a3ff4",
+            "tool_type": "agent",
+            "tool_id": "Write",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  1180
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "计算机科学/高性能服务开发与架构最佳实战经验/高性能服务架构可行性方案.md": [
+      {
+        "hash": "s_1c34592f79ef79::t_ff1a6f22ac345c",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              603
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a56f6ce33592b4b627a3fe4",
+            "tool_type": "agent",
+            "tool_id": "Write",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  603
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_1c34592f79ef79": {
+      "tool": "trae",
+      "conversation_id": "696d925956af85cb7e7f8cb6",
+      "session_id": "696d925956af85cb7e7f8cb6",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_1c34592f79ef79::t_8c9980d323e7d0": {
+      "tool": "trae",
+      "conversation_id": "696d925956af85cb7e7f8cb6",
+      "session_id": "696d925956af85cb7e7f8cb6",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_1c34592f79ef79::t_9497b45755e939": {
+      "tool": "trae",
+      "conversation_id": "696d925956af85cb7e7f8cb6",
+      "session_id": "696d925956af85cb7e7f8cb6",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_1c34592f79ef79::t_9f002e904163a0": {
+      "tool": "trae",
+      "conversation_id": "696d925956af85cb7e7f8cb6",
+      "session_id": "696d925956af85cb7e7f8cb6",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_1c34592f79ef79::t_9f60d86b196df9": {
+      "tool": "trae",
+      "conversation_id": "696d925956af85cb7e7f8cb6",
+      "session_id": "696d925956af85cb7e7f8cb6",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_1c34592f79ef79::t_bca7d4f898b0ff": {
+      "tool": "trae",
+      "conversation_id": "696d925956af85cb7e7f8cb6",
+      "session_id": "696d925956af85cb7e7f8cb6",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_1c34592f79ef79::t_ff1a6f22ac345c": {
+      "tool": "trae",
+      "conversation_id": "696d925956af85cb7e7f8cb6",
+      "session_id": "696d925956af85cb7e7f8cb6",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_7b78ac0fe9eae2": {
+      "tool": "trae",
+      "conversation_id": "696dcfe456af85cb7e7f8cba",
+      "session_id": "696dcfe456af85cb7e7f8cba",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_7b78ac0fe9eae2::t_bb961d39efd27a": {
+      "tool": "trae",
+      "conversation_id": "696dcfe456af85cb7e7f8cba",
+      "session_id": "696dcfe456af85cb7e7f8cba",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_7b78ac0fe9eae2::t_f75d4352bd3be1": {
+      "tool": "trae",
+      "conversation_id": "696dcfe456af85cb7e7f8cba",
+      "session_id": "696dcfe456af85cb7e7f8cba",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_fc986f4ab1158b": {
+      "tool": "trae",
+      "conversation_id": "696defd756af85cb7e7f8cbc",
+      "session_id": "696defd756af85cb7e7f8cbc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_fc986f4ab1158b::t_6469aca0db4886": {
+      "tool": "trae",
+      "conversation_id": "696defd756af85cb7e7f8cbc",
+      "session_id": "696defd756af85cb7e7f8cbc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_fc986f4ab1158b::t_b627e7253701a4": {
+      "tool": "trae",
+      "conversation_id": "696defd756af85cb7e7f8cbc",
+      "session_id": "696defd756af85cb7e7f8cbc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_fc986f4ab1158b::t_c4e581de856325": {
+      "tool": "trae",
+      "conversation_id": "696defd756af85cb7e7f8cbc",
+      "session_id": "696defd756af85cb7e7f8cbc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
