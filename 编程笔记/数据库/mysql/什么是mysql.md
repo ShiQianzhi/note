@@ -1,6 +1,6 @@
 ## 前言
 MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的关系数据库管理系统)应用软件之一。  
-![MySQL](image.png)  
+![MySQL](data/images/什么是mysql-20260715115521-1.png)  
 MySQL 是开源的，由瑞典 MySQL AB 公司开发，目前隶属于 Oracle 旗下产品。MySQL 使用标准的 SQL 数据语言形式。其是可以定制的，采用了 GPL 协议，你可以修改源码来开发自己的 MySQL 系统。
 
 ## 数据库的概念
