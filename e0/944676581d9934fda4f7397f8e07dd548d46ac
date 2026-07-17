@@ -1,0 +1,87 @@
+基础学科知识/数学/算术基础.md
+  h_318b0e42409ad8 65-66,69,72-73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "e0944676581d9934fda4f7397f8e07dd548d46ac",
+  "prompts": {},
+  "humans": {
+    "h_318b0e42409ad8": {
+      "author": "ShiQianzhi <shiqianzhi.flgh@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {
+    "s_fc986f4ab1158b": {
+      "tool": "trae",
+      "conversation_id": "696defd756af85cb7e7f8cbc",
+      "session_id": "696defd756af85cb7e7f8cbc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_fc986f4ab1158b::t_10e245d22e90c0": {
+      "tool": "trae",
+      "conversation_id": "696defd756af85cb7e7f8cbc",
+      "session_id": "696defd756af85cb7e7f8cbc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_fc986f4ab1158b::t_29e7d93c7c92ea": {
+      "tool": "trae",
+      "conversation_id": "696defd756af85cb7e7f8cbc",
+      "session_id": "696defd756af85cb7e7f8cbc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_fc986f4ab1158b::t_6a50910c2f09e7": {
+      "tool": "trae",
+      "conversation_id": "696defd756af85cb7e7f8cbc",
+      "session_id": "696defd756af85cb7e7f8cbc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_fc986f4ab1158b::t_6c8377a1e8caad": {
+      "tool": "trae",
+      "conversation_id": "696defd756af85cb7e7f8cbc",
+      "session_id": "696defd756af85cb7e7f8cbc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_fc986f4ab1158b::t_76a77d87766c42": {
+      "tool": "trae",
+      "conversation_id": "696defd756af85cb7e7f8cbc",
+      "session_id": "696defd756af85cb7e7f8cbc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_fc986f4ab1158b::t_77f16c33924a4f": {
+      "tool": "trae",
+      "conversation_id": "696defd756af85cb7e7f8cbc",
+      "session_id": "696defd756af85cb7e7f8cbc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_fc986f4ab1158b::t_7a06431feb8df0": {
+      "tool": "trae",
+      "conversation_id": "696defd756af85cb7e7f8cbc",
+      "session_id": "696defd756af85cb7e7f8cbc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_fc986f4ab1158b::t_8fbe4387beaf8c": {
+      "tool": "trae",
+      "conversation_id": "696defd756af85cb7e7f8cbc",
+      "session_id": "696defd756af85cb7e7f8cbc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_fc986f4ab1158b::t_c9dc5618a6bbe3": {
+      "tool": "trae",
+      "conversation_id": "696defd756af85cb7e7f8cbc",
+      "session_id": "696defd756af85cb7e7f8cbc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
