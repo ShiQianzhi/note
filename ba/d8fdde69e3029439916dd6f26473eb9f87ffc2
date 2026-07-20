@@ -1,0 +1,27 @@
+时间胶囊.md
+  s_619f252b977895::t_7119adf2c8068f 9
+  s_619f252b977895::t_ca3b7909b32cd4 7-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "bad8fdde69e3029439916dd6f26473eb9f87ffc2",
+  "prompts": {},
+  "humans": {
+    "h_318b0e42409ad8": {
+      "author": "ShiQianzhi <shiqianzhi.flgh@bytedance.com>"
+    }
+  },
+  "sessions": {
+    "s_619f252b977895": {
+      "agent_id": {
+        "tool": "trae-cue",
+        "id": "ai_tab-icr-ad519b62-8d20-4fb7-a5c7-35e55995e780",
+        "model": "default"
+      },
+      "human_author": "ShiQianzhi <shiqianzhi.flgh@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
