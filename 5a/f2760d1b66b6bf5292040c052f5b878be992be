@@ -1,0 +1,109 @@
+计算机科学/数据结构与算法/算法/位运算详解.md
+  s_873856c452f434::t_839e8e3392ed70 1-1044 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5de479f18936ac32867ae3","tool_type":"agent","tool_id":"Write","line_ranges":[{"Range":[1,1044]}]}]}
+"计算机科学/编程语言/C/C 语言快速入门.md"
+  s_873856c452f434::t_84bb967b977e47 1-1529 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a5de23ff18936ac32867abd","tool_type":"agent","tool_id":"Write","line_ranges":[{"Range":[1,1529]}]}]}
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "5af2760d1b66b6bf5292040c052f5b878be992be",
+  "prompts": {},
+  "humans": {
+    "h_318b0e42409ad8": {
+      "author": "ShiQianzhi <shiqianzhi.flgh@bytedance.com>"
+    }
+  },
+  "sessions": {
+    "s_873856c452f434": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a5de1c9f18936ac32867a9d",
+        "model": "Doubao_1_6__dev"
+      },
+      "human_author": "ShiQianzhi <shiqianzhi.flgh@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "计算机科学/数据结构与算法/算法/位运算详解.md": [
+      {
+        "hash": "s_873856c452f434::t_839e8e3392ed70",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              1044
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5de479f18936ac32867ae3",
+            "tool_type": "agent",
+            "tool_id": "Write",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  1044
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "计算机科学/编程语言/C/C 语言快速入门.md": [
+      {
+        "hash": "s_873856c452f434::t_84bb967b977e47",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              1529
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a5de23ff18936ac32867abd",
+            "tool_type": "agent",
+            "tool_id": "Write",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  1529
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_873856c452f434": {
+      "tool": "trae",
+      "conversation_id": "6a5de1c9f18936ac32867a9d",
+      "session_id": "6a5de1c9f18936ac32867a9d",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_873856c452f434::t_839e8e3392ed70": {
+      "tool": "trae",
+      "conversation_id": "6a5de1c9f18936ac32867a9d",
+      "session_id": "6a5de1c9f18936ac32867a9d",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_873856c452f434::t_84bb967b977e47": {
+      "tool": "trae",
+      "conversation_id": "6a5de1c9f18936ac32867a9d",
+      "session_id": "6a5de1c9f18936ac32867a9d",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
