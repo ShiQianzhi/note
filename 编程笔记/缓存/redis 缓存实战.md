@@ -4,6 +4,6 @@
 > 内存读写速度比磁盘块好几个量级，合理使用内存缓存可以有效提高系统性能。
 
 而缓存层通常会存在三个问题：缓存雪崩、缓存击穿、缓存穿透。
-![img.png](img.png)
+![img.png](data/images/redis 缓存实战-20260715115521-1.png)
 
-![img_1.png](img_1.png)
+![img_1.png](data/images/redis 缓存实战-20260715115521-2.png)

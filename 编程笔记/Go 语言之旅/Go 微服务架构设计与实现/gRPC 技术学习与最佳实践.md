@@ -2,12 +2,12 @@
 
 ### 什么是 gRPC 
 gRPC 是一个现代开源高性能远程过程调用 (RPC) 框架，可在任何环境中运行。它能够高效地连接数据中心内和跨数据中心的服务，并提供可插拔的负载平衡、跟踪、健康检查和身份验证支持。
-![gRPC 架构图](image.png)
+![gRPC 架构图](data/images/gRPC 技术学习与最佳实践-20260715115521-1.png)
 
 
 ### gRPC 工作原理
 gRPC 采用客户端和服务器模型，以网络设备为 gRPC 客户端，gRPC 的交互过程如下：  
-![数据交互过程](image-1.png)
+![数据交互过程](data/images/gRPC 技术学习与最佳实践-20260715115521-2.png)
 
 客户端主动和服务端建立gRPC连接，将设备上配置的订阅数据推送给服务器。在整个gRPC交互的过程中，客户端和服务器都需要使用 ProtoBuf 来定义 Proto 文件。
 
@@ -54,7 +54,7 @@ service Greeter {
 ```bash
 protoc --go_out=. --go-grpc_out=. .\proto\hello.proto
 ```
-![源文件示例](image-2.png)
+![源文件示例](data/images/gRPC 技术学习与最佳实践-20260715115521-3.png)
 
 创建服务端并执行：
 ```go

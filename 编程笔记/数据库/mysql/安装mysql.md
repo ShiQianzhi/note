@@ -15,7 +15,7 @@ cat /etc/redhat-release
 ```
 下载对应的MySQL库：https://dev.mysql.com/downloads/mysql/
 例如我的发行版对应的：
-![alt text](image-1.png)
+![alt text](data/images/安装mysql-20260715115521-1.png)
 ```bash
 wget https://repo.mysql.com/mysql84-community-release-el8-1.noarch.rpm
 yum localinstall mysql84-community-release-el8-1.noarch.rpm
