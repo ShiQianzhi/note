@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Markdown image rule test</title>
+  <desc id="desc">A simple generated image used to test saving Markdown images into the local images directory.</desc>
+  <rect width="960" height="540" rx="32" fill="#f7f7f5"/>
+  <rect x="72" y="72" width="816" height="396" rx="28" fill="#ffffff" stroke="#deded8" stroke-width="2"/>
+  <text x="120" y="170" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#222222">Markdown 图片规则测试</text>
+  <text x="120" y="235" font-family="Arial, sans-serif" font-size="26" fill="#555555">生成的图片已保存到当前目录下的 images 文件夹。</text>
+  <rect x="120" y="290" width="720" height="88" rx="16" fill="#f1f1ee" stroke="#d7d7d0"/>
+  <text x="150" y="345" font-family="Consolas, monospace" font-size="28" fill="#333333">images/markdown-image-rule-test.svg</text>
+  <circle cx="800" cy="155" r="38" fill="#2f80ed"/>
+  <path d="M782 154l13 13 28-32" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

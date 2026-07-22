@@ -1,0 +1,34 @@
+<svg width="1280" height="680" viewBox="0 0 1280 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">聚合查询与临时表执行时序图</title>
+  <desc id="desc">展示 GROUP BY 查询扫描记录、按 status 聚合，并在必要时使用磁盘临时表的过程。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#334155"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+    <style>
+      .title{font:700 32px "Microsoft YaHei",Arial,sans-serif;fill:#0F172A}.sub{font:400 16px "Microsoft YaHei",Arial,sans-serif;fill:#64748B}
+      .box{fill:#fff;stroke:#CBD5E1;stroke-width:1.5;filter:url(#shadow)}.hot{fill:#EFF6FF;stroke:#93C5FD}.store{fill:#FFF7ED;stroke:#FDBA74}.tmp{fill:#F0FDF4;stroke:#86EFAC}.warn{fill:#FEF2F2;stroke:#FCA5A5}
+      .h{font:700 17px "Microsoft YaHei",Arial,sans-serif;fill:#0F172A}.t{font:400 14px "Microsoft YaHei",Arial,sans-serif;fill:#475569}.n{font:700 14px Arial,sans-serif;fill:#2563EB}
+      .line{stroke:#334155;stroke-width:2.2;fill:none;marker-end:url(#arrow)}.note{fill:#F8FAFC;stroke:#E2E8F0}
+    </style>
+  </defs>
+  <rect width="1280" height="680" rx="28" fill="#F8FAFC"/>
+  <text x="640" y="54" text-anchor="middle" class="title">聚合查询与临时表：GROUP BY status</text>
+  <text x="640" y="84" text-anchor="middle" class="sub">聚合慢通常来自扫描范围过大、索引不能服务分组、临时表落盘</text>
+
+  <rect x="80" y="130" width="145" height="90" rx="16" class="box"/><text x="153" y="165" text-anchor="middle" class="h">Client</text><text x="153" y="193" text-anchor="middle" class="t">GROUP BY</text>
+  <rect x="265" y="130" width="160" height="90" rx="16" class="hot"/><text x="345" y="165" text-anchor="middle" class="h">Optimizer</text><text x="345" y="193" text-anchor="middle" class="t">评估索引/成本</text>
+  <rect x="465" y="130" width="160" height="90" rx="16" class="store"/><text x="545" y="165" text-anchor="middle" class="h">InnoDB</text><text x="545" y="193" text-anchor="middle" class="t">扫描时间范围</text>
+  <rect x="665" y="130" width="170" height="90" rx="16" class="tmp"/><text x="750" y="165" text-anchor="middle" class="h">内存聚合区</text><text x="750" y="193" text-anchor="middle" class="t">按 status 计数</text>
+  <rect x="875" y="105" width="170" height="72" rx="16" class="warn"/><text x="960" y="136" text-anchor="middle" class="h">磁盘临时表</text><text x="960" y="161" text-anchor="middle" class="t">内存不足时</text>
+  <rect x="875" y="220" width="170" height="72" rx="16" class="tmp"/><text x="960" y="251" text-anchor="middle" class="h">聚合结果</text><text x="960" y="276" text-anchor="middle" class="t">返回 status,count</text>
+  <rect x="1085" y="162" width="130" height="90" rx="16" class="box"/><text x="1150" y="197" text-anchor="middle" class="h">Client</text><text x="1150" y="225" text-anchor="middle" class="t">接收结果</text>
+
+  <path d="M225 175H265" class="line"/><path d="M425 175H465" class="line"/><path d="M625 175H665" class="line"/><path d="M835 160H875" class="line"/><path d="M750 220C780 250 820 256 875 256" class="line"/><path d="M1045 256C1070 240 1075 220 1085 207" class="line"/>
+
+  <rect x="115" y="350" width="1050" height="205" rx="22" class="note"/>
+  <text x="160" y="393" class="n">1</text><text x="185" y="393" class="t">优化器判断是否能用索引缩小 `created_at` 范围，无法有效过滤时扫描行数会很大。</text>
+  <text x="160" y="428" class="n">2</text><text x="185" y="428" class="t">执行器接收 InnoDB 返回的记录，按 `status` 做分组计数。</text>
+  <text x="160" y="463" class="n">3</text><text x="185" y="463" class="t">聚合数据可放内存时使用内存临时结构；超出限制或类型不适合时可能落盘。</text>
+  <text x="160" y="498" class="n">4</text><text x="185" y="498" class="t">磁盘临时表会显著增加 IO 和延迟，高频统计应考虑汇总表、缓存或 OLAP。</text>
+  <text x="640" y="615" text-anchor="middle" class="sub">性能关注：扫描范围、Using temporary、Using filesort、磁盘临时表、统计任务隔离</text>
+</svg>

@@ -1,0 +1,83 @@
+<svg width="1200" height="860" viewBox="0 0 1200 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">MySQL 整体架构图</title>
+  <desc id="desc">展示客户端层、连接层、SQL 层、存储引擎接口、InnoDB 和文件系统磁盘之间的调用关系。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#EEF2F7"/>
+    </linearGradient>
+    <linearGradient id="server" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EAF2FF"/>
+      <stop offset="100%" stop-color="#F7FAFF"/>
+    </linearGradient>
+    <linearGradient id="innodb" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFF5E8"/>
+      <stop offset="100%" stop-color="#FFFBF5"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0F172A" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 34px "Microsoft YaHei", "PingFang SC", Arial, sans-serif; fill: #0F172A; }
+      .subtitle { font: 400 17px "Microsoft YaHei", "PingFang SC", Arial, sans-serif; fill: #64748B; }
+      .box-title { font: 700 23px "Microsoft YaHei", "PingFang SC", Arial, sans-serif; fill: #0F172A; }
+      .box-sub { font: 400 16px "Microsoft YaHei", "PingFang SC", Arial, sans-serif; fill: #475569; }
+      .tag { font: 500 14px "Microsoft YaHei", "PingFang SC", Arial, sans-serif; fill: #334155; }
+      .small { font: 400 13px "Microsoft YaHei", "PingFang SC", Arial, sans-serif; fill: #64748B; }
+      .line { stroke: #334155; stroke-width: 2.4; fill: none; marker-end: url(#arrow); }
+      .soft-line { stroke: #CBD5E1; stroke-width: 1.4; fill: none; }
+    </style>
+  </defs>
+  <rect width="1200" height="860" rx="28" fill="url(#bg)"/>
+  <text x="600" y="58" text-anchor="middle" class="title">MySQL 整体架构</text>
+  <text x="600" y="88" text-anchor="middle" class="subtitle">Server 层负责 SQL 执行路径，InnoDB 负责数据组织、事务、锁与恢复</text>
+  <rect x="250" y="125" width="700" height="94" rx="18" fill="#FFFFFF" stroke="#D8DEE9" filter="url(#shadow)"/>
+  <text x="600" y="163" text-anchor="middle" class="box-title">Client</text>
+  <text x="600" y="193" text-anchor="middle" class="box-sub">应用程序 / 连接池 / MySQL 驱动 / MySQL 协议</text>
+  <line x1="600" y1="219" x2="600" y2="260" class="line"/>
+  <rect x="120" y="260" width="960" height="260" rx="24" fill="url(#server)" stroke="#BBD2F5" filter="url(#shadow)"/>
+  <text x="600" y="296" text-anchor="middle" class="box-title">MySQL Server 层</text>
+  <text x="600" y="322" text-anchor="middle" class="subtitle">连接管理、SQL 编译优化、执行器、Binlog 与复制能力</text>
+  <rect x="170" y="352" width="260" height="118" rx="16" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="300" y="385" text-anchor="middle" class="box-title">Connection Layer</text>
+  <text x="300" y="414" text-anchor="middle" class="box-sub">连接管理 / 线程</text>
+  <text x="300" y="442" text-anchor="middle" class="box-sub">认证授权 / 会话状态</text>
+  <rect x="470" y="352" width="260" height="118" rx="16" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="600" y="385" text-anchor="middle" class="box-title">SQL Layer</text>
+  <text x="600" y="414" text-anchor="middle" class="box-sub">Parser / Preprocessor</text>
+  <text x="600" y="442" text-anchor="middle" class="box-sub">Optimizer / Executor</text>
+  <rect x="770" y="352" width="260" height="118" rx="16" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="900" y="385" text-anchor="middle" class="box-title">Server 能力</text>
+  <text x="900" y="414" text-anchor="middle" class="box-sub">函数 / 视图 / 存储过程</text>
+  <text x="900" y="442" text-anchor="middle" class="box-sub">Binlog / 复制 / 临时表</text>
+  <line x1="600" y1="520" x2="600" y2="561" class="line"/>
+  <rect x="320" y="561" width="560" height="76" rx="18" fill="#FFFFFF" stroke="#D8DEE9" filter="url(#shadow)"/>
+  <text x="600" y="593" text-anchor="middle" class="box-title">Storage Engine API</text>
+  <text x="600" y="620" text-anchor="middle" class="box-sub">handler 接口，屏蔽不同存储引擎的实现差异</text>
+  <line x1="600" y1="637" x2="600" y2="676" class="line"/>
+  <rect x="120" y="676" width="960" height="118" rx="24" fill="url(#innodb)" stroke="#F2C98D" filter="url(#shadow)"/>
+  <text x="250" y="716" text-anchor="middle" class="box-title">InnoDB</text>
+  <text x="250" y="746" text-anchor="middle" class="box-sub">默认事务型存储引擎</text>
+  <rect x="395" y="704" width="122" height="34" rx="17" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="456" y="726" text-anchor="middle" class="tag">B+Tree</text>
+  <rect x="532" y="704" width="142" height="34" rx="17" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="603" y="726" text-anchor="middle" class="tag">Buffer Pool</text>
+  <rect x="689" y="704" width="102" height="34" rx="17" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="740" y="726" text-anchor="middle" class="tag">MVCC</text>
+  <rect x="806" y="704" width="92" height="34" rx="17" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="852" y="726" text-anchor="middle" class="tag">Locks</text>
+  <rect x="395" y="750" width="116" height="34" rx="17" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="453" y="772" text-anchor="middle" class="tag">Undo</text>
+  <rect x="526" y="750" width="106" height="34" rx="17" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="579" y="772" text-anchor="middle" class="tag">Redo</text>
+  <rect x="647" y="750" width="154" height="34" rx="17" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="724" y="772" text-anchor="middle" class="tag">Change Buffer</text>
+  <rect x="816" y="750" width="166" height="34" rx="17" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="899" y="772" text-anchor="middle" class="tag">Doublewrite / Purge</text>
+  <line x1="600" y1="794" x2="600" y2="824" class="line"/>
+  <rect x="320" y="824" width="560" height="28" rx="14" fill="#FFFFFF" stroke="#D8DEE9"/>
+  <text x="600" y="843" text-anchor="middle" class="small">Filesystem / Disk：表空间、redo、undo、binlog、临时文件</text>
+</svg>

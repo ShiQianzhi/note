@@ -1,0 +1,36 @@
+<svg width="1280" height="700" viewBox="0 0 1280 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">INSERT 写入执行时序图</title>
+  <desc id="desc">展示 INSERT 写入修改 Buffer Pool、维护索引、记录 Undo、Redo、Binlog 并提交的过程。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#334155"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+    <style>
+      .title{font:700 32px "Microsoft YaHei",Arial,sans-serif;fill:#0F172A}.sub{font:400 16px "Microsoft YaHei",Arial,sans-serif;fill:#64748B}
+      .box{fill:#fff;stroke:#CBD5E1;stroke-width:1.5;filter:url(#shadow)}.hot{fill:#EFF6FF;stroke:#93C5FD}.store{fill:#FFF7ED;stroke:#FDBA74}.log{fill:#F0FDF4;stroke:#86EFAC}
+      .h{font:700 17px "Microsoft YaHei",Arial,sans-serif;fill:#0F172A}.t{font:400 14px "Microsoft YaHei",Arial,sans-serif;fill:#475569}.n{font:700 14px Arial,sans-serif;fill:#2563EB}
+      .line{stroke:#334155;stroke-width:2.2;fill:none;marker-end:url(#arrow)}.note{fill:#F8FAFC;stroke:#E2E8F0}
+    </style>
+  </defs>
+  <rect width="1280" height="700" rx="28" fill="#F8FAFC"/>
+  <text x="640" y="54" text-anchor="middle" class="title">INSERT 写入：数据页、索引与日志协同</text>
+  <text x="640" y="84" text-anchor="middle" class="sub">写入性能受二级索引数量、唯一性检查、redo/binlog 刷盘和主键顺序性影响</text>
+
+  <rect x="70" y="125" width="135" height="82" rx="16" class="box"/><text x="138" y="158" text-anchor="middle" class="h">Client</text><text x="138" y="184" text-anchor="middle" class="t">INSERT</text>
+  <rect x="240" y="125" width="145" height="82" rx="16" class="box"/><text x="313" y="158" text-anchor="middle" class="h">Server</text><text x="313" y="184" text-anchor="middle" class="t">解析/权限</text>
+  <rect x="420" y="125" width="145" height="82" rx="16" class="hot"/><text x="493" y="158" text-anchor="middle" class="h">Executor</text><text x="493" y="184" text-anchor="middle" class="t">调用引擎</text>
+  <rect x="600" y="125" width="145" height="82" rx="16" class="store"/><text x="673" y="158" text-anchor="middle" class="h">InnoDB</text><text x="673" y="184" text-anchor="middle" class="t">插入一行</text>
+  <rect x="780" y="100" width="155" height="70" rx="16" class="store"/><text x="858" y="130" text-anchor="middle" class="h">Buffer Pool</text><text x="858" y="154" text-anchor="middle" class="t">修改数据/索引页</text>
+  <rect x="780" y="205" width="155" height="70" rx="16" class="log"/><text x="858" y="235" text-anchor="middle" class="h">Undo Log</text><text x="858" y="259" text-anchor="middle" class="t">回滚信息</text>
+  <rect x="980" y="100" width="155" height="70" rx="16" class="log"/><text x="1058" y="130" text-anchor="middle" class="h">Redo Log</text><text x="1058" y="154" text-anchor="middle" class="t">prepare/commit</text>
+  <rect x="980" y="205" width="155" height="70" rx="16" class="log"/><text x="1058" y="235" text-anchor="middle" class="h">Binlog</text><text x="1058" y="259" text-anchor="middle" class="t">复制/恢复</text>
+
+  <path d="M205 166H240" class="line"/><path d="M385 166H420" class="line"/><path d="M565 166H600" class="line"/><path d="M745 150H780" class="line"/><path d="M745 182C760 210 760 235 780 240" class="line"/><path d="M935 135H980" class="line"/><path d="M935 240H980" class="line"/>
+
+  <rect x="115" y="360" width="1050" height="215" rx="22" class="note"/>
+  <text x="160" y="403" class="n">1</text><text x="185" y="403" class="t">执行器调用 InnoDB 插入行，InnoDB 修改聚簇索引页和相关二级索引页。</text>
+  <text x="160" y="438" class="n">2</text><text x="185" y="438" class="t">如果二级索引页不在内存，非唯一索引可能先写 Change Buffer，唯一索引通常要做唯一性检查。</text>
+  <text x="160" y="473" class="n">3</text><text x="185" y="473" class="t">Undo Log 记录回滚信息，Redo Log 记录物理修改，用于崩溃恢复。</text>
+  <text x="160" y="508" class="n">4</text><text x="185" y="508" class="t">Server 写 Binlog，InnoDB 完成 redo commit，两阶段提交保证恢复和复制一致。</text>
+  <text x="160" y="543" class="n">5</text><text x="185" y="543" class="t">根据刷盘策略，redo/binlog 持久化后返回 OK。</text>
+  <text x="640" y="635" text-anchor="middle" class="sub">性能关注：二级索引数量、随机主键、唯一索引检查、redo/binlog 刷盘、事务大小</text>
+</svg>

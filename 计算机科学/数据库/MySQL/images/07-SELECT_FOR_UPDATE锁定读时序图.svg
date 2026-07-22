@@ -1,0 +1,34 @@
+<svg width="1280" height="680" viewBox="0 0 1280 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">SELECT FOR UPDATE 锁定读执行时序图</title>
+  <desc id="desc">展示事务中 SELECT FOR UPDATE 通过唯一索引定位订单、加排他锁、更新并提交释放锁的过程。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#334155"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.10"/></filter>
+    <style>
+      .title{font:700 32px "Microsoft YaHei",Arial,sans-serif;fill:#0F172A}.sub{font:400 16px "Microsoft YaHei",Arial,sans-serif;fill:#64748B}
+      .box{fill:#fff;stroke:#CBD5E1;stroke-width:1.5;filter:url(#shadow)}.txn{fill:#EFF6FF;stroke:#93C5FD}.store{fill:#FFF7ED;stroke:#FDBA74}.lock{fill:#FEF2F2;stroke:#FCA5A5}
+      .h{font:700 17px "Microsoft YaHei",Arial,sans-serif;fill:#0F172A}.t{font:400 14px "Microsoft YaHei",Arial,sans-serif;fill:#475569}.n{font:700 14px Arial,sans-serif;fill:#2563EB}
+      .line{stroke:#334155;stroke-width:2.2;fill:none;marker-end:url(#arrow)}.note{fill:#F8FAFC;stroke:#E2E8F0}
+    </style>
+  </defs>
+  <rect width="1280" height="680" rx="28" fill="#F8FAFC"/>
+  <text x="640" y="54" text-anchor="middle" class="title">SELECT ... FOR UPDATE：锁定读</text>
+  <text x="640" y="84" text-anchor="middle" class="sub">锁定读读取最新已提交版本，并对命中记录加排他锁直到事务结束</text>
+
+  <rect x="70" y="130" width="150" height="90" rx="16" class="box"/><text x="145" y="165" text-anchor="middle" class="h">Client</text><text x="145" y="193" text-anchor="middle" class="t">开启事务</text>
+  <rect x="260" y="130" width="160" height="90" rx="16" class="txn"/><text x="340" y="165" text-anchor="middle" class="h">Transaction</text><text x="340" y="193" text-anchor="middle" class="t">事务上下文</text>
+  <rect x="460" y="130" width="160" height="90" rx="16" class="store"/><text x="540" y="165" text-anchor="middle" class="h">uk_order_no</text><text x="540" y="193" text-anchor="middle" class="t">唯一索引定位</text>
+  <rect x="660" y="130" width="160" height="90" rx="16" class="lock"/><text x="740" y="165" text-anchor="middle" class="h">排他锁</text><text x="740" y="193" text-anchor="middle" class="t">锁定订单行</text>
+  <rect x="860" y="130" width="160" height="90" rx="16" class="store"/><text x="940" y="165" text-anchor="middle" class="h">UPDATE</text><text x="940" y="193" text-anchor="middle" class="t">修改已锁定行</text>
+  <rect x="1060" y="130" width="150" height="90" rx="16" class="txn"/><text x="1135" y="165" text-anchor="middle" class="h">COMMIT</text><text x="1135" y="193" text-anchor="middle" class="t">释放锁</text>
+
+  <path d="M220 175H260" class="line"/><path d="M420 175H460" class="line"/><path d="M620 175H660" class="line"/><path d="M820 175H860" class="line"/><path d="M1020 175H1060" class="line"/>
+
+  <rect x="115" y="320" width="1050" height="235" rx="22" class="note"/>
+  <text x="160" y="363" class="n">1</text><text x="185" y="363" class="t">`START TRANSACTION` 创建事务上下文，后续锁会跟随事务生命周期。</text>
+  <text x="160" y="398" class="n">2</text><text x="185" y="398" class="t">`SELECT ... FOR UPDATE` 是当前读，不是普通快照读，会读取最新记录。</text>
+  <text x="160" y="433" class="n">3</text><text x="185" y="433" class="t">通过唯一索引 `uk_order_no` 定位单行并加排他锁，锁范围较小。</text>
+  <text x="160" y="468" class="n">4</text><text x="185" y="468" class="t">后续 UPDATE 修改同一行，不需要和其他事务重新竞争这行锁。</text>
+  <text x="160" y="503" class="n">5</text><text x="185" y="503" class="t">事务提交后释放锁；如果事务中有外部调用或慢操作，会放大锁等待。</text>
+  <text x="640" y="615" text-anchor="middle" class="sub">性能关注：是否唯一定位、事务是否短、范围锁、外部调用、锁等待和死锁</text>
+</svg>
