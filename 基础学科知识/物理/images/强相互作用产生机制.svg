@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="680" viewBox="0 0 1120 680">
+  <rect width="1120" height="680" fill="#fbfbfd"/>
+  <text x="560" y="44" text-anchor="middle" font-size="28" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">强相互作用从哪里来：色荷、胶子和强力场</text>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#5f6368"/>
+    </marker>
+    <style>
+      .card { fill: #ffffff; stroke-width: 4; rx: 20; }
+      .title { font: 21px Arial, 'PingFang SC', sans-serif; font-weight: 700; fill: #202124; }
+      .desc { font: 16px Arial, 'PingFang SC', sans-serif; fill: #5f6368; }
+      .arrow { stroke: #5f6368; stroke-width: 3; marker-end: url(#arrow); fill: none; }
+    </style>
+  </defs>
+
+  <rect x="70" y="120" width="250" height="140" class="card" stroke="#e53935"/>
+  <text x="195" y="162" text-anchor="middle" class="title">夸克带色荷</text>
+  <text x="195" y="198" text-anchor="middle" class="desc">不是颜色</text>
+  <text x="195" y="226" text-anchor="middle" class="desc">而是一种强相互作用“电荷”</text>
+
+  <rect x="435" y="120" width="250" height="140" class="card" stroke="#43a047"/>
+  <text x="560" y="162" text-anchor="middle" class="title">色荷激发强力场</text>
+  <text x="560" y="198" text-anchor="middle" class="desc">类似电荷产生电磁场</text>
+  <text x="560" y="226" text-anchor="middle" class="desc">但规律更复杂</text>
+
+  <rect x="800" y="120" width="250" height="140" class="card" stroke="#1e88e5"/>
+  <text x="925" y="162" text-anchor="middle" class="title">胶子传递作用</text>
+  <text x="925" y="198" text-anchor="middle" class="desc">胶子是强相互作用媒介</text>
+  <text x="925" y="226" text-anchor="middle" class="desc">胶子自己也带色荷</text>
+
+  <path d="M320 190 H425" class="arrow"/>
+  <path d="M685 190 H790" class="arrow"/>
+
+  <rect x="230" y="350" width="660" height="170" rx="24" fill="#e8f5e9" stroke="#43a047" stroke-width="4"/>
+  <text x="560" y="392" text-anchor="middle" class="title">结果：夸克被强力场束缚在一起</text>
+  <text x="560" y="430" text-anchor="middle" class="desc">强力不会像电磁力那样随距离简单变弱</text>
+  <text x="560" y="462" text-anchor="middle" class="desc">夸克越想被拉开，强力场中储存的能量越多</text>
+  <text x="560" y="494" text-anchor="middle" class="desc">能量足够大时，会产生新的夸克-反夸克对，而不是得到孤立夸克</text>
+
+  <path d="M560 260 V340" class="arrow"/>
+
+  <text x="560" y="600" text-anchor="middle" font-size="18" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">简化总结：强相互作用来自夸克的色荷；色荷通过胶子和强力场发生作用；这种作用把夸克束缚成质子、中子等强子。</text>
+</svg>

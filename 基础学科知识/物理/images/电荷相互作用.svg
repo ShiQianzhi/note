@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+  <rect width="900" height="360" fill="#fbfbfd"/>
+  <text x="450" y="42" text-anchor="middle" font-size="26" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">电荷之间的基本相互作用</text>
+
+  <circle cx="180" cy="145" r="42" fill="#e53935"/>
+  <text x="180" y="154" text-anchor="middle" font-size="34" font-family="Arial" fill="#fff">+</text>
+  <circle cx="330" cy="145" r="42" fill="#e53935"/>
+  <text x="330" y="154" text-anchor="middle" font-size="34" font-family="Arial" fill="#fff">+</text>
+  <line x1="230" y1="145" x2="280" y2="145" stroke="#5f6368" stroke-width="3"/>
+  <path d="M232 145 L252 133 L252 157 Z" fill="#5f6368"/>
+  <path d="M278 145 L258 133 L258 157 Z" fill="#5f6368"/>
+  <text x="255" y="220" text-anchor="middle" font-size="20" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">同种电荷相互排斥</text>
+
+  <circle cx="570" cy="145" r="42" fill="#1e88e5"/>
+  <text x="570" y="154" text-anchor="middle" font-size="34" font-family="Arial" fill="#fff">-</text>
+  <circle cx="720" cy="145" r="42" fill="#e53935"/>
+  <text x="720" y="154" text-anchor="middle" font-size="34" font-family="Arial" fill="#fff">+</text>
+  <line x1="620" y1="145" x2="670" y2="145" stroke="#5f6368" stroke-width="3"/>
+  <path d="M668 145 L648 133 L648 157 Z" fill="#5f6368"/>
+  <path d="M622 145 L642 133 L642 157 Z" fill="#5f6368"/>
+  <text x="645" y="220" text-anchor="middle" font-size="20" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">异种电荷相互吸引</text>
+
+  <text x="450" y="300" text-anchor="middle" font-size="18" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">电不是一种神秘物质，而是带电粒子及其相互作用所表现出的物理现象</text>
+</svg>

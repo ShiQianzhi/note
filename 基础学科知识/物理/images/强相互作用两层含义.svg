@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="620" viewBox="0 0 1120 620">
+  <rect width="1120" height="620" fill="#fbfbfd"/>
+  <text x="560" y="44" text-anchor="middle" font-size="28" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">强相互作用的两层含义</text>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#5f6368"/>
+    </marker>
+    <style>
+      .title { font: 22px Arial, 'PingFang SC', sans-serif; font-weight: 700; fill: #202124; }
+      .desc { font: 16px Arial, 'PingFang SC', sans-serif; fill: #5f6368; }
+      .arrow { stroke: #5f6368; stroke-width: 3; marker-end: url(#arrow); fill: none; }
+    </style>
+  </defs>
+
+  <rect x="70" y="105" width="440" height="390" rx="22" fill="#e8f5e9" stroke="#43a047" stroke-width="4"/>
+  <text x="290" y="150" text-anchor="middle" class="title">第一层：夸克之间的强相互作用</text>
+  <text x="290" y="185" text-anchor="middle" class="desc">胶子把夸克束缚在质子和中子内部</text>
+
+  <circle cx="230" cy="290" r="42" fill="#fb8c00"/>
+  <text x="230" y="300" text-anchor="middle" font-size="28" font-family="Arial" fill="#fff">u</text>
+  <circle cx="350" cy="290" r="42" fill="#fb8c00"/>
+  <text x="350" y="300" text-anchor="middle" font-size="28" font-family="Arial" fill="#fff">u</text>
+  <circle cx="290" cy="390" r="42" fill="#8e24aa"/>
+  <text x="290" y="400" text-anchor="middle" font-size="28" font-family="Arial" fill="#fff">d</text>
+  <path d="M262 290 H318" stroke="#43a047" stroke-width="6"/>
+  <path d="M246 326 L274 362" stroke="#43a047" stroke-width="6"/>
+  <path d="M334 326 L306 362" stroke="#43a047" stroke-width="6"/>
+  <text x="290" y="460" text-anchor="middle" class="desc">例：uud 组成质子</text>
+
+  <rect x="610" y="105" width="440" height="390" rx="22" fill="#fff8e1" stroke="#f9a825" stroke-width="4"/>
+  <text x="830" y="150" text-anchor="middle" class="title">第二层：核子之间的残余强力</text>
+  <text x="830" y="185" text-anchor="middle" class="desc">质子和中子被束缚成原子核</text>
+
+  <circle cx="760" cy="300" r="48" fill="#e53935"/>
+  <text x="760" y="310" text-anchor="middle" font-size="28" font-family="Arial" fill="#fff">p</text>
+  <circle cx="900" cy="300" r="48" fill="#757575"/>
+  <text x="900" y="310" text-anchor="middle" font-size="28" font-family="Arial" fill="#fff">n</text>
+  <circle cx="830" cy="405" r="48" fill="#e53935"/>
+  <text x="830" y="415" text-anchor="middle" font-size="28" font-family="Arial" fill="#fff">p</text>
+  <path d="M805 300 H855" stroke="#f9a825" stroke-width="7"/>
+  <path d="M782 340 L810 368" stroke="#f9a825" stroke-width="7"/>
+  <path d="M878 340 L850 368" stroke="#f9a825" stroke-width="7"/>
+  <text x="830" y="460" text-anchor="middle" class="desc">例：质子 p 和中子 n 组成原子核</text>
+
+  <path d="M515 300 H600" class="arrow"/>
+  <text x="560" y="280" text-anchor="middle" class="desc">更高一层表现为</text>
+  <text x="560" y="540" text-anchor="middle" font-size="18" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">强相互作用最根本地束缚夸克；在原子核中又表现为核子之间的残余强力。</text>
+</svg>

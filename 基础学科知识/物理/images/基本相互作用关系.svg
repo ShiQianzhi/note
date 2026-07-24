@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560">
+  <rect width="1120" height="560" fill="#fbfbfd"/>
+  <text x="560" y="42" text-anchor="middle" font-size="28" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">微观粒子之间靠什么发生关系：四种基本相互作用</text>
+
+  <defs>
+    <style>
+      .card { fill: #fff; stroke-width: 4; rx: 20; }
+      .title { font: 22px Arial, 'PingFang SC', sans-serif; font-weight: 700; fill: #202124; }
+      .body { font: 16px Arial, 'PingFang SC', sans-serif; fill: #5f6368; }
+    </style>
+  </defs>
+
+  <rect x="60" y="105" width="470" height="160" class="card" stroke="#43a047"/>
+  <text x="295" y="145" text-anchor="middle" class="title">强相互作用</text>
+  <text x="95" y="182" class="body">作用对象：夸克、胶子，以及由夸克组成的质子和中子</text>
+  <text x="95" y="213" class="body">核心作用：把夸克束缚成质子/中子，把核子束缚成原子核</text>
+  <text x="95" y="244" class="body">特点：距离极短，但在原子核尺度非常强</text>
+
+  <rect x="590" y="105" width="470" height="160" class="card" stroke="#1e88e5"/>
+  <text x="825" y="145" text-anchor="middle" class="title">电磁相互作用</text>
+  <text x="625" y="182" class="body">作用对象：带电粒子，例如电子、质子、夸克</text>
+  <text x="625" y="213" class="body">核心作用：解释电、磁、光、化学键和原子结构</text>
+  <text x="625" y="244" class="body">媒介粒子：光子</text>
+
+  <rect x="60" y="310" width="470" height="160" class="card" stroke="#8e24aa"/>
+  <text x="295" y="350" text-anchor="middle" class="title">弱相互作用</text>
+  <text x="95" y="387" class="body">作用对象：夸克、轻子等基本粒子</text>
+  <text x="95" y="418" class="body">核心作用：导致某些粒子衰变，例如 β 衰变</text>
+  <text x="95" y="449" class="body">媒介粒子：W±、Z 玻色子</text>
+
+  <rect x="590" y="310" width="470" height="160" class="card" stroke="#f9a825"/>
+  <text x="825" y="350" text-anchor="middle" class="title">引力相互作用</text>
+  <text x="625" y="387" class="body">作用对象：所有具有能量和质量的对象</text>
+  <text x="625" y="418" class="body">核心作用：支配行星、恒星、星系等大尺度结构</text>
+  <text x="625" y="449" class="body">特点：微观尺度极弱，宏观天体尺度非常重要</text>
+
+  <text x="560" y="520" text-anchor="middle" font-size="18" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">粒子“是什么”只是一半问题；粒子“如何相互作用”才解释了原子、分子、物质和宇宙结构。</text>
+</svg>

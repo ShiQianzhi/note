@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="680" viewBox="0 0 1120 680">
+  <rect width="1120" height="680" fill="#fbfbfd"/>
+  <text x="560" y="44" text-anchor="middle" font-size="28" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">电磁现象的主要表现和应用</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#5f6368"/>
+    </marker>
+    <style>
+      .center { fill: #fff8e1; stroke: #f9a825; stroke-width: 4; }
+      .card { fill: #fff; stroke-width: 3; rx: 18; }
+      .title { font: 20px Arial, 'PingFang SC', sans-serif; font-weight: 700; fill: #202124; }
+      .desc { font: 15px Arial, 'PingFang SC', sans-serif; fill: #5f6368; }
+      .line { stroke: #5f6368; stroke-width: 3; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <circle cx="560" cy="340" r="105" class="center"/>
+  <text x="560" y="325" text-anchor="middle" font-size="24" font-family="Arial, 'PingFang SC', sans-serif" font-weight="700" fill="#202124">电磁</text>
+  <text x="560" y="360" text-anchor="middle" font-size="16" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">电场、磁场、电荷运动</text>
+
+  <rect x="70" y="110" width="250" height="105" class="card" stroke="#e53935"/>
+  <text x="195" y="148" text-anchor="middle" class="title">自然现象</text>
+  <text x="195" y="178" text-anchor="middle" class="desc">闪电、极光、太阳光</text>
+
+  <rect x="435" y="90" width="250" height="105" class="card" stroke="#1e88e5"/>
+  <text x="560" y="128" text-anchor="middle" class="title">电力系统</text>
+  <text x="560" y="158" text-anchor="middle" class="desc">发电机、变压器、电网</text>
+
+  <rect x="800" y="110" width="250" height="105" class="card" stroke="#43a047"/>
+  <text x="925" y="148" text-anchor="middle" class="title">动力设备</text>
+  <text x="925" y="178" text-anchor="middle" class="desc">电动机、电动车、机器人</text>
+
+  <rect x="70" y="465" width="250" height="105" class="card" stroke="#8e24aa"/>
+  <text x="195" y="503" text-anchor="middle" class="title">通信</text>
+  <text x="195" y="533" text-anchor="middle" class="desc">无线电、Wi-Fi、手机信号</text>
+
+  <rect x="435" y="500" width="250" height="105" class="card" stroke="#fb8c00"/>
+  <text x="560" y="538" text-anchor="middle" class="title">计算与电子</text>
+  <text x="560" y="568" text-anchor="middle" class="desc">晶体管、芯片、传感器</text>
+
+  <rect x="800" y="465" width="250" height="105" class="card" stroke="#0097a7"/>
+  <text x="925" y="503" text-anchor="middle" class="title">医学与检测</text>
+  <text x="925" y="533" text-anchor="middle" class="desc">核磁共振、心电图、成像</text>
+
+  <line x1="485" y1="286" x2="305" y2="210" class="line"/>
+  <line x1="560" y1="235" x2="560" y2="200" class="line"/>
+  <line x1="635" y1="286" x2="815" y2="210" class="line"/>
+  <line x1="485" y1="394" x2="305" y2="465" class="line"/>
+  <line x1="560" y1="445" x2="560" y2="495" class="line"/>
+  <line x1="635" y1="394" x2="815" y2="465" class="line"/>
+
+  <text x="560" y="650" text-anchor="middle" font-size="18" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">电磁现象既解释自然，也支撑现代电力、通信、计算、医疗和工业技术。</text>
+</svg>

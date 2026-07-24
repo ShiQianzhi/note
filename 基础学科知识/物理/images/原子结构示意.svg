@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560">
+  <rect width="980" height="560" fill="#fbfbfd"/>
+  <text x="490" y="42" text-anchor="middle" font-size="28" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">原子结构：原子核 + 电子云</text>
+
+  <circle cx="375" cy="285" r="190" fill="#e3f2fd" opacity="0.55" stroke="#90caf9" stroke-width="3"/>
+  <circle cx="375" cy="285" r="130" fill="none" stroke="#64b5f6" stroke-width="2" stroke-dasharray="9 8"/>
+  <circle cx="375" cy="285" r="70" fill="none" stroke="#42a5f5" stroke-width="2" stroke-dasharray="7 7"/>
+
+  <circle cx="375" cy="285" r="44" fill="#ffecb3" stroke="#f9a825" stroke-width="4"/>
+  <circle cx="360" cy="276" r="14" fill="#e53935"/>
+  <text x="360" y="282" text-anchor="middle" font-size="17" font-family="Arial" fill="#fff">p</text>
+  <circle cx="389" cy="276" r="14" fill="#e53935"/>
+  <text x="389" y="282" text-anchor="middle" font-size="17" font-family="Arial" fill="#fff">p</text>
+  <circle cx="374" cy="303" r="14" fill="#757575"/>
+  <text x="374" y="309" text-anchor="middle" font-size="17" font-family="Arial" fill="#fff">n</text>
+
+  <circle cx="500" cy="165" r="11" fill="#1e88e5"/>
+  <text x="520" y="170" font-size="16" font-family="Arial, 'PingFang SC', sans-serif" fill="#1e88e5">电子可能出现区域</text>
+  <circle cx="235" cy="385" r="9" fill="#1e88e5"/>
+  <circle cx="435" cy="420" r="8" fill="#1e88e5"/>
+  <circle cx="255" cy="160" r="7" fill="#1e88e5"/>
+  <circle cx="525" cy="285" r="8" fill="#1e88e5"/>
+
+  <line x1="432" y1="285" x2="620" y2="245" stroke="#5f6368" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="645" y="242" font-size="19" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">原子核</text>
+  <text x="645" y="272" font-size="16" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">集中了几乎全部质量</text>
+  <text x="645" y="300" font-size="16" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">由质子和中子组成</text>
+
+  <line x1="518" y1="165" x2="715" y2="150" stroke="#5f6368" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="735" y="153" font-size="19" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">电子云</text>
+  <text x="735" y="183" font-size="16" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">不是固定轨道小球</text>
+  <text x="735" y="211" font-size="16" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">而是概率分布</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#5f6368"/>
+    </marker>
+  </defs>
+
+  <text x="490" y="520" text-anchor="middle" font-size="18" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">原子大部分空间是电子云区域，原子核极小但质量高度集中。</text>
+</svg>

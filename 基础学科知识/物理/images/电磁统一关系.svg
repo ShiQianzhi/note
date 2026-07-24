@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="640" viewBox="0 0 1120 640">
+  <rect width="1120" height="640" fill="#fbfbfd"/>
+  <text x="560" y="44" text-anchor="middle" font-size="28" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">电和磁如何统一成电磁现象</text>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#5f6368"/>
+    </marker>
+    <style>
+      .box { fill: #ffffff; stroke-width: 4; rx: 18; }
+      .title { font: 21px Arial, 'PingFang SC', sans-serif; font-weight: 700; fill: #202124; }
+      .desc { font: 16px Arial, 'PingFang SC', sans-serif; fill: #5f6368; }
+      .arrow { stroke: #5f6368; stroke-width: 3; marker-end: url(#arrow); fill: none; }
+    </style>
+  </defs>
+
+  <rect x="80" y="115" width="210" height="105" class="box" stroke="#e53935"/>
+  <text x="185" y="155" text-anchor="middle" class="title">电荷</text>
+  <text x="185" y="187" text-anchor="middle" class="desc">正电荷 / 负电荷</text>
+
+  <rect x="455" y="115" width="210" height="105" class="box" stroke="#1e88e5"/>
+  <text x="560" y="155" text-anchor="middle" class="title">电场</text>
+  <text x="560" y="187" text-anchor="middle" class="desc">电荷周围的影响</text>
+
+  <rect x="830" y="115" width="210" height="105" class="box" stroke="#43a047"/>
+  <text x="935" y="155" text-anchor="middle" class="title">电流</text>
+  <text x="935" y="187" text-anchor="middle" class="desc">电荷定向运动</text>
+
+  <rect x="455" y="330" width="210" height="105" class="box" stroke="#8e24aa"/>
+  <text x="560" y="370" text-anchor="middle" class="title">磁场</text>
+  <text x="560" y="402" text-anchor="middle" class="desc">电流和磁体周围的影响</text>
+
+  <rect x="455" y="500" width="210" height="90" class="box" stroke="#f9a825"/>
+  <text x="560" y="535" text-anchor="middle" class="title">电磁波</text>
+  <text x="560" y="565" text-anchor="middle" class="desc">变化电场和变化磁场传播</text>
+
+  <path d="M290 168 H445" class="arrow"/>
+  <text x="367" y="145" text-anchor="middle" font-size="16" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">产生</text>
+
+  <path d="M665 168 H820" class="arrow"/>
+  <text x="742" y="145" text-anchor="middle" font-size="16" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">推动电荷运动</text>
+
+  <path d="M890 220 C840 300, 735 366, 675 382" class="arrow"/>
+  <text x="805" y="318" text-anchor="middle" font-size="16" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">电流产生磁场</text>
+
+  <path d="M455 382 C355 350, 330 250, 455 190" class="arrow"/>
+  <text x="330" y="318" text-anchor="middle" font-size="16" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">变化磁场产生电场</text>
+
+  <path d="M560 435 V490" class="arrow"/>
+  <text x="650" y="472" text-anchor="middle" font-size="16" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">相互激发并向外传播</text>
+
+  <text x="560" y="622" text-anchor="middle" font-size="18" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">电磁不是“电 + 磁”的简单相加，而是同一种电磁相互作用在不同条件下的表现。</text>
+</svg>

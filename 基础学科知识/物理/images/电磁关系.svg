@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="430" viewBox="0 0 940 430">
+  <rect width="940" height="430" fill="#fbfbfd"/>
+  <text x="470" y="42" text-anchor="middle" font-size="26" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">电和磁不是孤立现象</text>
+
+  <line x1="210" y1="110" x2="210" y2="330" stroke="#424242" stroke-width="8"/>
+  <path d="M210 120 C145 150, 145 290, 210 320" fill="none" stroke="#1e88e5" stroke-width="4"/>
+  <path d="M210 120 C275 150, 275 290, 210 320" fill="none" stroke="#1e88e5" stroke-width="4"/>
+  <path d="M210 145 C170 170, 170 270, 210 295" fill="none" stroke="#1e88e5" stroke-width="3"/>
+  <path d="M210 145 C250 170, 250 270, 210 295" fill="none" stroke="#1e88e5" stroke-width="3"/>
+  <path d="M210 155 L225 180 L195 180 Z" fill="#1e88e5"/>
+  <text x="210" y="370" text-anchor="middle" font-size="18" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">电流周围产生磁场</text>
+
+  <rect x="560" y="135" width="70" height="170" rx="10" fill="#ef5350"/>
+  <rect x="710" y="135" width="70" height="170" rx="10" fill="#42a5f5"/>
+  <text x="595" y="225" text-anchor="middle" font-size="32" font-family="Arial" fill="#fff">N</text>
+  <text x="745" y="225" text-anchor="middle" font-size="32" font-family="Arial" fill="#fff">S</text>
+
+  <path d="M630 155 C665 125, 705 125, 740 155" fill="none" stroke="#8e24aa" stroke-width="4" marker-end="url(#arrow2)"/>
+  <path d="M630 220 C665 195, 705 195, 740 220" fill="none" stroke="#8e24aa" stroke-width="4" marker-end="url(#arrow2)"/>
+  <path d="M630 285 C665 315, 705 315, 740 285" fill="none" stroke="#8e24aa" stroke-width="4" marker-end="url(#arrow2)"/>
+  <defs>
+    <marker id="arrow2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#8e24aa"/>
+    </marker>
+  </defs>
+
+  <circle cx="675" cy="220" r="46" fill="none" stroke="#424242" stroke-width="5"/>
+  <path d="M675 174 V128" stroke="#424242" stroke-width="4"/>
+  <path d="M675 266 V315" stroke="#424242" stroke-width="4"/>
+  <text x="675" y="370" text-anchor="middle" font-size="18" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">变化的磁场可以产生电流</text>
+
+  <text x="470" y="405" text-anchor="middle" font-size="18" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">发电机、电动机、变压器、无线通信都建立在电磁关系之上</text>
+</svg>

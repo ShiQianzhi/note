@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420">
+  <rect width="920" height="420" fill="#fbfbfd"/>
+  <text x="460" y="42" text-anchor="middle" font-size="26" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">用地形类比理解电场和电势</text>
+
+  <path d="M70 310 C160 220, 230 250, 310 160 C400 60, 510 80, 600 165 C690 250, 770 220, 850 310" fill="none" stroke="#8d6e63" stroke-width="5"/>
+  <path d="M70 310 C160 220, 230 250, 310 160 C400 60, 510 80, 600 165 C690 250, 770 220, 850 310 L850 350 L70 350 Z" fill="#efebe9" opacity="0.9"/>
+
+  <circle cx="455" cy="88" r="22" fill="#e53935"/>
+  <text x="455" y="96" text-anchor="middle" font-size="26" font-family="Arial" fill="#fff">+</text>
+  <text x="455" y="130" text-anchor="middle" font-size="17" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">高电势</text>
+
+  <circle cx="155" cy="310" r="20" fill="#1e88e5"/>
+  <text x="155" y="317" text-anchor="middle" font-size="24" font-family="Arial" fill="#fff">-</text>
+  <text x="155" y="348" text-anchor="middle" font-size="17" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">低电势</text>
+
+  <path d="M430 125 C390 175, 330 220, 250 270" fill="none" stroke="#1e88e5" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M485 125 C550 185, 650 235, 760 286" fill="none" stroke="#1e88e5" stroke-width="4" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#1e88e5"/>
+    </marker>
+  </defs>
+
+  <text x="460" y="250" text-anchor="middle" font-size="20" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">电场：告诉电荷“如果放在这里，会受到什么方向的力”</text>
+  <text x="460" y="285" text-anchor="middle" font-size="20" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">电势：类似高度，电势差会推动电荷发生定向运动</text>
+  <text x="460" y="382" text-anchor="middle" font-size="17" font-family="Arial, 'PingFang SC', sans-serif" fill="#5f6368">注意：这是帮助理解的类比，真实电场不是地形，但“差异推动运动”的思想相似</text>
+</svg>

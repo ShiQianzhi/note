@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520">
+  <rect width="1100" height="520" fill="#fbfbfd"/>
+  <text x="550" y="42" text-anchor="middle" font-size="28" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">从宏观物质到微观粒子的层级</text>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#5f6368"/>
+    </marker>
+    <style>
+      .box { fill: #ffffff; stroke: #1e88e5; stroke-width: 3; rx: 18; }
+      .title { font: 21px Arial, 'PingFang SC', sans-serif; fill: #202124; font-weight: 700; }
+      .desc { font: 15px Arial, 'PingFang SC', sans-serif; fill: #5f6368; }
+      .arrow { stroke: #5f6368; stroke-width: 3; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect x="40" y="115" width="160" height="95" class="box"/>
+  <text x="120" y="152" text-anchor="middle" class="title">宏观物体</text>
+  <text x="120" y="182" text-anchor="middle" class="desc">水、石头、人体</text>
+
+  <line x1="200" y1="162" x2="255" y2="162" class="arrow"/>
+  <rect x="260" y="115" width="160" height="95" class="box"/>
+  <text x="340" y="152" text-anchor="middle" class="title">分子</text>
+  <text x="340" y="182" text-anchor="middle" class="desc">原子按化学键组合</text>
+
+  <line x1="420" y1="162" x2="475" y2="162" class="arrow"/>
+  <rect x="480" y="115" width="160" height="95" class="box"/>
+  <text x="560" y="152" text-anchor="middle" class="title">原子</text>
+  <text x="560" y="182" text-anchor="middle" class="desc">原子核 + 电子</text>
+
+  <line x1="640" y1="162" x2="695" y2="162" class="arrow"/>
+  <rect x="700" y="115" width="160" height="95" class="box"/>
+  <text x="780" y="152" text-anchor="middle" class="title">原子核</text>
+  <text x="780" y="182" text-anchor="middle" class="desc">质子 + 中子</text>
+
+  <line x1="860" y1="162" x2="915" y2="162" class="arrow"/>
+  <rect x="920" y="115" width="140" height="95" class="box"/>
+  <text x="990" y="152" text-anchor="middle" class="title">夸克</text>
+  <text x="990" y="182" text-anchor="middle" class="desc">组成质子中子</text>
+
+  <line x1="560" y1="210" x2="560" y2="275" class="arrow"/>
+  <rect x="480" y="280" width="160" height="95" class="box" style="stroke:#8e24aa"/>
+  <text x="560" y="317" text-anchor="middle" class="title">电子</text>
+  <text x="560" y="347" text-anchor="middle" class="desc">绕原子核形成电子云</text>
+
+  <line x1="990" y1="210" x2="990" y2="275" class="arrow"/>
+  <rect x="900" y="280" width="180" height="95" class="box" style="stroke:#43a047"/>
+  <text x="990" y="317" text-anchor="middle" class="title">更深层问题</text>
+  <text x="990" y="347" text-anchor="middle" class="desc">夸克和电子目前视为基本粒子</text>
+
+  <text x="550" y="450" text-anchor="middle" font-size="19" font-family="Arial, 'PingFang SC', sans-serif" fill="#202124">学习顺序：先知道“谁由谁组成”，再理解“它们靠什么相互作用”。</text>
+</svg>
