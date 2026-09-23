@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="450" viewBox="0 0 960 450">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3 0 6Z" fill="#334155"/></marker>
+    <style>.t{font:700 24px Arial,'Microsoft YaHei';fill:#0f172a}.h{font:700 17px Arial,'Microsoft YaHei';fill:#0f172a}.p{font:14px Arial,'Microsoft YaHei';fill:#334155}.l{stroke:#334155;stroke-width:2;marker-end:url(#a)}</style>
+  </defs>
+  <rect width="960" height="450" fill="#fff"/>
+  <text x="480" y="38" text-anchor="middle" class="t">向量数据：把语义映射到可检索空间</text>
+  <text x="35" y="83" class="h">建库</text>
+  <rect x="100" y="60" width="150" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="175" y="93" text-anchor="middle" class="h">原始对象</text><text x="175" y="119" text-anchor="middle" class="p">文本 · 图片 · 音频</text>
+  <line x1="250" y1="100" x2="315" y2="100" class="l"/>
+  <rect x="323" y="60" width="155" height="80" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="400" y="93" text-anchor="middle" class="h">Embedding 模型</text><text x="400" y="119" text-anchor="middle" class="p">对象 → 高维向量</text>
+  <line x1="478" y1="100" x2="543" y2="100" class="l"/>
+  <rect x="551" y="60" width="175" height="80" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="638" y="93" text-anchor="middle" class="h">向量索引</text><text x="638" y="119" text-anchor="middle" class="p">HNSW · IVF · PQ</text>
+  <line x1="726" y1="100" x2="791" y2="100" class="l"/>
+  <rect x="799" y="60" width="130" height="80" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="864" y="93" text-anchor="middle" class="h">记录</text><text x="864" y="119" text-anchor="middle" class="p">原文 + 元数据</text>
+  <text x="35" y="233" class="h">查询</text>
+  <rect x="100" y="210" width="150" height="80" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="175" y="243" text-anchor="middle" class="h">用户查询</text><text x="175" y="269" text-anchor="middle" class="p">同一模型编码</text>
+  <line x1="250" y1="250" x2="315" y2="250" class="l"/>
+  <rect x="323" y="210" width="155" height="80" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="400" y="243" text-anchor="middle" class="h">查询向量</text><text x="400" y="269" text-anchor="middle" class="p">[0.12, -0.31, ...]</text>
+  <line x1="478" y1="250" x2="543" y2="250" class="l"/>
+  <rect x="551" y="210" width="175" height="80" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="638" y="243" text-anchor="middle" class="h">近似最近邻</text><text x="638" y="269" text-anchor="middle" class="p">相似度 + 条件过滤</text>
+  <line x1="726" y1="250" x2="791" y2="250" class="l"/>
+  <rect x="799" y="210" width="130" height="80" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="864" y="243" text-anchor="middle" class="h">Top-k 结果</text><text x="864" y="269" text-anchor="middle" class="p">重排并返回</text>
+  <rect x="180" y="345" width="600" height="65" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+  <text x="480" y="374" text-anchor="middle" class="h">模型、归一化方式与距离度量必须一致</text>
+  <text x="480" y="397" text-anchor="middle" class="p">更换任一项后，应重建全部向量与索引</text>
+</svg>

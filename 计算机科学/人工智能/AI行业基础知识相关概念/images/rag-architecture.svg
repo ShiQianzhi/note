@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3 0 6Z" fill="#334155"/></marker>
+    <style>.t{font:700 24px Arial,'Microsoft YaHei';fill:#0f172a}.h{font:700 16px Arial,'Microsoft YaHei';fill:#0f172a}.p{font:13px Arial,'Microsoft YaHei';fill:#334155}.l{stroke:#334155;stroke-width:2;marker-end:url(#a)}</style>
+  </defs>
+  <rect width="960" height="470" fill="#fff"/>
+  <text x="480" y="36" text-anchor="middle" class="t">RAG：离线知识索引与在线检索生成</text>
+  <text x="35" y="87" class="h">离线索引</text>
+  <rect x="125" y="57" width="130" height="70" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="190" y="87" text-anchor="middle" class="h">数据源</text><text x="190" y="109" text-anchor="middle" class="p">文件 · 网页 · DB</text>
+  <line x1="255" y1="92" x2="295" y2="92" class="l"/>
+  <rect x="303" y="57" width="130" height="70" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="368" y="87" text-anchor="middle" class="h">解析与切块</text><text x="368" y="109" text-anchor="middle" class="p">正文 + 元数据</text>
+  <line x1="433" y1="92" x2="473" y2="92" class="l"/>
+  <rect x="481" y="57" width="130" height="70" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/><text x="546" y="87" text-anchor="middle" class="h">Embedding</text><text x="546" y="109" text-anchor="middle" class="p">生成文档向量</text>
+  <line x1="611" y1="92" x2="651" y2="92" class="l"/>
+  <rect x="659" y="57" width="150" height="70" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><text x="734" y="87" text-anchor="middle" class="h">知识索引</text><text x="734" y="109" text-anchor="middle" class="p">向量 + 原文 + 权限</text>
+  <text x="35" y="221" class="h">在线查询</text>
+  <rect x="125" y="190" width="130" height="70" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="190" y="220" text-anchor="middle" class="h">用户问题</text><text x="190" y="242" text-anchor="middle" class="p">对话上下文</text>
+  <line x1="255" y1="225" x2="295" y2="225" class="l"/>
+  <rect x="303" y="190" width="130" height="70" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="368" y="220" text-anchor="middle" class="h">查询处理</text><text x="368" y="242" text-anchor="middle" class="p">改写 · 路由</text>
+  <line x1="433" y1="225" x2="473" y2="225" class="l"/>
+  <rect x="481" y="190" width="130" height="70" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/><text x="546" y="220" text-anchor="middle" class="h">召回与重排</text><text x="546" y="242" text-anchor="middle" class="p">Hybrid + Rerank</text>
+  <line x1="611" y1="225" x2="651" y2="225" class="l"/>
+  <rect x="659" y="190" width="150" height="70" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/><text x="734" y="220" text-anchor="middle" class="h">上下文证据</text><text x="734" y="242" text-anchor="middle" class="p">相关片段 + 来源</text>
+  <path d="M734 127V180" class="l"/>
+  <path d="M734 260V315H600" class="l"/>
+  <rect x="405" y="305" width="195" height="80" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/><text x="502" y="338" text-anchor="middle" class="h">LLM 基于证据生成</text><text x="502" y="363" text-anchor="middle" class="p">回答 · 引用 · 不足时拒答</text>
+  <line x1="405" y1="345" x2="343" y2="345" class="l"/>
+  <rect x="175" y="305" width="160" height="80" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="255" y="338" text-anchor="middle" class="h">结果与引用</text><text x="255" y="363" text-anchor="middle" class="p">可核查、可追溯</text>
+  <rect x="195" y="414" width="570" height="38" rx="5" fill="#f8fafc" stroke="#475569"/>
+  <text x="480" y="439" text-anchor="middle" class="p">质量上限由数据决定，召回决定证据，生成决定表达，评测驱动持续改进</text>
+</svg>

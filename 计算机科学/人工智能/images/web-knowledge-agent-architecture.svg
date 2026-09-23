@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="680" viewBox="0 0 1120 680">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .title{font:700 26px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+      .section{font:700 19px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+      .label{font:700 16px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+      .text{font:14px Arial,'Microsoft YaHei',sans-serif;fill:#334155}
+      .small{font:13px Arial,'Microsoft YaHei',sans-serif;fill:#475569}
+      .line{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#arrow)}
+      .dash{stroke:#64748b;stroke-width:2;stroke-dasharray:6 5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1120" height="680" fill="#ffffff"/>
+  <text x="560" y="40" text-anchor="middle" class="title">网页版知识库 Agent：文档入库与问答双链路</text>
+
+  <rect x="28" y="70" width="1064" height="228" rx="7" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="55" y="102" class="section">离线 / 上传时：知识入库</text>
+
+  <rect x="62" y="132" width="150" height="92" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="137" y="166" text-anchor="middle" class="label">网页上传</text>
+  <text x="137" y="192" text-anchor="middle" class="text">PDF · MD · TXT</text>
+  <line x1="212" y1="178" x2="252" y2="178" class="line"/>
+
+  <rect x="260" y="132" width="150" height="92" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="335" y="166" text-anchor="middle" class="label">解析与校验</text>
+  <text x="335" y="192" text-anchor="middle" class="text">类型 · 大小 · 页码</text>
+  <line x1="410" y1="178" x2="450" y2="178" class="line"/>
+
+  <rect x="458" y="132" width="150" height="92" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="533" y="166" text-anchor="middle" class="label">语义切块</text>
+  <text x="533" y="192" text-anchor="middle" class="text">800 字符 + 重叠</text>
+  <line x1="608" y1="178" x2="648" y2="178" class="line"/>
+
+  <rect x="656" y="132" width="170" height="92" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="741" y="166" text-anchor="middle" class="label">BGE Embedding</text>
+  <text x="741" y="192" text-anchor="middle" class="text">中文文本 → 向量</text>
+  <line x1="826" y1="178" x2="866" y2="178" class="line"/>
+
+  <rect x="874" y="132" width="170" height="92" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="959" y="166" text-anchor="middle" class="label">Chroma</text>
+  <text x="959" y="192" text-anchor="middle" class="text">向量 + 原文 + 元数据</text>
+
+  <rect x="28" y="326" width="1064" height="268" rx="7" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="55" y="358" class="section">在线：Agentic RAG 问答</text>
+
+  <rect x="62" y="395" width="150" height="92" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="137" y="429" text-anchor="middle" class="label">聊天界面</text>
+  <text x="137" y="455" text-anchor="middle" class="text">问题 + thread_id</text>
+  <line x1="212" y1="441" x2="252" y2="441" class="line"/>
+
+  <rect x="260" y="380" width="190" height="122" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="355" y="414" text-anchor="middle" class="label">LangGraph Agent</text>
+  <text x="355" y="441" text-anchor="middle" class="text">理解问题 · 决定检索</text>
+  <text x="355" y="466" text-anchor="middle" class="small">Checkpointer 保存短期记忆</text>
+  <line x1="450" y1="441" x2="490" y2="441" class="line"/>
+
+  <rect x="498" y="395" width="190" height="92" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="593" y="429" text-anchor="middle" class="label">检索工具</text>
+  <text x="593" y="455" text-anchor="middle" class="text">Top-k 语义搜索</text>
+  <path d="M593 395V271H959V232" class="dash"/>
+  <line x1="688" y1="441" x2="728" y2="441" class="line"/>
+
+  <rect x="736" y="380" width="160" height="122" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="816" y="414" text-anchor="middle" class="label">证据约束生成</text>
+  <text x="816" y="441" text-anchor="middle" class="text">仅依据检索内容</text>
+  <text x="816" y="466" text-anchor="middle" class="small">不足则明确拒答</text>
+  <line x1="896" y1="441" x2="936" y2="441" class="line"/>
+
+  <rect x="944" y="395" width="120" height="92" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="1004" y="429" text-anchor="middle" class="label">答案</text>
+  <text x="1004" y="455" text-anchor="middle" class="text">引用 + 原文片段</text>
+
+  <path d="M1004 487V535H137V495" class="line"/>
+  <text x="560" y="558" text-anchor="middle" class="small">多轮追问复用同一 thread_id，来源由 ToolMessage Artifact 提取</text>
+
+  <rect x="115" y="620" width="890" height="42" rx="6" fill="#ffffff" stroke="#475569" stroke-width="2"/>
+  <text x="560" y="647" text-anchor="middle" class="text">生产边界：租户权限过滤 · 文档版本 · 异步入库 · 引用校验 · 评测 · 脱敏审计</text>
+</svg>

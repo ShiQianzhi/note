@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="430" viewBox="0 0 1080 430">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0 0L10 3 0 6Z" fill="#334155"/>
+    </marker>
+    <style>
+      .title{font:700 25px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+      .head{font:700 17px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+      .text{font:14px Arial,'Microsoft YaHei',sans-serif;fill:#334155}
+      .line{stroke:#334155;stroke-width:2;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect width="1080" height="430" fill="#fff"/>
+  <text x="540" y="40" text-anchor="middle" class="title">Rust 工具链：从源码到可交付程序</text>
+  <rect x="35" y="100" width="145" height="90" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="107" y="134" text-anchor="middle" class="head">Cargo 项目</text>
+  <text x="107" y="160" text-anchor="middle" class="text">源码 + Cargo.toml</text>
+  <line x1="180" y1="145" x2="220" y2="145" class="line"/>
+  <rect x="228" y="100" width="145" height="90" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="300" y="134" text-anchor="middle" class="head">cargo check</text>
+  <text x="300" y="160" text-anchor="middle" class="text">类型与借用检查</text>
+  <line x1="373" y1="145" x2="413" y2="145" class="line"/>
+  <rect x="421" y="100" width="145" height="90" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="493" y="134" text-anchor="middle" class="head">cargo test</text>
+  <text x="493" y="160" text-anchor="middle" class="text">单元与文档测试</text>
+  <line x1="566" y1="145" x2="606" y2="145" class="line"/>
+  <rect x="614" y="100" width="145" height="90" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="686" y="134" text-anchor="middle" class="head">Clippy / fmt</text>
+  <text x="686" y="160" text-anchor="middle" class="text">规范与静态检查</text>
+  <line x1="759" y1="145" x2="799" y2="145" class="line"/>
+  <rect x="807" y="100" width="238" height="90" rx="6" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+  <text x="926" y="134" text-anchor="middle" class="head">cargo build --release</text>
+  <text x="926" y="160" text-anchor="middle" class="text">优化、链接、生成原生程序</text>
+  <rect x="130" y="270" width="240" height="86" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+  <text x="250" y="304" text-anchor="middle" class="head">rustup</text>
+  <text x="250" y="331" text-anchor="middle" class="text">编译器、组件、目标平台</text>
+  <rect x="420" y="270" width="240" height="86" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+  <text x="540" y="304" text-anchor="middle" class="head">Cargo.lock</text>
+  <text x="540" y="331" text-anchor="middle" class="text">可复现依赖解析结果</text>
+  <rect x="710" y="270" width="240" height="86" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+  <text x="830" y="304" text-anchor="middle" class="head">crates.io</text>
+  <text x="830" y="331" text-anchor="middle" class="text">依赖生态与包发布</text>
+</svg>

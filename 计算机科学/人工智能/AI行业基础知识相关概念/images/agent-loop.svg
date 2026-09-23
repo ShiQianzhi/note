@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3 0 6Z" fill="#334155"/></marker>
+    <style>.t{font:700 24px Arial,'Microsoft YaHei';fill:#0f172a}.h{font:700 17px Arial,'Microsoft YaHei';fill:#0f172a}.p{font:14px Arial,'Microsoft YaHei';fill:#334155}.l{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#a)}</style>
+  </defs>
+  <rect width="960" height="470" fill="#fff"/>
+  <text x="480" y="38" text-anchor="middle" class="t">AI Agent：受约束的感知、决策与行动闭环</text>
+  <rect x="390" y="70" width="180" height="70" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="480" y="100" text-anchor="middle" class="h">目标与当前状态</text><text x="480" y="123" text-anchor="middle" class="p">用户意图 · 任务进度</text>
+  <path d="M570 105C690 105 735 150 735 210" class="l"/>
+  <rect x="655" y="215" width="170" height="76" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="740" y="247" text-anchor="middle" class="h">规划与决策</text><text x="740" y="271" text-anchor="middle" class="p">选择下一步动作</text>
+  <path d="M740 291C740 355 675 375 610 375" class="l"/>
+  <rect x="395" y="338" width="210" height="76" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="500" y="370" text-anchor="middle" class="h">工具执行</text><text x="500" y="394" text-anchor="middle" class="p">API · 搜索 · 代码 · 文件</text>
+  <path d="M395 376C290 376 230 340 230 292" class="l"/>
+  <rect x="145" y="215" width="170" height="76" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="230" y="247" text-anchor="middle" class="h">环境观察</text><text x="230" y="271" text-anchor="middle" class="p">真实结果 · 错误反馈</text>
+  <path d="M230 215C230 150 295 105 382 105" class="l"/>
+  <rect x="375" y="190" width="210" height="90" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="480" y="224" text-anchor="middle" class="h">模型 + 工作记忆</text><text x="480" y="249" text-anchor="middle" class="p">理解、推理、更新上下文</text>
+  <rect x="88" y="412" width="784" height="38" rx="5" fill="#f8fafc" stroke="#475569"/>
+  <text x="480" y="437" text-anchor="middle" class="p">守卫贯穿全程：Schema 校验 · 最小权限 · 人工审批 · 步数与费用预算 · 审计</text>
+</svg>

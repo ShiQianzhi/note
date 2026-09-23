@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="500" viewBox="0 0 1080 500">
+  <style>
+    .title{font:700 25px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+    .head{font:700 19px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+    .label{font:700 15px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+    .text{font:14px Arial,'Microsoft YaHei',sans-serif;fill:#334155}
+  </style>
+  <rect width="1080" height="500" fill="#fff"/>
+  <text x="540" y="40" text-anchor="middle" class="title">Python、Go 与 Rust：安全检查发生在哪里</text>
+  <rect x="40" y="80" width="310" height="350" rx="7" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="195" y="118" text-anchor="middle" class="head">Python</text>
+  <rect x="78" y="145" width="234" height="55" rx="5" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="195" y="179" text-anchor="middle" class="label">动态类型源码</text>
+  <rect x="78" y="225" width="234" height="55" rx="5" fill="#fff" stroke="#64748b"/>
+  <text x="195" y="259" text-anchor="middle" class="label">解释器 / 虚拟机</text>
+  <rect x="78" y="305" width="234" height="72" rx="5" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="195" y="334" text-anchor="middle" class="label">运行时检查</text>
+  <text x="195" y="358" text-anchor="middle" class="text">引用计数 + GC</text>
+  <text x="195" y="409" text-anchor="middle" class="text">灵活，错误较晚暴露</text>
+
+  <rect x="385" y="80" width="310" height="350" rx="7" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="540" y="118" text-anchor="middle" class="head">Go</text>
+  <rect x="423" y="145" width="234" height="55" rx="5" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="540" y="179" text-anchor="middle" class="label">静态类型源码</text>
+  <rect x="423" y="225" width="234" height="55" rx="5" fill="#fff" stroke="#64748b"/>
+  <text x="540" y="259" text-anchor="middle" class="label">编译器检查</text>
+  <rect x="423" y="305" width="234" height="72" rx="5" fill="#fef3c7" stroke="#d97706"/>
+  <text x="540" y="334" text-anchor="middle" class="label">运行时管理</text>
+  <text x="540" y="358" text-anchor="middle" class="text">并发 GC + 调度器</text>
+  <text x="540" y="409" text-anchor="middle" class="text">工程简洁，运行时承担更多</text>
+
+  <rect x="730" y="80" width="310" height="350" rx="7" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="885" y="118" text-anchor="middle" class="head">Rust</text>
+  <rect x="768" y="145" width="234" height="55" rx="5" fill="#ffedd5" stroke="#ea580c"/>
+  <text x="885" y="179" text-anchor="middle" class="label">静态强类型源码</text>
+  <rect x="768" y="225" width="234" height="72" rx="5" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="885" y="254" text-anchor="middle" class="label">编译期证明</text>
+  <text x="885" y="278" text-anchor="middle" class="text">类型 + 所有权 + 借用</text>
+  <rect x="768" y="322" width="234" height="55" rx="5" fill="#fff" stroke="#64748b"/>
+  <text x="885" y="356" text-anchor="middle" class="label">原生机器码，无 GC</text>
+  <text x="885" y="409" text-anchor="middle" class="text">前期严格，运行时可预测</text>
+  <text x="540" y="470" text-anchor="middle" class="text">三者没有绝对优劣：开发效率、运行成本、安全边界和生态共同决定选型</text>
+</svg>

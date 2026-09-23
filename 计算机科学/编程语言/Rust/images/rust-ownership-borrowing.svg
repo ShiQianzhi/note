@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0 0L10 3 0 6Z" fill="#334155"/>
+    </marker>
+    <style>
+      .title{font:700 25px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+      .head{font:700 18px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+      .text{font:14px Arial,'Microsoft YaHei',sans-serif;fill:#334155}
+      .code{font:14px Consolas,monospace;fill:#0f172a}
+      .line{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#a)}
+      .bad{stroke:#dc2626;stroke-width:3}
+    </style>
+  </defs>
+  <rect width="1080" height="560" fill="#fff"/>
+  <text x="540" y="40" text-anchor="middle" class="title">所有权与借用：编译期约束资源访问</text>
+
+  <text x="50" y="90" class="head">Move：唯一所有者发生转移</text>
+  <rect x="70" y="115" width="180" height="90" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="160" y="149" text-anchor="middle" class="code">first: String</text>
+  <text x="160" y="176" text-anchor="middle" class="text">拥有堆字符串</text>
+  <line x1="250" y1="160" x2="330" y2="160" class="line"/>
+  <text x="290" y="142" text-anchor="middle" class="code">Move</text>
+  <rect x="338" y="115" width="180" height="90" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="428" y="149" text-anchor="middle" class="code">second: String</text>
+  <text x="428" y="176" text-anchor="middle" class="text">成为新所有者</text>
+  <line x1="428" y1="205" x2="428" y2="245" class="line"/>
+  <rect x="338" y="253" width="180" height="62" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="428" y="290" text-anchor="middle" class="text">作用域结束：自动释放</text>
+  <line x1="70" y1="225" x2="250" y2="225" class="bad"/>
+  <text x="160" y="252" text-anchor="middle" class="text" fill="#dc2626">first 不再可用</text>
+
+  <text x="590" y="90" class="head">Borrow：所有者不变，临时授予访问权</text>
+  <rect x="620" y="115" width="180" height="90" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="710" y="149" text-anchor="middle" class="code">value: String</text>
+  <text x="710" y="176" text-anchor="middle" class="text">始终拥有数据</text>
+  <path d="M800 145H892" class="line"/>
+  <path d="M800 175H892" class="line"/>
+  <rect x="900" y="110" width="135" height="100" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="967" y="145" text-anchor="middle" class="code">&amp;value</text>
+  <text x="967" y="171" text-anchor="middle" class="text">多个只读借用</text>
+  <text x="967" y="194" text-anchor="middle" class="text">不可修改</text>
+
+  <rect x="90" y="390" width="400" height="105" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="290" y="425" text-anchor="middle" class="head">合法状态 A</text>
+  <text x="290" y="455" text-anchor="middle" class="text">任意多个 &amp;T，只读共享</text>
+  <text x="290" y="480" text-anchor="middle" class="text">没有可变引用</text>
+
+  <rect x="590" y="390" width="400" height="105" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="790" y="425" text-anchor="middle" class="head">合法状态 B</text>
+  <text x="790" y="455" text-anchor="middle" class="text">恰好一个 &amp;mut T，独占修改</text>
+  <text x="790" y="480" text-anchor="middle" class="text">没有其他读写引用</text>
+
+  <text x="540" y="535" text-anchor="middle" class="text">核心规则：共享与可变不能同时发生，从源头阻止悬垂引用和数据竞争</text>
+</svg>

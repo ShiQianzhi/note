@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="470" viewBox="0 0 1080 470">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0 0L10 3 0 6Z" fill="#334155"/>
+    </marker>
+    <style>
+      .title{font:700 25px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+      .head{font:700 18px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+      .text{font:14px Arial,'Microsoft YaHei',sans-serif;fill:#334155}
+      .code{font:14px Consolas,monospace;fill:#0f172a}
+      .line{stroke:#334155;stroke-width:2;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect width="1080" height="470" fill="#fff"/>
+  <text x="540" y="40" text-anchor="middle" class="title">用枚举表达状态：让非法状态无法构造</text>
+
+  <rect x="45" y="90" width="390" height="300" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="240" y="125" text-anchor="middle" class="head">弱模型：多个独立字段</text>
+  <text x="78" y="168" class="code">status: String</text>
+  <text x="78" y="202" class="code">data: Option&lt;Data&gt;</text>
+  <text x="78" y="236" class="code">error: Option&lt;Error&gt;</text>
+  <rect x="78" y="275" width="324" height="78" rx="5" fill="#fff" stroke="#dc2626"/>
+  <text x="240" y="307" text-anchor="middle" class="text">可能出现：status = "success"</text>
+  <text x="240" y="332" text-anchor="middle" class="text">但 data = None 且 error = Some(...)</text>
+  <text x="240" y="378" text-anchor="middle" class="text">依靠运行时判断和团队约定</text>
+
+  <line x1="435" y1="240" x2="625" y2="240" class="line"/>
+  <text x="530" y="218" text-anchor="middle" class="text">重构为代数数据类型</text>
+
+  <rect x="633" y="90" width="402" height="300" rx="7" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="834" y="125" text-anchor="middle" class="head">强模型：枚举变体携带数据</text>
+  <text x="680" y="172" class="code">enum LoadState {</text>
+  <text x="710" y="208" class="code">Idle,</text>
+  <text x="710" y="244" class="code">Loading,</text>
+  <text x="710" y="280" class="code">Success(Data),</text>
+  <text x="710" y="316" class="code">Failed(Error),</text>
+  <text x="680" y="352" class="code">}</text>
+  <text x="834" y="378" text-anchor="middle" class="text">每种状态只携带合法数据</text>
+  <text x="540" y="435" text-anchor="middle" class="text">match 穷尽检查保证新增状态后，所有处理逻辑都会得到编译器提醒</text>
+</svg>

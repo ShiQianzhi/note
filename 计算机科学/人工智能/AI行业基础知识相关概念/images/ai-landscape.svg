@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="460" viewBox="0 0 960 460">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .title{font:700 24px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+      .label{font:700 18px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+      .desc{font:14px Arial,'Microsoft YaHei',sans-serif;fill:#334155}
+      .line{stroke:#334155;stroke-width:2;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="960" height="460" fill="#fff"/>
+  <text x="480" y="38" text-anchor="middle" class="title">人工智能：从基础要素到智能能力</text>
+  <rect x="45" y="85" width="180" height="110" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="135" y="122" text-anchor="middle" class="label">基础要素</text>
+  <text x="135" y="152" text-anchor="middle" class="desc">数据 · 算法 · 算力</text>
+  <text x="135" y="176" text-anchor="middle" class="desc">目标与评价指标</text>
+  <line x1="225" y1="140" x2="282" y2="140" class="line"/>
+  <rect x="290" y="72" width="190" height="136" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="385" y="108" text-anchor="middle" class="label">学习方法</text>
+  <text x="385" y="138" text-anchor="middle" class="desc">监督 · 无监督</text>
+  <text x="385" y="162" text-anchor="middle" class="desc">自监督 · 强化学习</text>
+  <text x="385" y="186" text-anchor="middle" class="desc">深度学习</text>
+  <line x1="480" y1="140" x2="537" y2="140" class="line"/>
+  <rect x="545" y="72" width="170" height="136" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="630" y="108" text-anchor="middle" class="label">模型能力</text>
+  <text x="630" y="138" text-anchor="middle" class="desc">感知 · 认知</text>
+  <text x="630" y="162" text-anchor="middle" class="desc">生成 · 推理</text>
+  <text x="630" y="186" text-anchor="middle" class="desc">决策与行动</text>
+  <line x1="715" y1="140" x2="772" y2="140" class="line"/>
+  <rect x="780" y="85" width="135" height="110" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="847" y="122" text-anchor="middle" class="label">应用</text>
+  <text x="847" y="152" text-anchor="middle" class="desc">搜索 · 推荐</text>
+  <text x="847" y="176" text-anchor="middle" class="desc">内容 · 自动化</text>
+  <rect x="185" y="285" width="590" height="115" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+  <text x="480" y="320" text-anchor="middle" class="label">贯穿全生命周期的工程与治理</text>
+  <text x="480" y="352" text-anchor="middle" class="desc">数据质量 · 模型评测 · 部署监控 · 安全隐私 · 公平合规 · 人工复核</text>
+  <text x="480" y="378" text-anchor="middle" class="desc">AI 的价值由整个系统决定，而不只是模型参数量</text>
+  <line x1="480" y1="208" x2="480" y2="277" class="line"/>
+</svg>

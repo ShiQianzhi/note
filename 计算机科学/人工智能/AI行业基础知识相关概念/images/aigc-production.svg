@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="450" viewBox="0 0 960 450">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3 0 6Z" fill="#334155"/></marker>
+    <style>.t{font:700 24px Arial,'Microsoft YaHei';fill:#0f172a}.h{font:700 16px Arial,'Microsoft YaHei';fill:#0f172a}.p{font:13px Arial,'Microsoft YaHei';fill:#334155}.l{stroke:#334155;stroke-width:2;marker-end:url(#a)}</style>
+  </defs>
+  <rect width="960" height="450" fill="#fff"/>
+  <text x="480" y="38" text-anchor="middle" class="t">AIGC：从创作需求到可信内容</text>
+  <rect x="30" y="92" width="135" height="90" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="97" y="126" text-anchor="middle" class="h">创作需求</text><text x="97" y="151" text-anchor="middle" class="p">目标 · 受众 · 约束</text>
+  <line x1="165" y1="137" x2="200" y2="137" class="l"/>
+  <rect x="208" y="92" width="135" height="90" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="275" y="126" text-anchor="middle" class="h">控制条件</text><text x="275" y="151" text-anchor="middle" class="p">Prompt · 参考素材</text>
+  <line x1="343" y1="137" x2="378" y2="137" class="l"/>
+  <rect x="386" y="75" width="170" height="124" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="471" y="109" text-anchor="middle" class="h">生成模型</text><text x="471" y="136" text-anchor="middle" class="p">自回归 · 扩散</text><text x="471" y="159" text-anchor="middle" class="p">语音 · 多模态</text><text x="471" y="182" text-anchor="middle" class="p">生成候选内容</text>
+  <line x1="556" y1="137" x2="591" y2="137" class="l"/>
+  <rect x="599" y="92" width="135" height="90" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="666" y="126" text-anchor="middle" class="h">编辑与验证</text><text x="666" y="151" text-anchor="middle" class="p">事实 · 风格 · 版权</text>
+  <line x1="734" y1="137" x2="769" y2="137" class="l"/>
+  <rect x="777" y="92" width="150" height="90" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="852" y="126" text-anchor="middle" class="h">发布与反馈</text><text x="852" y="151" text-anchor="middle" class="p">标识 · 追踪 · 迭代</text>
+  <text x="480" y="253" text-anchor="middle" class="h">同一生成底座可以服务多种内容模态</text>
+  <rect x="115" y="285" width="125" height="65" rx="6" fill="#e0f2fe" stroke="#0284c7"/><text x="177" y="325" text-anchor="middle" class="h">文本 / 代码</text>
+  <rect x="267" y="285" width="125" height="65" rx="6" fill="#dcfce7" stroke="#16a34a"/><text x="329" y="325" text-anchor="middle" class="h">图像 / 3D</text>
+  <rect x="419" y="285" width="125" height="65" rx="6" fill="#fef3c7" stroke="#d97706"/><text x="481" y="325" text-anchor="middle" class="h">音频 / 音乐</text>
+  <rect x="571" y="285" width="125" height="65" rx="6" fill="#ede9fe" stroke="#7c3aed"/><text x="633" y="325" text-anchor="middle" class="h">视频 / 数字人</text>
+  <rect x="723" y="285" width="125" height="65" rx="6" fill="#fee2e2" stroke="#dc2626"/><text x="785" y="325" text-anchor="middle" class="h">交互内容</text>
+  <rect x="180" y="385" width="600" height="40" rx="5" fill="#f8fafc" stroke="#475569"/>
+  <text x="480" y="411" text-anchor="middle" class="p">人的职责从直接制作扩展为定义目标、筛选候选、专业编辑与最终负责</text>
+</svg>

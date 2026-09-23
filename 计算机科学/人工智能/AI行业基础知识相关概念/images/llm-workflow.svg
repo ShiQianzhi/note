@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="450" viewBox="0 0 960 450">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3 0 6Z" fill="#334155"/></marker>
+    <style>.t{font:700 24px Arial,'Microsoft YaHei';fill:#0f172a}.h{font:700 17px Arial,'Microsoft YaHei';fill:#0f172a}.p{font:14px Arial,'Microsoft YaHei';fill:#334155}.l{stroke:#334155;stroke-width:2;marker-end:url(#a)}</style>
+  </defs>
+  <rect width="960" height="450" fill="#fff"/>
+  <text x="480" y="38" text-anchor="middle" class="t">语言大模型：文本如何变成回答</text>
+  <rect x="35" y="100" width="140" height="95" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="105" y="136" text-anchor="middle" class="h">输入文本</text><text x="105" y="165" text-anchor="middle" class="p">问题与上下文</text>
+  <line x1="175" y1="147" x2="215" y2="147" class="l"/>
+  <rect x="223" y="100" width="140" height="95" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="293" y="136" text-anchor="middle" class="h">Tokenizer</text><text x="293" y="165" text-anchor="middle" class="p">文本 → Token ID</text>
+  <line x1="363" y1="147" x2="403" y2="147" class="l"/>
+  <rect x="411" y="85" width="170" height="125" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="496" y="120" text-anchor="middle" class="h">Transformer</text><text x="496" y="149" text-anchor="middle" class="p">Embedding</text><text x="496" y="173" text-anchor="middle" class="p">自注意力 + 前馈网络</text><text x="496" y="195" text-anchor="middle" class="p">多层上下文表示</text>
+  <line x1="581" y1="147" x2="621" y2="147" class="l"/>
+  <rect x="629" y="100" width="140" height="95" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="699" y="136" text-anchor="middle" class="h">概率分布</text><text x="699" y="165" text-anchor="middle" class="p">预测下一个 Token</text>
+  <line x1="769" y1="147" x2="809" y2="147" class="l"/>
+  <rect x="817" y="100" width="110" height="95" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="872" y="136" text-anchor="middle" class="h">解码</text><text x="872" y="165" text-anchor="middle" class="p">生成回答</text>
+  <path d="M872 202V280H496V218" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#a)"/>
+  <text x="700" y="269" text-anchor="middle" class="p">把新 Token 加回上下文，逐步循环</text>
+  <rect x="185" y="325" width="590" height="78" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+  <text x="480" y="357" text-anchor="middle" class="h">训练目标：最大化正确下一个 Token 的概率</text>
+  <text x="480" y="383" text-anchor="middle" class="p">流畅生成不等于事实正确，事实型任务需要检索、工具与验证</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="520" viewBox="0 0 1080 520">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0 0L10 3 0 6Z" fill="#334155"/>
+    </marker>
+    <style>
+      .title{font:700 25px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+      .head{font:700 18px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+      .label{font:700 15px Arial,'Microsoft YaHei',sans-serif;fill:#0f172a}
+      .text{font:14px Arial,'Microsoft YaHei',sans-serif;fill:#334155}
+      .line{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect width="1080" height="520" fill="#fff"/>
+  <text x="540" y="40" text-anchor="middle" class="title">Rust 并发模型：转移、共享与异步</text>
+
+  <rect x="35" y="82" width="320" height="340" rx="7" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="195" y="118" text-anchor="middle" class="head">消息传递</text>
+  <rect x="70" y="155" width="105" height="62" rx="5" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="122" y="192" text-anchor="middle" class="label">线程 A</text>
+  <line x1="175" y1="186" x2="230" y2="186" class="line"/>
+  <rect x="238" y="155" width="82" height="62" rx="5" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="279" y="192" text-anchor="middle" class="label">Channel</text>
+  <path d="M279 217V260H175" class="line"/>
+  <rect x="70" y="267" width="105" height="62" rx="5" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="122" y="304" text-anchor="middle" class="label">线程 B</text>
+  <text x="195" y="363" text-anchor="middle" class="text">值的所有权随消息转移</text>
+  <text x="195" y="389" text-anchor="middle" class="text">优先减少共享状态</text>
+
+  <rect x="380" y="82" width="320" height="340" rx="7" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="540" y="118" text-anchor="middle" class="head">共享可变状态</text>
+  <rect x="435" y="152" width="210" height="72" rx="5" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="540" y="181" text-anchor="middle" class="label">Arc&lt;Mutex&lt;T&gt;&gt;</text>
+  <text x="540" y="205" text-anchor="middle" class="text">共享所有权 + 独占修改</text>
+  <rect x="415" y="275" width="100" height="60" rx="5" fill="#fff" stroke="#475569"/>
+  <text x="465" y="311" text-anchor="middle" class="label">线程 A</text>
+  <rect x="565" y="275" width="100" height="60" rx="5" fill="#fff" stroke="#475569"/>
+  <text x="615" y="311" text-anchor="middle" class="label">线程 B</text>
+  <path d="M465 275V235H525" class="line"/>
+  <path d="M615 275V235H555" class="line"/>
+  <text x="540" y="377" text-anchor="middle" class="text">Send / Sync 在编译期约束跨线程访问</text>
+
+  <rect x="725" y="82" width="320" height="340" rx="7" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="885" y="118" text-anchor="middle" class="head">Tokio 异步任务</text>
+  <rect x="775" y="152" width="220" height="72" rx="5" fill="#ffedd5" stroke="#ea580c"/>
+  <text x="885" y="181" text-anchor="middle" class="label">少量运行时线程</text>
+  <text x="885" y="205" text-anchor="middle" class="text">调度大量 Future</text>
+  <rect x="755" y="273" width="82" height="55" rx="5" fill="#fff" stroke="#475569"/>
+  <rect x="844" y="273" width="82" height="55" rx="5" fill="#fff" stroke="#475569"/>
+  <rect x="933" y="273" width="82" height="55" rx="5" fill="#fff" stroke="#475569"/>
+  <text x="796" y="307" text-anchor="middle" class="label">Future</text>
+  <text x="885" y="307" text-anchor="middle" class="label">Future</text>
+  <text x="974" y="307" text-anchor="middle" class="label">Future</text>
+  <path d="M835 224V265" class="line"/>
+  <path d="M885 224V265" class="line"/>
+  <path d="M935 224V265" class="line"/>
+  <text x="885" y="377" text-anchor="middle" class="text">适合高并发 I/O，不加速 CPU 计算</text>
+  <text x="540" y="478" text-anchor="middle" class="text">选择顺序：先明确所有权，再选择 Channel、锁、线程或异步任务</text>
+</svg>
