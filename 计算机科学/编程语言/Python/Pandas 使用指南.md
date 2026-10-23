@@ -65,10 +65,10 @@ df = pd.DataFrame({
 }, index=["row1", "row2", "row3"])
 ```
 
-| 结构 | 维度 | 索引 | 类比 |
-|------|------|------|------|
-| Series | 1 | 只有行索引 | 带标签的一列 |
-| DataFrame | 2 | 行索引 + 列名 | Excel 工作表 / SQL 表 |
+| 结构        | 维度 | 索引       | 类比                |
+| --------- | -- | -------- | ----------------- |
+| Series    | 1  | 只有行索引    | 带标签的一列            |
+| DataFrame | 2  | 行索引 + 列名 | Excel 工作表 / SQL 表 |
 
 ### 2.3 常用属性一览
 
@@ -116,15 +116,15 @@ df4 = pd.DataFrame(arr, columns=["a", "b", "c", "d"])
 
 ### 3.2 常用初始化构造函数
 
-| 函数 | 作用 |
-|------|------|
-| `pd.DataFrame(dict/list/ndarray)` | 通用构造函数 |
-| `pd.Series(data, index, name, dtype)` | 创建 Series |
-| `pd.read_csv(path)` | 从 CSV 文件读取 |
-| `pd.read_excel(path, sheet_name)` | 从 Excel 文件读取 |
-| `pd.read_json(path_or_buf)` | 从 JSON 读取 |
-| `pd.read_sql(query, con)` | 从 SQL 查询读取 |
-| `pd.date_range(start, end, periods, freq)` | 生成日期范围索引 |
+| 函数                                         | 作用           |
+| ------------------------------------------ | ------------ |
+| `pd.DataFrame(dict/list/ndarray)`          | 通用构造函数       |
+| `pd.Series(data, index, name, dtype)`      | 创建 Series    |
+| `pd.read_csv(path)`                        | 从 CSV 文件读取   |
+| `pd.read_excel(path, sheet_name)`          | 从 Excel 文件读取 |
+| `pd.read_json(path_or_buf)`                | 从 JSON 读取    |
+| `pd.read_sql(query, con)`                  | 从 SQL 查询读取   |
+| `pd.date_range(start, end, periods, freq)` | 生成日期范围索引     |
 
 ```python
 dates = pd.date_range("2026-01-01", periods=5, freq="D")
@@ -162,13 +162,13 @@ df.nsmallest(2, "age")         # 按 age 取最小的 2 行
 
 Pandas 提供多套索引 API，**必须明确区分**，否则会遇到 `SettingWithCopyWarning` 或意外结果。
 
-| 方式 | 语法 | 行/列选择依据 | 切片端点 |
-|------|------|--------------|----------|
-| `[]` 方括号 | `df[col]` / `df[[c1,c2]]` | 选列（标量/列表）；切片选行 | 行切片为位置切片，**左闭右开** |
-| `.loc[]` | `df.loc[row, col]` | **按标签**（索引名/列名） | 标签切片**包含两端** |
-| `.iloc[]` | `df.iloc[row_pos, col_pos]` | **按整数位置** | 位置切片**左闭右开** |
-| `.at[]` / `.iat[]` | `df.at[label, col]` | 快速取单个值 | 按标签/位置 |
-| 布尔索引 | `df[mask]` / `df.loc[mask]` | 按条件筛选行 | — |
+| 方式                 | 语法                          | 行/列选择依据         | 切片端点              |
+| ------------------ | --------------------------- | --------------- | ----------------- |
+| `[]` 方括号           | `df[col]` / `df[[c1,c2]]`   | 选列（标量/列表）；切片选行  | 行切片为位置切片，**左闭右开** |
+| `.loc[]`           | `df.loc[row, col]`          | **按标签**（索引名/列名） | 标签切片**包含两端**      |
+| `.iloc[]`          | `df.iloc[row_pos, col_pos]` | **按整数位置**       | 位置切片**左闭右开**      |
+| `.at[]` / `.iat[]` | `df.at[label, col]`         | 快速取单个值          | 按标签/位置            |
+| 布尔索引               | `df[mask]` / `df.loc[mask]` | 按条件筛选行          | —                 |
 
 ```python
 df = pd.DataFrame({
@@ -381,13 +381,13 @@ pd.merge(users, orders, left_index=True, right_index=True)
 pd.merge(df1, df2, on="key", suffixes=("_left", "_right"))
 ```
 
-| `how` 参数 | 含义 |
-|-----------|------|
-| `"inner"` | 只保留两边键都匹配的行（默认） |
-| `"left"` | 保留左表全部行，右表无匹配填 NaN |
+| `how` 参数  | 含义                 |
+| --------- | ------------------ |
+| `"inner"` | 只保留两边键都匹配的行（默认）    |
+| `"left"`  | 保留左表全部行，右表无匹配填 NaN |
 | `"right"` | 保留右表全部行，左表无匹配填 NaN |
-| `"outer"` | 保留两边所有行，无匹配填 NaN |
-| `"cross"` | 笛卡尔积（慎用） |
+| `"outer"` | 保留两边所有行，无匹配填 NaN   |
+| `"cross"` | 笛卡尔积（慎用）           |
 
 ### 8.2 join（按索引合并的快捷方式）
 
@@ -507,17 +507,17 @@ df["pct_change"] = df["value"].pct_change()  # 百分比变化
 
 常用 `freq` 别名：
 
-| 别名 | 含义 |
-|------|------|
-| `D` | 日历日 |
-| `B` | 工作日 |
-| `W` | 周（周日为结束） |
-| `ME` / `M` | 月末 |
-| `QE` / `Q` | 季末 |
-| `YE` / `A` | 年末 |
-| `h` / `H` | 小时 |
-| `min` / `T` | 分钟 |
-| `s` / `S` | 秒 |
+| 别名          | 含义       |
+| ----------- | -------- |
+| `D`         | 日历日      |
+| `B`         | 工作日      |
+| `W`         | 周（周日为结束） |
+| `ME` / `M`  | 月末       |
+| `QE` / `Q`  | 季末       |
+| `YE` / `A`  | 年末       |
+| `h` / `H`   | 小时       |
+| `min` / `T` | 分钟       |
+| `s` / `S`   | 秒        |
 
 ## 十二、文件读写
 
@@ -659,12 +659,12 @@ report.to_excel("user_report.xlsx", index=False)
 ## 十四、性能与最佳实践
 
 1. **优先向量化**：能用 Series/NumPy 运算就别用 `apply(axis=1)` 或 Python 循环。
-2. **选好 `dtype`**：字符串列优先考虑 `category`（基数不太大时），可空整数用 `"Int64"`，布尔用 `"boolean"` 扩展类型以支持 `pd.NA`。
+2. **选好** **`dtype`**：字符串列优先考虑 `category`（基数不太大时），可空整数用 `"Int64"`，布尔用 `"boolean"` 扩展类型以支持 `pd.NA`。
 3. **避免频繁 append**：循环中不要反复 `df = pd.concat([df, row])`，先收集到 `list` 再一次性构造 DataFrame。
 4. **只读取需要的列**：`read_csv(usecols=...)`、指定 `dtype` 能显著降低内存。
 5. **链式索引不要赋值**：统一用 `.loc[mask, col] = value`，避免 `SettingWithCopyWarning`。
-6. **`inplace=True` 不总是高效**：很多情况下它仍然创建副本，而且不利于链式调用；推荐赋值给新变量。
-7. **`groupby` 后列选择**：`df.groupby("k")["v"].mean()` 比 `df.groupby("k").mean()["v"]` 更高效（先选列再聚合，少算无关列）。
+6. **`inplace=True`** **不总是高效**：很多情况下它仍然创建副本，而且不利于链式调用；推荐赋值给新变量。
+7. **`groupby`** **后列选择**：`df.groupby("k")["v"].mean()` 比 `df.groupby("k").mean()["v"]` 更高效（先选列再聚合，少算无关列）。
 8. **大文件分块**：用 `chunksize` 迭代处理，或考虑 `dask.dataframe`、`polars`、`pyarrow` 等工具。
 
 ### 14.1 内存优化示例
@@ -691,19 +691,19 @@ def reduce_mem_usage(df: pd.DataFrame) -> pd.DataFrame:
 
 ## 十五、常见陷阱
 
-| 问题 | 原因 | 建议 |
-|------|------|------|
-| `SettingWithCopyWarning` | 链式索引返回副本，赋值可能丢失 | 用 `.loc[row, col] = x` 或先 `.copy()` |
-| 切片端点搞错 | `.loc` 标签切片**包含两端**；`.iloc` 位置切片**左闭右开** | 写完用 `head()`/切片打印验证 |
-| 缺失值比较永远为 False | `np.nan != np.nan` | 用 `isna()`/`notna()` 判断 |
-| `count()` 与 `size()` 差异 | `count` 不计 NaN；`size` 计 NaN | 按需求选用 |
-| 多条件 `and`/`or` 报错 | Python `and/or` 无法作用于 Series | 用 `&` `\|` `~`，每个条件加括号 |
-| `apply(axis=1)` 超慢 | 行级 Python 循环 | 改写为向量化或 `np.select` |
-| 字符串列默认 `object` 类型 | 内存高、操作慢 | 低基数字符串转为 `"category"` |
-| `read_csv` 数字被识别为字符串 | 存在千分位、货币符号或脏值 | 用 `converters`、`pd.to_numeric(errors="coerce")` |
-| `merge` 后行数暴涨 | 连接键不唯一导致笛卡尔积 | merge 前检查两边键的唯一性（`duplicated`） |
-| 时间序列时区混乱 | 无时区 vs 有时区混合 | 统一用 `tz_localize`/`tz_convert` |
-| `inplace=True` 不生效 | 某些操作返回新对象，`inplace` 可能无效或被未来版本移除 | 优先用赋值式：`df = df.xxx()` |
+| 问题                       | 原因                                       | 建议                                              |
+| ------------------------ | ---------------------------------------- | ----------------------------------------------- |
+| `SettingWithCopyWarning` | 链式索引返回副本，赋值可能丢失                          | 用 `.loc[row, col] = x` 或先 `.copy()`             |
+| 切片端点搞错                   | `.loc` 标签切片**包含两端**；`.iloc` 位置切片**左闭右开** | 写完用 `head()`/切片打印验证                             |
+| 缺失值比较永远为 False           | `np.nan != np.nan`                       | 用 `isna()`/`notna()` 判断                         |
+| `count()` 与 `size()` 差异  | `count` 不计 NaN；`size` 计 NaN              | 按需求选用                                           |
+| 多条件 `and`/`or` 报错        | Python `and/or` 无法作用于 Series             | 用 `&` `\|` `~`，每个条件加括号                          |
+| `apply(axis=1)` 超慢       | 行级 Python 循环                             | 改写为向量化或 `np.select`                             |
+| 字符串列默认 `object` 类型       | 内存高、操作慢                                  | 低基数字符串转为 `"category"`                           |
+| `read_csv` 数字被识别为字符串     | 存在千分位、货币符号或脏值                            | 用 `converters`、`pd.to_numeric(errors="coerce")` |
+| `merge` 后行数暴涨            | 连接键不唯一导致笛卡尔积                             | merge 前检查两边键的唯一性（`duplicated`）                  |
+| 时间序列时区混乱                 | 无时区 vs 有时区混合                             | 统一用 `tz_localize`/`tz_convert`                  |
+| `inplace=True` 不生效       | 某些操作返回新对象，`inplace` 可能无效或被未来版本移除         | 优先用赋值式：`df = df.xxx()`                          |
 
 ## 十六、附录：Pandas 函数/属性汇总表
 
@@ -711,125 +711,125 @@ def reduce_mem_usage(df: pd.DataFrame) -> pd.DataFrame:
 
 ### 16.1 数据创建与 I/O
 
-| 名称 | 类型 | 作用简述 |
-|------|------|----------|
-| `pd.Series` | 构造函数 | 创建一维带标签数组 |
-| `pd.DataFrame` | 构造函数 | 创建二维带标签表格 |
-| `pd.date_range` | 构造函数 | 生成固定频率的 DatetimeIndex |
-| `pd.read_csv` | I/O | 读取 CSV/文本分隔文件 |
-| `pd.read_excel` | I/O | 读取 Excel 文件 |
-| `pd.read_json` | I/O | 读取 JSON 数据 |
-| `pd.read_sql` | I/O | 从 SQL 查询/表读取 |
-| `DataFrame.to_csv` | I/O | 导出为 CSV |
-| `DataFrame.to_excel` | I/O | 导出为 Excel |
-| `DataFrame.to_json` | I/O | 导出为 JSON |
-| `DataFrame.to_sql` | I/O | 写入 SQL 数据库 |
-| `pd.ExcelWriter` | 上下文管理器 | 多 Sheet 写入 Excel |
+| 名称                   | 类型     | 作用简述                  |
+| -------------------- | ------ | --------------------- |
+| `pd.Series`          | 构造函数   | 创建一维带标签数组             |
+| `pd.DataFrame`       | 构造函数   | 创建二维带标签表格             |
+| `pd.date_range`      | 构造函数   | 生成固定频率的 DatetimeIndex |
+| `pd.read_csv`        | I/O    | 读取 CSV/文本分隔文件         |
+| `pd.read_excel`      | I/O    | 读取 Excel 文件           |
+| `pd.read_json`       | I/O    | 读取 JSON 数据            |
+| `pd.read_sql`        | I/O    | 从 SQL 查询/表读取          |
+| `DataFrame.to_csv`   | I/O    | 导出为 CSV               |
+| `DataFrame.to_excel` | I/O    | 导出为 Excel             |
+| `DataFrame.to_json`  | I/O    | 导出为 JSON              |
+| `DataFrame.to_sql`   | I/O    | 写入 SQL 数据库            |
+| `pd.ExcelWriter`     | 上下文管理器 | 多 Sheet 写入 Excel      |
 
 ### 16.2 属性与整体信息
 
-| 名称 | 类型 | 作用简述 |
-|------|------|----------|
-| `DataFrame.shape` | 属性 | (行数, 列数) 元组 |
-| `DataFrame.columns` | 属性 | 列名 Index |
-| `DataFrame.index` | 属性 | 行索引 Index |
-| `DataFrame.dtypes` | 属性 | 各列数据类型 |
-| `DataFrame.values` | 属性 | 底层 NumPy 数组（不推荐） |
-| `DataFrame.T` | 属性 | 转置 |
-| `DataFrame.info()` | 方法 | 打印结构、非空计数、内存 |
-| `DataFrame.describe()` | 方法 | 数值列/分类列统计摘要 |
+| 名称                     | 类型 | 作用简述             |
+| ---------------------- | -- | ---------------- |
+| `DataFrame.shape`      | 属性 | (行数, 列数) 元组      |
+| `DataFrame.columns`    | 属性 | 列名 Index         |
+| `DataFrame.index`      | 属性 | 行索引 Index        |
+| `DataFrame.dtypes`     | 属性 | 各列数据类型           |
+| `DataFrame.values`     | 属性 | 底层 NumPy 数组（不推荐） |
+| `DataFrame.T`          | 属性 | 转置               |
+| `DataFrame.info()`     | 方法 | 打印结构、非空计数、内存     |
+| `DataFrame.describe()` | 方法 | 数值列/分类列统计摘要      |
 
 ### 16.3 数据查看与探查
 
-| 名称 | 类型 | 作用简述 |
-|------|------|----------|
-| `DataFrame.head(n)` | 方法 | 前 n 行 |
-| `DataFrame.tail(n)` | 方法 | 后 n 行 |
-| `DataFrame.sample(n)` | 方法 | 随机抽 n 行 |
-| `Series.value_counts()` | 方法 | 列值频次统计 |
-| `Series.unique()` | 方法 | 列去重值数组 |
-| `Series.nunique()` | 方法 | 去重值个数 |
-| `DataFrame.nlargest(n, col)` | 方法 | 按列取最大的 n 行 |
+| 名称                            | 类型 | 作用简述       |
+| ----------------------------- | -- | ---------- |
+| `DataFrame.head(n)`           | 方法 | 前 n 行      |
+| `DataFrame.tail(n)`           | 方法 | 后 n 行      |
+| `DataFrame.sample(n)`         | 方法 | 随机抽 n 行    |
+| `Series.value_counts()`       | 方法 | 列值频次统计     |
+| `Series.unique()`             | 方法 | 列去重值数组     |
+| `Series.nunique()`            | 方法 | 去重值个数      |
+| `DataFrame.nlargest(n, col)`  | 方法 | 按列取最大的 n 行 |
 | `DataFrame.nsmallest(n, col)` | 方法 | 按列取最小的 n 行 |
 
 ### 16.4 索引与选择
 
-| 名称 | 类型 | 作用简述 |
-|------|------|----------|
-| `df[col]` / `df[[cols]]` | 索引器 | 选单列/多列 |
-| `df.loc[row, col]` | 索引器 | 按标签选择 |
-| `df.iloc[r, c]` | 索引器 | 按整数位置选择 |
-| `df.at[lbl, col]` / `df.iat[r, c]` | 索引器 | 快速取单个值 |
-| `df.query(expr)` | 方法 | 用字符串表达式筛选行 |
-| `Series.isin(values)` | 方法 | 元素是否在给定集合中 |
-| `Series.str` | 访问器 | 向量化字符串方法 |
+| 名称                                 | 类型  | 作用简述       |
+| ---------------------------------- | --- | ---------- |
+| `df[col]` / `df[[cols]]`           | 索引器 | 选单列/多列     |
+| `df.loc[row, col]`                 | 索引器 | 按标签选择      |
+| `df.iloc[r, c]`                    | 索引器 | 按整数位置选择    |
+| `df.at[lbl, col]` / `df.iat[r, c]` | 索引器 | 快速取单个值     |
+| `df.query(expr)`                   | 方法  | 用字符串表达式筛选行 |
+| `Series.isin(values)`              | 方法  | 元素是否在给定集合中 |
+| `Series.str`                       | 访问器 | 向量化字符串方法   |
 
 ### 16.5 缺失值、重复值与类型
 
-| 名称 | 类型 | 作用简述 |
-|------|------|----------|
-| `isna()` / `isnull()` | 方法 | 判断缺失 |
-| `notna()` / `notnull()` | 方法 | 判断非缺失 |
-| `dropna()` | 方法 | 删除含缺失的行/列 |
-| `fillna(x)` | 方法 | 填充缺失值 |
-| `ffill()` / `bfill()` | 方法 | 前向/后向填充 |
-| `interpolate()` | 方法 | 插值填充 |
-| `duplicated()` | 方法 | 检测重复行 |
-| `drop_duplicates()` | 方法 | 删除重复行 |
-| `astype(dtype)` | 方法 | 类型转换 |
-| `pd.to_numeric()` | 函数 | 转数值类型 |
-| `pd.to_datetime()` | 函数 | 转日期时间类型 |
-| `Series.replace()` | 方法 | 值替换 |
+| 名称                      | 类型 | 作用简述      |
+| ----------------------- | -- | --------- |
+| `isna()` / `isnull()`   | 方法 | 判断缺失      |
+| `notna()` / `notnull()` | 方法 | 判断非缺失     |
+| `dropna()`              | 方法 | 删除含缺失的行/列 |
+| `fillna(x)`             | 方法 | 填充缺失值     |
+| `ffill()` / `bfill()`   | 方法 | 前向/后向填充   |
+| `interpolate()`         | 方法 | 插值填充      |
+| `duplicated()`          | 方法 | 检测重复行     |
+| `drop_duplicates()`     | 方法 | 删除重复行     |
+| `astype(dtype)`         | 方法 | 类型转换      |
+| `pd.to_numeric()`       | 函数 | 转数值类型     |
+| `pd.to_datetime()`      | 函数 | 转日期时间类型   |
+| `Series.replace()`      | 方法 | 值替换       |
 
 ### 16.6 列操作与变换
 
-| 名称 | 类型 | 作用简述 |
-|------|------|----------|
-| `df[new_col] = ...` | 赋值 | 新增/覆盖列 |
-| `DataFrame.assign(**kwargs)` | 方法 | 链式新增列，返回新对象 |
-| `DataFrame.drop(columns=)` | 方法 | 删除列 |
-| `DataFrame.insert(loc, column, value)` | 方法 | 在指定位置插入列 |
-| `DataFrame.rename()` | 方法 | 重命名行/列 |
-| `DataFrame.sort_values()` | 方法 | 按值排序 |
-| `DataFrame.sort_index()` | 方法 | 按索引排序 |
-| `pd.cut()` | 函数 | 连续值分箱（按区间边界） |
-| `pd.qcut()` | 函数 | 按分位数分箱 |
-| `Series.map()` | 方法 | 映射/逐元素函数 |
+| 名称                                     | 类型 | 作用简述               |
+| -------------------------------------- | -- | ------------------ |
+| `df[new_col] = ...`                    | 赋值 | 新增/覆盖列             |
+| `DataFrame.assign(**kwargs)`           | 方法 | 链式新增列，返回新对象        |
+| `DataFrame.drop(columns=)`             | 方法 | 删除列                |
+| `DataFrame.insert(loc, column, value)` | 方法 | 在指定位置插入列           |
+| `DataFrame.rename()`                   | 方法 | 重命名行/列             |
+| `DataFrame.sort_values()`              | 方法 | 按值排序               |
+| `DataFrame.sort_index()`               | 方法 | 按索引排序              |
+| `pd.cut()`                             | 函数 | 连续值分箱（按区间边界）       |
+| `pd.qcut()`                            | 函数 | 按分位数分箱             |
+| `Series.map()`                         | 方法 | 映射/逐元素函数           |
 | `DataFrame.apply()` / `Series.apply()` | 方法 | 应用自定义函数（逐列/逐行/逐元素） |
-| `np.where()` / `np.select()` | 函数 | 向量化条件赋值 |
+| `np.where()` / `np.select()`           | 函数 | 向量化条件赋值            |
 
 ### 16.7 合并与拼接
 
-| 名称 | 类型 | 作用简述 |
-|------|------|----------|
-| `pd.merge()` | 函数 | 数据库风格 join |
-| `DataFrame.merge()` | 方法 | merge 的方法形式 |
-| `DataFrame.join()` | 方法 | 按索引 join 的快捷方式 |
-| `pd.concat()` | 函数 | 轴向拼接（纵向/横向） |
+| 名称                  | 类型 | 作用简述           |
+| ------------------- | -- | -------------- |
+| `pd.merge()`        | 函数 | 数据库风格 join     |
+| `DataFrame.merge()` | 方法 | merge 的方法形式    |
+| `DataFrame.join()`  | 方法 | 按索引 join 的快捷方式 |
+| `pd.concat()`       | 函数 | 轴向拼接（纵向/横向）    |
 
 ### 16.8 分组、聚合、透视
 
-| 名称 | 类型 | 作用简述 |
-|------|------|----------|
-| `DataFrame.groupby()` | 方法 | 按键分组，返回 GroupBy 对象 |
-| `GroupBy.agg()` / `GroupBy.aggregate()` | 方法 | 聚合（支持多函数/命名聚合） |
-| `GroupBy.transform()` | 方法 | 组内变换，返回等长结果 |
-| `GroupBy.filter()` | 方法 | 按组条件过滤整个组 |
-| `GroupBy.size()` | 方法 | 组大小（含 NaN） |
-| `GroupBy.count()` | 方法 | 组非 NaN 计数 |
-| `DataFrame.pivot_table()` | 方法 | 透视表 |
-| `pd.crosstab()` | 函数 | 交叉频次表 |
+| 名称                                      | 类型 | 作用简述               |
+| --------------------------------------- | -- | ------------------ |
+| `DataFrame.groupby()`                   | 方法 | 按键分组，返回 GroupBy 对象 |
+| `GroupBy.agg()` / `GroupBy.aggregate()` | 方法 | 聚合（支持多函数/命名聚合）     |
+| `GroupBy.transform()`                   | 方法 | 组内变换，返回等长结果        |
+| `GroupBy.filter()`                      | 方法 | 按组条件过滤整个组          |
+| `GroupBy.size()`                        | 方法 | 组大小（含 NaN）         |
+| `GroupBy.count()`                       | 方法 | 组非 NaN 计数          |
+| `DataFrame.pivot_table()`               | 方法 | 透视表                |
+| `pd.crosstab()`                         | 函数 | 交叉频次表              |
 
 ### 16.9 时间序列
 
-| 名称 | 类型 | 作用简述 |
-|------|------|----------|
-| `Series.dt` | 访问器 | 日期时间属性访问（year/month/...） |
-| `Series.shift(n)` | 方法 | 按周期平移 |
-| `Series.diff(n)` | 方法 | n 阶差分 |
-| `Series.pct_change(n)` | 方法 | 百分比变化 |
-| `Series.rolling(w)` | 方法 | 滚动窗口 |
-| `Series.resample(freq)` | 方法 | 时间重采样 |
+| 名称                      | 类型  | 作用简述                     |
+| ----------------------- | --- | ------------------------ |
+| `Series.dt`             | 访问器 | 日期时间属性访问（year/month/...） |
+| `Series.shift(n)`       | 方法  | 按周期平移                    |
+| `Series.diff(n)`        | 方法  | n 阶差分                    |
+| `Series.pct_change(n)`  | 方法  | 百分比变化                    |
+| `Series.rolling(w)`     | 方法  | 滚动窗口                     |
+| `Series.resample(freq)` | 方法  | 时间重采样                    |
 
 ## 十七、附录：Pandas 函数/属性详细用法
 
@@ -840,6 +840,7 @@ def reduce_mem_usage(df: pd.DataFrame) -> pd.DataFrame:
 **作用**：创建一维带标签数组，是 DataFrame 的列单位。
 
 **核心参数**：
+
 - `data`：类数组（list、ndarray、dict、标量）
 - `index`：索引标签数组，长度与 data 一致；缺省时为 `RangeIndex(0, n)`
 - `dtype`：显式指定类型，如 `"int64"`、`"float64"`、`"string"`、`"category"`
@@ -856,13 +857,14 @@ pd.Series(5, index=["a", "b", "c"])           # 标量广播
 
 **注意**：从 dict 创建时若显式传 `index`，将按 `index` 顺序取值，缺失的键填 NaN。
 
----
+***
 
 #### `pd.DataFrame(data=None, index=None, columns=None, dtype=None, copy=None)`
 
 **作用**：创建二维带标签表格，是 Pandas 最核心的对象。
 
 **核心参数**：
+
 - `data`：ndarray、dict（列名→列值）、list of dict（每行一条记录）、另一个 DataFrame
 - `index`：行索引
 - `columns`：列名顺序/筛选
@@ -876,13 +878,14 @@ pd.DataFrame(np.arange(6).reshape(2, 3), columns=["a", "b", "c"])
 
 **注意**：从 list of dict 创建时，缺失键自动填 NaN；dict 值长度必须一致（标量会广播）。
 
----
+***
 
 #### `pd.date_range(start=None, end=None, periods=None, freq=None, tz=None, ...)`
 
 **作用**：生成等间距的 `DatetimeIndex`。
 
 **核心参数**：
+
 - `start` / `end`：起止时间
 - `periods`：生成点数（与 `end` 二选一或结合使用）
 - `freq`：频率字符串，如 `"D"`、`"h"`、`"ME"`、`"W-MON"`
@@ -894,7 +897,7 @@ pd.date_range("2026-01-01", "2026-01-31", freq="W")
 pd.date_range("2026-01-01", periods=3, freq="ME", tz="Asia/Shanghai")
 ```
 
----
+***
 
 ### 17.2 文件 I/O
 
@@ -903,6 +906,7 @@ pd.date_range("2026-01-01", periods=3, freq="ME", tz="Asia/Shanghai")
 **作用**：读取分隔符文本文件为 DataFrame，是最常用的数据入口。
 
 **核心参数**：
+
 - `sep`：分隔符，默认 `,`；正则如 `r"\s+"` 支持多空白
 - `header`：作为列名的行号，默认 `0`；无表头传 `None` 并配合 `names=`
 - `index_col`：作为行索引的列号/列名/列表
@@ -923,13 +927,14 @@ for chunk in pd.read_csv("huge.csv", chunksize=100_000):
 
 **注意**：日期解析优先用 `parse_dates` 而不是读完后再 `pd.to_datetime`；但多列组合日期、自定义格式更适合读完后用 `pd.to_datetime(df[["y","m","d"]])` 或指定 `format`。
 
----
+***
 
 #### `pd.read_excel(io, sheet_name=0, header=0, usecols=None, dtype=None, ...)`
 
 **作用**：读取 Excel 文件（`.xlsx`/`.xls`）。需要 `openpyxl`（xlsx）或 `xlrd`（旧 xls）。
 
 **核心参数**：
+
 - `sheet_name`：`0` 默认第一个；字符串为 sheet 名；列表读多个 sheet 返回 `dict`；`None` 读全部
 - `usecols`：列字母范围（如 `"A:D"`）或列名列表
 - `dtype`、`header` 等同 `read_csv`
@@ -939,11 +944,12 @@ pd.read_excel("data.xlsx", sheet_name="Sheet1", usecols="A:C")
 sheets = pd.read_excel("data.xlsx", sheet_name=None)  # dict of DataFrames
 ```
 
----
+***
 
 #### `pd.read_sql(sql, con, index_col=None, ...)` / `pd.read_sql_table` / `pd.read_sql_query`
 
 **作用**：从 SQL 数据库读取。
+
 - `read_sql` 自动判断是表名还是 SQL 语句；
 - 需要 SQLAlchemy `connectable`（`Engine`/`Connection`）或 SQLite DB API 连接。
 
@@ -953,13 +959,14 @@ engine = create_engine("sqlite:///data.db")
 df = pd.read_sql("SELECT * FROM users WHERE age > 20", engine)
 ```
 
----
+***
 
 #### `DataFrame.to_csv(path_or_buf=None, sep=',', na_rep='', index=True, encoding=None, columns=None, ...)`
 
 **作用**：导出为 CSV。
 
 **核心参数**：
+
 - `na_rep`：缺失值表示，默认空字符串
 - `index`：是否写行索引，通常 `False`
 - `encoding`：Windows Excel 打开建议 `"utf-8-sig"`
@@ -969,7 +976,7 @@ df = pd.read_sql("SELECT * FROM users WHERE age > 20", engine)
 df.to_csv("out.csv", index=False, encoding="utf-8-sig")
 ```
 
----
+***
 
 #### `DataFrame.to_excel(excel_writer, sheet_name='Sheet1', index=True, ...)`
 
@@ -981,13 +988,14 @@ with pd.ExcelWriter("out.xlsx") as writer:
     df2.to_excel(writer, sheet_name="b", index=False)
 ```
 
----
+***
 
 #### `DataFrame.to_sql(name, con, if_exists='fail', index=True, index_label=None, chunksize=None, ...)`
 
 **作用**：写入 SQL 表。
 
 **核心参数**：
+
 - `if_exists`：`"fail"`（默认，表存在报错）、`"replace"`（删表重建）、`"append"`（追加）
 - `index`：是否写索引为列
 
@@ -997,13 +1005,13 @@ df.to_sql("users_copy", engine, if_exists="append", index=False)
 
 **注意**：`"replace"` 会 DROP TABLE 再重建，可能丢失约束/索引，生产环境慎用。
 
----
+***
 
 #### `pd.ExcelWriter(path, engine=None, mode='w', ...)`
 
 **作用**：上下文管理器，用于向同一个 Excel 文件写入多个 sheet。
 
----
+***
 
 ### 17.3 属性与整体信息
 
@@ -1013,7 +1021,7 @@ df.to_sql("users_copy", engine, if_exists="append", index=False)
 - `ndim`：维度数，DataFrame 恒为 2
 - `size`：元素总数 = 行数 × 列数
 
----
+***
 
 #### `DataFrame.columns` / `DataFrame.index`
 
@@ -1025,25 +1033,25 @@ df.columns = ["A", "B", "C"]
 df.index = pd.date_range("2026-01-01", periods=len(df))
 ```
 
----
+***
 
 #### `DataFrame.dtypes`
 
 **作用**：返回每列数据类型的 Series。注意 Pandas 扩展类型（`Int64`、`boolean`、`string`、`category`、`datetime64[ns, tz]`）。
 
----
+***
 
 #### `DataFrame.values`
 
 **作用**：返回底层 NumPy 数组。**不推荐**——若有扩展类型会产生 `object` 数组。推荐 `DataFrame.to_numpy(dtype=None, copy=False)`，更清晰可控。
 
----
+***
 
 #### `DataFrame.T`
 
 **作用**：转置，行变列、列变行，返回视图或副本视情况。非数值列转置后类型可能变为 `object`。
 
----
+***
 
 #### `DataFrame.info(verbose=None, buf=None, max_cols=None, memory_usage=None, show_counts=None)`
 
@@ -1053,7 +1061,7 @@ df.index = pd.date_range("2026-01-01", periods=len(df))
 df.info(memory_usage="deep")  # 更精确计算 object 列内存
 ```
 
----
+***
 
 #### `DataFrame.describe(percentiles=None, include=None, exclude=None)`
 
@@ -1064,7 +1072,7 @@ df.describe(percentiles=[0.1, 0.5, 0.9])
 df.describe(include=["object", "category"])
 ```
 
----
+***
 
 ### 17.4 数据查看
 
@@ -1072,11 +1080,12 @@ df.describe(include=["object", "category"])
 
 返回前/后 n 行，默认 5。
 
----
+***
 
 #### `DataFrame.sample(n=None, frac=None, replace=False, weights=None, random_state=None, axis=None)`
 
 **作用**：随机抽样。
+
 - `n`：抽多少行
 - `frac`：抽比例（如 `0.1` 为 10%）
 - `replace`：是否有放回
@@ -1086,11 +1095,12 @@ df.describe(include=["object", "category"])
 df.sample(frac=0.1, random_state=42)
 ```
 
----
+***
 
 #### `Series.value_counts(normalize=False, sort=True, ascending=False, bins=None, dropna=True)`
 
 **作用**：统计列值频次。
+
 - `normalize=True` 返回比例而非次数
 - `dropna=False` 包含 NaN 的计数
 - `bins` 对数值列按区间分组计数
@@ -1100,14 +1110,14 @@ df["city"].value_counts(normalize=True)
 df["score"].value_counts(bins=5)
 ```
 
----
+***
 
 #### `Series.unique()` / `Series.nunique(dropna=True)`
 
 - `unique()`：返回去重值的 NumPy 数组（顺序为首次出现顺序）
 - `nunique()`：返回不同值的个数；`dropna=False` 时把 NaN 也计数
 
----
+***
 
 #### `DataFrame.nlargest(n, columns, keep='first')` / `DataFrame.nsmallest(n, columns, keep='first')`
 
@@ -1118,13 +1128,14 @@ df.nlargest(5, "score")
 df.nsmallest(3, ["age", "score"])
 ```
 
----
+***
 
 ### 17.5 索引与选择
 
 #### `df.loc[row_selector, col_selector]`
 
 **作用**：按**标签**选择，是最推荐的索引器。`row_selector`/`col_selector` 可以是：
+
 - 单个标签（如 `"r1"`、`"name"`）
 - 标签列表（`["r1", "r3"]`、`["name", "score"]`）
 - 标签切片（**包含两端**）
@@ -1138,7 +1149,7 @@ df.loc[df["age"] > 28, ["name", "score"]]
 df.loc[:, "a":"c"] = 0            # 批量赋值
 ```
 
----
+***
 
 #### `df.iloc[row_pos, col_pos]`
 
@@ -1151,7 +1162,7 @@ df.iloc[[0, 3], [0, -1]]
 df.iloc[:, -1]     # 最后一列
 ```
 
----
+***
 
 #### `df.at[label, col]` / `df.iat[r, c]`
 
@@ -1162,11 +1173,12 @@ df.at["r1", "name"]
 df.iat[0, 0] = "NewName"  # 可赋值
 ```
 
----
+***
 
 #### `df[col]` 方括号索引器
 
 **作用**：
+
 - 传字符串：选单列，返回 Series
 - 传列表：选多列，返回 DataFrame
 - 传布尔 Series：筛选行
@@ -1178,9 +1190,9 @@ df[["name", "score"]]    # DataFrame
 df[df["age"] > 28]       # 行筛选
 ```
 
-**注意**：`df[0:2]` 对 RangeIndex 按位置切；若索引是字符串标签则按标签切，容易混淆，**推荐优先用 `.loc`/`.iloc`**。
+**注意**：`df[0:2]` 对 RangeIndex 按位置切；若索引是字符串标签则按标签切，容易混淆，**推荐优先用** **`.loc`/`.iloc`**。
 
----
+***
 
 #### `DataFrame.query(expr, inplace=False, **kwargs)`
 
@@ -1194,7 +1206,7 @@ df.query("city in ['Beijing', 'Shenzhen']")
 
 **注意**：列名含空格或特殊字符时用反引号包裹：`` `col name` ``。
 
----
+***
 
 #### `Series.isin(values)`
 
@@ -1206,24 +1218,24 @@ df.loc[df["city"].isin(["Beijing", "Shenzhen"])]
 
 **注意**：用 `set` 传入可提高大集合的查找性能。
 
----
+***
 
 #### `Series.str`（StringMethods 访问器）
 
 **作用**：向量化字符串方法集合。Series 的 dtype 为 `object` 或 `string` 时可用。常用方法：
 
-| 方法 | 作用 |
-|------|------|
-| `.lower()` / `.upper()` | 大小写转换 |
-| `.strip()` / `.lstrip()` / `.rstrip()` | 去空白 |
-| `.contains(pat, case=True, regex=True, na=None)` | 是否包含模式 |
-| `.startswith(s)` / `.endswith(s)` | 开头/结尾匹配 |
-| `.replace(pat, repl, regex=True)` | 替换 |
-| `.split(pat, n=-1, expand=False)` | 分割，`expand=True` 返回 DataFrame |
-| `.extract(pat, expand=True)` | 正则提取分组为 DataFrame |
-| `.len()` | 长度 |
-| `.slice(start, stop)` | 按位置切片 |
-| `.cat(sep=None, na_rep=None)` | 字符串拼接 |
+| 方法                                               | 作用                            |
+| ------------------------------------------------ | ----------------------------- |
+| `.lower()` / `.upper()`                          | 大小写转换                         |
+| `.strip()` / `.lstrip()` / `.rstrip()`           | 去空白                           |
+| `.contains(pat, case=True, regex=True, na=None)` | 是否包含模式                        |
+| `.startswith(s)` / `.endswith(s)`                | 开头/结尾匹配                       |
+| `.replace(pat, repl, regex=True)`                | 替换                            |
+| `.split(pat, n=-1, expand=False)`                | 分割，`expand=True` 返回 DataFrame |
+| `.extract(pat, expand=True)`                     | 正则提取分组为 DataFrame             |
+| `.len()`                                         | 长度                            |
+| `.slice(start, stop)`                            | 按位置切片                         |
+| `.cat(sep=None, na_rep=None)`                    | 字符串拼接                         |
 
 ```python
 df["name"].str.contains("li", case=False, na=False)
@@ -1232,7 +1244,7 @@ df["code"].str.extract(r"(\d{3})-(\d{4})")
 
 **注意**：默认 `regex=True`；固定字符串替换请传 `regex=False` 避免正则特殊字符误解析。
 
----
+***
 
 ### 17.6 缺失值处理
 
@@ -1248,13 +1260,14 @@ df[df["age"].notna()]
 
 **注意**：Pandas 中 `np.nan`、`None`（在数值列中）、`pd.NaT`（时间缺失）、`pd.NA`（扩展类型缺失）都被视为缺失；**`np.nan != np.nan`**，因此不要用 `== np.nan` 判断。
 
----
+***
 
 #### `DataFrame.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)`
 
 **作用**：删除含缺失值的行或列。
 
 **核心参数**：
+
 - `axis`：`0` 删行（默认），`1` 删列
 - `how`：`"any"` 只要有一个缺失就删（默认）；`"all"` 全行/列全缺失才删
 - `thresh`：要求非缺失值至少有多少个（保留阈值），覆盖 `how`
@@ -1265,13 +1278,14 @@ df.dropna(subset=["age", "score"], thresh=2)
 df.dropna(axis=1, how="all")
 ```
 
----
+***
 
 #### `DataFrame.fillna(value=None, method=None, axis=None, inplace=False, limit=None, downcast=None)`
 
 **作用**：填充缺失值。
 
 **核心参数**：
+
 - `value`：标量、dict/Series（按列指定填充值）、DataFrame
 - `method`：已弃用，建议用 `ffill()`/`bfill()`
 - `limit`：连续填充的最大个数
@@ -1282,7 +1296,7 @@ df.fillna(0)
 df.fillna({"age": 0, "score": df["score"].mean()})
 ```
 
----
+***
 
 #### `DataFrame.ffill(axis=0, limit=None, inplace=False)` / `bfill()`
 
@@ -1292,23 +1306,24 @@ df.fillna({"age": 0, "score": df["score"].mean()})
 df["value"] = df["value"].ffill()
 ```
 
----
+***
 
 #### `DataFrame.interpolate(method='linear', axis=0, limit=None, inplace=False, ...)`
 
 **作用**：插值填充。`method="linear"` 线性插值；还支持 `"time"`（时间加权）、`"nearest"`、`"spline"`、`"polynomial"` 等。
 
----
+***
 
 ### 17.7 重复值与类型转换
 
 #### `DataFrame.duplicated(subset=None, keep='first')`
 
 **作用**：返回布尔 Series，标记是否是重复行。
+
 - `subset`：按哪些列判断重复（默认全部列）
 - `keep`：`"first"` 第一次出现标记为 False（默认）；`"last"` 最后一次标记为 False；`False` 所有重复都标记 True
 
----
+***
 
 #### `DataFrame.drop_duplicates(subset=None, keep='first', inplace=False, ignore_index=False)`
 
@@ -1318,11 +1333,12 @@ df["value"] = df["value"].ffill()
 df.drop_duplicates(subset=["city"], keep="last", ignore_index=True)
 ```
 
----
+***
 
 #### `Series/DataFrame.astype(dtype, copy=True, errors='raise')`
 
 **作用**：类型转换。
+
 - `dtype`：目标类型，如 `"float32"`、`"Int64"`、`"string"`、`"category"`
 - `errors`：`"raise"`（默认）报错；`"ignore"` 忽略；**注意**没有 `"coerce"`，`coerce` 请用 `pd.to_numeric`/`pd.to_datetime`
 
@@ -1331,11 +1347,12 @@ df["age"] = df["age"].astype("Int64")
 df["city"] = df["city"].astype("category")
 ```
 
----
+***
 
 #### `pd.to_numeric(arg, errors='raise', downcast=None)`
 
 **作用**：将参数转换为数值类型。
+
 - `errors`：`"raise"`、`"ignore"`、`"coerce"`（失败变 NaN）
 - `downcast`：`"integer"`/`"signed"`/`"unsigned"`/`"float"` 尝试缩小类型
 
@@ -1343,11 +1360,12 @@ df["city"] = df["city"].astype("category")
 df["amt"] = pd.to_numeric(df["amt"], errors="coerce")
 ```
 
----
+***
 
 #### `pd.to_datetime(arg, errors='raise', format=None, utc=False, ...)`
 
 **作用**：转换为 `datetime64[ns]`。
+
 - `errors`：同上
 - `format`：显式格式字符串（如 `"%Y-%m-%d"`）可大幅加速解析
 - `utc=True`：转换为 UTC 时区时间
@@ -1358,11 +1376,12 @@ df["date"] = pd.to_datetime(df["date_str"], format="%Y/%m/%d", errors="coerce")
 
 **注意**：默认 `format=None` 会推断格式，慢且可能误判；数据量大或格式明确时一定要指定 `format`。
 
----
+***
 
 #### `Series.replace(to_replace=None, value=None, inplace=False, limit=None, regex=False)`
 
 **作用**：替换值。支持：
+
 - 标量到标量
 - dict：`{old: new}` 或 `{col: {old: new}}`
 - list：多个 old 映射到同一个 value
@@ -1372,7 +1391,7 @@ df["city"] = df["city"].replace({"Beijing": "BJ", "Shanghai": "SH"})
 df["s"] = df["s"].replace(r"\s+", " ", regex=True)
 ```
 
----
+***
 
 ### 17.8 列操作与变换
 
@@ -1387,7 +1406,7 @@ df["flag"] = True
 
 **注意**：赋值时 Pandas 按索引对齐——若赋值的 Series 索引不同，会按 df 的索引对齐，不匹配位置填 NaN。
 
----
+***
 
 #### `DataFrame.assign(**kwargs)`
 
@@ -1400,7 +1419,7 @@ df2 = df.assign(
 )
 ```
 
----
+***
 
 #### `DataFrame.drop(labels=None, axis=0, index=None, columns=None, level=None, inplace=False, errors='raise')`
 
@@ -1411,7 +1430,7 @@ df = df.drop(columns=["tmp"])
 df = df.drop(index=[0, 3])
 ```
 
----
+***
 
 #### `DataFrame.insert(loc, column, value, allow_duplicates=False)`
 
@@ -1421,7 +1440,7 @@ df = df.drop(index=[0, 3])
 df.insert(0, "id", range(1, len(df) + 1))
 ```
 
----
+***
 
 #### `DataFrame.rename(mapper=None, index=None, columns=None, axis=None, inplace=False, errors='ignore')`
 
@@ -1432,13 +1451,14 @@ df = df.rename(columns=str.upper)
 df = df.rename(columns={"name": "姓名"})
 ```
 
----
+***
 
 #### `DataFrame.sort_values(by, axis=0, ascending=True, inplace=False, kind='quicksort', na_position='last', ignore_index=False, key=None)`
 
 **作用**：按值排序。
 
 **核心参数**：
+
 - `by`：字符串或列名列表
 - `ascending`：布尔或布尔列表（对应每列）
 - `na_position`：`"last"`（默认）NaN 放最后；`"first"` 放最前
@@ -1450,19 +1470,20 @@ df.sort_values(["city", "score"], ascending=[True, False], na_position="first", 
 df.sort_values(by="name", key=lambda s: s.str.len())
 ```
 
----
+***
 
 #### `DataFrame.sort_index(axis=0, ascending=True, inplace=False, na_position='last', ...)`
 
 **作用**：按索引排序。对时间索引、层级索引尤其有用。
 
----
+***
 
 #### `pd.cut(x, bins, right=True, labels=None, retbins=False, precision=3, include_lowest=False, duplicates='raise', ordered=True)`
 
 **作用**：将连续值离散化为区间（"bin"），返回 `Categorical` 或 Series。
 
 **核心参数**：
+
 - `bins`：整数（等宽分箱个数）或区间边界列表
 - `right`：区间是否右闭，默认 True
 - `labels`：自定义箱标签
@@ -1473,7 +1494,7 @@ pd.cut(df["age"], bins=[0, 25, 35, 100], labels=["young", "mid", "senior"])
 pd.cut(df["score"], bins=3)  # 等宽 3 箱
 ```
 
----
+***
 
 #### `pd.qcut(x, q, labels=None, retbins=False, precision=3, duplicates='raise')`
 
@@ -1483,13 +1504,14 @@ pd.cut(df["score"], bins=3)  # 等宽 3 箱
 pd.qcut(df["score"], q=4, labels=["D", "C", "B", "A"])  # 四分位
 ```
 
----
+***
 
 #### `Series.map(arg, na_action=None)`
 
 **作用**：根据映射关系（dict、Series、函数）替换 Series 中的每个值。
 
 **核心参数**：
+
 - `arg`：dict/Series/function
 - `na_action=None` 默认传播 NaN；传 `"ignore"` 时函数不会作用于 NaN
 
@@ -1500,11 +1522,12 @@ df["name_len"] = df["name"].map(len)
 
 **注意**：dict 映射中找不到的键会变为 NaN，而不是保持原值；需保持原值可用 `replace` 或 `map` + `fillna`。
 
----
+***
 
 #### `DataFrame.apply(func, axis=0, raw=False, result_type=None, args=(), **kwargs)` / `Series.apply(func, convert_dtype=True, args=(), **kwargs)`
 
 **作用**：
+
 - DataFrame：`axis=0`（默认）对每列应用函数；`axis=1` 对每行应用函数（性能敏感）
 - Series：对每个元素应用函数
 
@@ -1516,7 +1539,7 @@ df.apply(lambda row: row["a"] + row["b"], axis=1)
 
 **⚠️ 注意**：`axis=1` 是 Python 层逐行循环，大数据量（>10 万行）优先向量化，否则性能会差数十倍。
 
----
+***
 
 #### `np.where(condition, x, y)` / `np.select(condlist, choicelist, default=0)`
 
@@ -1531,7 +1554,7 @@ df["grade"] = np.select(
 )
 ```
 
----
+***
 
 ### 17.9 合并与拼接
 
@@ -1540,6 +1563,7 @@ df["grade"] = np.select(
 **作用**：数据库风格表连接。
 
 **核心参数**：
+
 - `how`：`"inner"`、`"left"`、`"right"`、`"outer"`、`"cross"`
 - `on`：连接列名（两边相同）；不同时用 `left_on`/`right_on`
 - `left_index`/`right_index`：按索引连接
@@ -1554,7 +1578,7 @@ pd.merge(a, b, left_on="id", right_on="uid", how="inner", suffixes=("_a", "_b"))
 
 **最佳实践**：生产代码尽量指定 `validate`，能第一时间发现键不唯一导致行数暴涨的问题。
 
----
+***
 
 #### `DataFrame.join(other, on=None, how='left', lsuffix='', rsuffix='', sort=False, validate=None)`
 
@@ -1564,13 +1588,14 @@ pd.merge(a, b, left_on="id", right_on="uid", how="inner", suffixes=("_a", "_b"))
 users.set_index("user_id").join(orders.set_index("user_id"), how="left", rsuffix="_o")
 ```
 
----
+***
 
 #### `pd.concat(objs, axis=0, join='outer', ignore_index=False, keys=None, levels=None, names=None, verify_integrity=False, sort=False, copy=True)`
 
 **作用**：沿指定轴拼接多个 DataFrame/Series。
 
 **核心参数**：
+
 - `objs`：DataFrame/Series 的 list 或 dict
 - `axis`：`0` 纵向拼接行（默认）；`1` 横向拼接列
 - `join`：`"outer"`（默认，列并集）、`"inner"`（列交集）
@@ -1586,7 +1611,7 @@ pd.concat({"a": df1, "b": df2}, names=["source"])
 
 **注意**：纵向拼接时列对齐按标签进行，列名稍有不同（空格/大小写）会产生多余列和 NaN；横向拼接按行索引对齐。
 
----
+***
 
 ### 17.10 分组与聚合
 
@@ -1595,6 +1620,7 @@ pd.concat({"a": df1, "b": df2}, names=["source"])
 **作用**：按一个或多个键拆分，返回 `DataFrameGroupBy`/`SeriesGroupBy` 对象。
 
 **核心参数**：
+
 - `by`：列名、列名列表、映射、函数、Series、数组（长度等 df 行数）
 - `as_index`：默认 True，分组键成为结果索引；False 时分组键作为普通列
 - `sort`：默认 True 按组键排序；False 保持首次出现顺序，性能略高
@@ -1607,11 +1633,12 @@ df.groupby(["city", "age_band"], as_index=False)["score"].mean()
 df.groupby(pd.cut(df["score"], bins=3))  # 用 bin 作为分组键
 ```
 
----
+***
 
 #### `GroupBy.agg(func=None, *args, **kwargs)` / `GroupBy.aggregate()`
 
 **作用**：聚合，返回每组一个值。支持以下写法：
+
 - 单个函数字符串：`.agg("mean")`
 - 函数列表：`.agg(["mean", "sum"])`
 - dict（按列指定）：`.agg({"score": "mean", "age": "max"})`
@@ -1629,7 +1656,7 @@ df.groupby("city").agg(
 
 **注意**：`count` 统计非 NaN 个数；`size` 统计组大小（含 NaN）。
 
----
+***
 
 #### `GroupBy.transform(func, *args, **kwargs)`
 
@@ -1647,7 +1674,7 @@ df["score_filled"] = df.groupby("city")["score"].transform(
 
 `func` 可以是函数字符串（如 `"mean"`、`"rank"`）或可调用对象。
 
----
+***
 
 #### `GroupBy.filter(func, dropna=True, *args, **kwargs)`
 
@@ -1657,20 +1684,21 @@ df["score_filled"] = df.groupby("city")["score"].transform(
 df.groupby("city").filter(lambda g: g["score"].mean() > 88)
 ```
 
----
+***
 
 #### `GroupBy.size()` / `GroupBy.count()`
 
 - `size()`：每组行数（包含 NaN 的行），返回 Series
 - `count()`：每组每列非 NaN 个数，返回 DataFrame
 
----
+***
 
 #### `DataFrame.pivot_table(values=None, index=None, columns=None, aggfunc='mean', fill_value=None, margins=False, margins_name='All', dropna=True, observed=False)`
 
 **作用**：创建透视表。
 
 **核心参数**：
+
 - `values`：要聚合的列
 - `index`：行分组键
 - `columns`：列分组键
@@ -1682,7 +1710,7 @@ df.groupby("city").filter(lambda g: g["score"].mean() > 88)
 df.pivot_table("score", index="city", columns="age_band", aggfunc="mean", fill_value=0, margins=True)
 ```
 
----
+***
 
 #### `pd.crosstab(index, columns, values=None, rownames=None, colnames=None, aggfunc=None, margins=False, margins_name='All', dropna=True, normalize=False)`
 
@@ -1693,7 +1721,7 @@ pd.crosstab(df["city"], df["age_band"], margins=True)
 pd.crosstab(df["city"], df["age_band"], values=df["score"], aggfunc="mean")
 ```
 
----
+***
 
 ### 17.11 时间序列
 
@@ -1701,26 +1729,26 @@ pd.crosstab(df["city"], df["age_band"], values=df["score"], aggfunc="mean")
 
 **作用**：对 datetime 类型 Series 访问时间属性：
 
-| 属性/方法 | 含义 |
-|-----------|------|
-| `.year`/`.month`/`.day` | 年/月/日 |
-| `.hour`/`.minute`/`.second` | 时/分/秒 |
-| `.date`/`.time` | 日期/时间部分 |
-| `.dayofweek`/`.weekday` | 周几（0=周一） |
-| `.day_name()`/`.month_name()` | 星期/月份名称 |
-| `.quarter` | 季度 |
-| `.isocalendar()` | ISO 年/周/星期 |
-| `.days_in_month` | 当月天数 |
-| `.tz_localize(tz)` | 设时区（naive → tz-aware） |
-| `.tz_convert(tz)` | 转换时区 |
-| `.to_period(freq)` | 转为 Period |
+| 属性/方法                         | 含义                    |
+| ----------------------------- | --------------------- |
+| `.year`/`.month`/`.day`       | 年/月/日                 |
+| `.hour`/`.minute`/`.second`   | 时/分/秒                 |
+| `.date`/`.time`               | 日期/时间部分               |
+| `.dayofweek`/`.weekday`       | 周几（0=周一）              |
+| `.day_name()`/`.month_name()` | 星期/月份名称               |
+| `.quarter`                    | 季度                    |
+| `.isocalendar()`              | ISO 年/周/星期            |
+| `.days_in_month`              | 当月天数                  |
+| `.tz_localize(tz)`            | 设时区（naive → tz-aware） |
+| `.tz_convert(tz)`             | 转换时区                  |
+| `.to_period(freq)`            | 转为 Period             |
 
 ```python
 df["date"].dt.year
 df["date"].dt.tz_localize("UTC").dt.tz_convert("Asia/Shanghai")
 ```
 
----
+***
 
 #### `Series.shift(periods=1, freq=None, axis=0, fill_value=None)`
 
@@ -1731,7 +1759,7 @@ df["prev"] = df["value"].shift(1)
 df["next"] = df["value"].shift(-1)
 ```
 
----
+***
 
 #### `Series.diff(periods=1)`
 
@@ -1741,7 +1769,7 @@ df["next"] = df["value"].shift(-1)
 df["delta"] = df["value"].diff()
 ```
 
----
+***
 
 #### `Series.pct_change(periods=1, fill_method='pad', limit=None, freq=None)`
 
@@ -1751,13 +1779,14 @@ df["delta"] = df["value"].diff()
 df["ret"] = df["price"].pct_change()
 ```
 
----
+***
 
 #### `Series.rolling(window, min_periods=None, center=False, win_type=None, on=None, axis=0, closed=None, step=None)`
 
 **作用**：创建滚动窗口对象，可调用聚合方法（`mean`、`sum`、`std`、`apply` 等）。
 
 **核心参数**：
+
 - `window`：窗口大小（整数）或 offset（时间窗口如 `"7D"`）
 - `min_periods`：窗口内至少需要的非 NaN 个数
 - `center`：True 时窗口中心对齐标签
@@ -1768,7 +1797,7 @@ df["ma7"] = df["price"].rolling(7, min_periods=1).mean()
 df["vol30"] = df["ret"].rolling(30).std()
 ```
 
----
+***
 
 #### `Series.resample(rule, axis=0, closed=None, label=None, convention='start', kind=None, on=None, level=None, origin='start_day', ...)`
 
@@ -1781,36 +1810,36 @@ ts.resample("ME").last()         # 月末最后值
 ts.resample("h").ffill()         # 升采样到小时并前向填充
 ```
 
----
+***
 
 ## 十八、中英文术语对照表
 
-| 英文 | 中文 | 说明 |
-|------|------|------|
-| Series | 序列 | 一维带标签数组 |
-| DataFrame | 数据框 | 二维带标签表格 |
-| Index | 索引 | 行/列标签对象 |
-| label | 标签 | 索引中的元素（行名/列名） |
-| position | 位置 | 整数下标（0-based） |
-| missing value / NaN | 缺失值 | `np.nan`/`pd.NA`/`NaT` |
-| categorical | 分类（类型） | 有限离散取值类型 |
-| group by | 分组 | 按键拆分 |
-| aggregate | 聚合 | 组内多个值归约为一个 |
-| transform | 变换 | 组内变换，返回等长结果 |
-| filter (groupby) | 组过滤 | 按组级条件保留/丢弃整组 |
-| join / merge | 连接 / 合并 | 表之间按键关联 |
-| pivot table | 透视表 | 行×列二维聚合 |
-| crosstab | 交叉表 | 列联表/频次表 |
-| resample | 重采样 | 时间维度的桶聚合 |
-| rolling window | 滚动窗口 | 固定长度滑窗聚合 |
-| forward fill / ffill | 前向填充 | 用前值填 NaN |
-| backward fill / bfill | 后向填充 | 用后值填 NaN |
-| chained indexing | 链式索引 | 连续用 `[][]` 可能产生副本 |
-| view / copy | 视图 / 副本 | 是否共享内存 |
-| dtype | 数据类型 | NumPy/Pandas 类型 |
-| downcast | 向下转型 | 缩小类型位宽以省内存 |
-| time zone / tz | 时区 | `datetime64[ns, tz]` |
-| method chaining | 方法链 | `.xxx().yyy().zzz()` 连续调用 |
+| 英文                    | 中文      | 说明                        |
+| --------------------- | ------- | ------------------------- |
+| Series                | 序列      | 一维带标签数组                   |
+| DataFrame             | 数据框     | 二维带标签表格                   |
+| Index                 | 索引      | 行/列标签对象                   |
+| label                 | 标签      | 索引中的元素（行名/列名）             |
+| position              | 位置      | 整数下标（0-based）             |
+| missing value / NaN   | 缺失值     | `np.nan`/`pd.NA`/`NaT`    |
+| categorical           | 分类（类型）  | 有限离散取值类型                  |
+| group by              | 分组      | 按键拆分                      |
+| aggregate             | 聚合      | 组内多个值归约为一个                |
+| transform             | 变换      | 组内变换，返回等长结果               |
+| filter (groupby)      | 组过滤     | 按组级条件保留/丢弃整组              |
+| join / merge          | 连接 / 合并 | 表之间按键关联                   |
+| pivot table           | 透视表     | 行×列二维聚合                   |
+| crosstab              | 交叉表     | 列联表/频次表                   |
+| resample              | 重采样     | 时间维度的桶聚合                  |
+| rolling window        | 滚动窗口    | 固定长度滑窗聚合                  |
+| forward fill / ffill  | 前向填充    | 用前值填 NaN                  |
+| backward fill / bfill | 后向填充    | 用后值填 NaN                  |
+| chained indexing      | 链式索引    | 连续用 `[][]` 可能产生副本         |
+| view / copy           | 视图 / 副本 | 是否共享内存                    |
+| dtype                 | 数据类型    | NumPy/Pandas 类型           |
+| downcast              | 向下转型    | 缩小类型位宽以省内存                |
+| time zone / tz        | 时区      | `datetime64[ns, tz]`      |
+| method chaining       | 方法链     | `.xxx().yyy().zzz()` 连续调用 |
 
 ## 十九、进一步学习路径
 
@@ -1827,3 +1856,4 @@ ts.resample("h").ffill()         # 升采样到小时并前向填充
 - [Pandas User Guide](https://pandas.pydata.org/docs/user_guide/index.html)
 - [Pandas API Reference](https://pandas.pydata.org/docs/reference/index.html)
 - [Python for Data Analysis（Wes McKinney 著）](https://wesmckinney.com/book/) — Pandas 作者撰写
+
