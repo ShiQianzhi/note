@@ -80,8 +80,13 @@
 
   <rect x="620" y="390" width="430" height="70" rx="8" fill="#fff" stroke="#2980b9"/>
   <text x="835" y="415" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a5276">成本控制策略</text>
+<<<<<<< HEAD
   <text x="835" y="435" text-anchor="middle" font-size="11" fill="#555">• 简单意图走低成本模型 • 复杂推理走高阶模型</text>
   <text x="835" y="452" text-anchor="middle" font-size="11" fill="#555">• 单用户 Token 日配额 • 缓存命中优先复用计算</text>
+=======
+  <text x="835" y="435" text-anchor="middle" font-size="11" fill="#555">• 简单意图走低成本模型 &nbsp;• 复杂推理走高阶模型</text>
+  <text x="835" y="452" text-anchor="middle" font-size="11" fill="#555">• 单用户 Token 日配额 &nbsp;• 缓存命中优先复用计算</text>
+>>>>>>> 0da15c00b013a8bab8d532300a627832c0fa305a
 
   <line x1="540" y1="165" x2="620" y2="165" stroke="#555" stroke-width="1.5" marker-end="url(#lg)"/>
   <line x1="540" y1="255" x2="620" y2="255" stroke="#555" stroke-width="1.5" marker-end="url(#lg)"/>
