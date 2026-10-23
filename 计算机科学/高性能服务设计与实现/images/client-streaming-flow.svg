@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+  <rect width="1100" height="560" fill="#ffffff"/>
+  <text x="550" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a1a2e">客户端流式交互与断线重连流程</text>
+
+  <!-- Client box -->
+  <rect x="40" y="70" width="280" height="460" rx="12" fill="#e8f4fd" stroke="#2980b9" stroke-width="2"/>
+  <text x="180" y="100" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a5276">客户端</text>
+
+  <rect x="60" y="120" width="240" height="40" rx="6" fill="#fff" stroke="#2980b9"/>
+  <text x="180" y="145" text-anchor="middle" font-size="13" fill="#1a1a2e">用户输入 + 乐观渲染</text>
+
+  <rect x="60" y="175" width="240" height="40" rx="6" fill="#fff" stroke="#2980b9"/>
+  <text x="180" y="200" text-anchor="middle" font-size="13" fill="#1a1a2e">建立 SSE / WS 长连接</text>
+
+  <rect x="60" y="230" width="240" height="40" rx="6" fill="#fff" stroke="#2980b9"/>
+  <text x="180" y="255" text-anchor="middle" font-size="13" fill="#1a1a2e">逐 token 流式接收渲染</text>
+
+  <rect x="60" y="285" width="240" height="40" rx="6" fill="#fff" stroke="#2980b9"/>
+  <text x="180" y="310" text-anchor="middle" font-size="13" fill="#1a1a2e">本地缓存会话快照</text>
+
+  <rect x="60" y="340" width="240" height="40" rx="6" fill="#fff" stroke="#e67e22"/>
+  <text x="180" y="365" text-anchor="middle" font-size="13" fill="#1a1a2e">心跳检测（30s ping）</text>
+
+  <rect x="60" y="395" width="240" height="40" rx="6" fill="#fff" stroke="#c0392b"/>
+  <text x="180" y="420" text-anchor="middle" font-size="13" fill="#1a1a2e">断线检测 + 指数退避重连</text>
+
+  <rect x="60" y="450" width="240" height="55" rx="6" fill="#fff" stroke="#27ae60"/>
+  <text x="180" y="473" text-anchor="middle" font-size="13" fill="#1a1a2e">断点续传：携带 last_event_id</text>
+  <text x="180" y="492" text-anchor="middle" font-size="11" fill="#555">服务端从断点继续推送</text>
+
+  <!-- Gateway box -->
+  <rect x="380" y="70" width="300" height="460" rx="12" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="530" y="100" text-anchor="middle" font-size="16" font-weight="bold" fill="#922b21">接入网关 + 连接服务</text>
+
+  <rect x="400" y="120" width="260" height="40" rx="6" fill="#fff" stroke="#c0392b"/>
+  <text x="530" y="145" text-anchor="middle" font-size="13" fill="#1a1a2e">TLS 终止 + JWT 鉴权</text>
+
+  <rect x="400" y="175" width="260" height="40" rx="6" fill="#fff" stroke="#c0392b"/>
+  <text x="530" y="200" text-anchor="middle" font-size="13" fill="#1a1a2e">一致性哈希选连接节点</text>
+
+  <rect x="400" y="230" width="260" height="40" rx="6" fill="#fff" stroke="#c0392b"/>
+  <text x="530" y="255" text-anchor="middle" font-size="13" fill="#1a1a2e">HTTP/2 多路复用</text>
+
+  <rect x="400" y="285" width="260" height="40" rx="6" fill="#fff" stroke="#c0392b"/>
+  <text x="530" y="310" text-anchor="middle" font-size="13" fill="#1a1a2e">SSE 事件分帧推送</text>
+
+  <rect x="400" y="340" width="260" height="40" rx="6" fill="#fff" stroke="#c0392b"/>
+  <text x="530" y="365" text-anchor="middle" font-size="13" fill="#1a1a2e">连接池 / 心跳响应</text>
+
+  <rect x="400" y="395" width="260" height="40" rx="6" fill="#fff" stroke="#c0392b"/>
+  <text x="530" y="420" text-anchor="middle" font-size="13" fill="#1a1a2e">广播 / 定向推送</text>
+
+  <rect x="400" y="450" width="260" height="55" rx="6" fill="#fff" stroke="#c0392b"/>
+  <text x="530" y="473" text-anchor="middle" font-size="13" fill="#1a1a2e">Redis 记录 user_id → node_id</text>
+  <text x="530" y="492" text-anchor="middle" font-size="11" fill="#555">重连时路由回同节点</text>
+
+  <!-- Agent box -->
+  <rect x="740" y="70" width="320" height="460" rx="12" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
+  <text x="900" y="100" text-anchor="middle" font-size="16" font-weight="bold" fill="#9a7d0a">Agent 编排服务</text>
+
+  <rect x="760" y="120" width="280" height="40" rx="6" fill="#fff" stroke="#f39c12"/>
+  <text x="900" y="145" text-anchor="middle" font-size="13" fill="#1a1a2e">接收用户消息 / 上下文</text>
+
+  <rect x="760" y="175" width="280" height="40" rx="6" fill="#fff" stroke="#f39c12"/>
+  <text x="900" y="200" text-anchor="middle" font-size="13" fill="#1a1a2e">Planner 分解任务步骤</text>
+
+  <rect x="760" y="230" width="280" height="40" rx="6" fill="#fff" stroke="#f39c12"/>
+  <text x="900" y="255" text-anchor="middle" font-size="13" fill="#1a1a2e">调用 LLM / 工具链</text>
+
+  <rect x="760" y="285" width="280" height="40" rx="6" fill="#fff" stroke="#f39c12"/>
+  <text x="900" y="310" text-anchor="middle" font-size="13" fill="#1a1a2e">逐 token 回推连接服务</text>
+
+  <rect x="760" y="340" width="280" height="40" rx="6" fill="#fff" stroke="#f39c12"/>
+  <text x="900" y="365" text-anchor="middle" font-size="13" fill="#1a1a2e">状态 Checkpoint 落库</text>
+
+  <rect x="760" y="395" width="280" height="40" rx="6" fill="#fff" stroke="#f39c12"/>
+  <text x="900" y="420" text-anchor="middle" font-size="13" fill="#1a1a2e">超时/失败重试/熔断</text>
+
+  <rect x="760" y="450" width="280" height="55" rx="6" fill="#fff" stroke="#f39c12"/>
+  <text x="900" y="473" text-anchor="middle" font-size="13" fill="#1a1a2e">恢复执行：从 Checkpoint 续跑</text>
+  <text x="900" y="492" text-anchor="middle" font-size="11" fill="#555">保证长任务不丢失</text>
+
+  <!-- arrows -->
+  <defs>
+    <marker id="arr2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2c3e50"/>
+    </marker>
+  </defs>
+  <line x1="320" y1="195" x2="400" y2="195" stroke="#2c3e50" stroke-width="1.8" marker-end="url(#arr2)"/>
+  <line x1="320" y1="250" x2="400" y2="250" stroke="#2c3e50" stroke-width="1.8" marker-end="url(#arr2)"/>
+  <line x1="320" y1="415" x2="400" y2="415" stroke="#2c3e50" stroke-width="1.8" marker-end="url(#arr2)"/>
+  <line x1="680" y1="195" x2="760" y2="195" stroke="#2c3e50" stroke-width="1.8" marker-end="url(#arr2)"/>
+  <line x1="680" y1="250" x2="760" y2="250" stroke="#2c3e50" stroke-width="1.8" marker-end="url(#arr2)"/>
+  <line x1="680" y1="415" x2="760" y2="415" stroke="#2c3e50" stroke-width="1.8" marker-end="url(#arr2)"/>
+  <!-- reverse -->
+  <line x1="400" y1="305" x2="320" y2="305" stroke="#27ae60" stroke-width="1.8" marker-end="url(#arr2)"/>
+  <line x1="760" y1="305" x2="680" y2="305" stroke="#27ae60" stroke-width="1.8" marker-end="url(#arr2)"/>
+</svg>

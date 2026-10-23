@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 760" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+  <rect width="1100" height="760" fill="#ffffff"/>
+  <text x="550" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a2e">高性能 Agent 服务整体架构</text>
+
+  <!-- Client layer -->
+  <rect x="40" y="60" width="1020" height="90" rx="10" fill="#e8f4fd" stroke="#2980b9" stroke-width="2"/>
+  <text x="70" y="90" font-size="16" font-weight="bold" fill="#1a5276">客户端层</text>
+  <rect x="70" y="100" width="290" height="36" rx="6" fill="#ffffff" stroke="#2980b9"/>
+  <text x="215" y="123" text-anchor="middle" font-size="13" fill="#1a1a2e">Web / App / 小程序 / CLI</text>
+  <rect x="380" y="100" width="290" height="36" rx="6" fill="#ffffff" stroke="#2980b9"/>
+  <text x="525" y="123" text-anchor="middle" font-size="13" fill="#1a1a2e">SSE / WebSocket 流式连接</text>
+  <rect x="690" y="100" width="340" height="36" rx="6" fill="#ffffff" stroke="#2980b9"/>
+  <text x="860" y="123" text-anchor="middle" font-size="13" fill="#1a1a2e">本地缓存 + 断线重连 + 乐观渲染</text>
+
+  <!-- Access layer -->
+  <rect x="40" y="170" width="1020" height="90" rx="10" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="70" y="200" font-size="16" font-weight="bold" fill="#922b21">接入网关层</text>
+  <rect x="70" y="210" width="230" height="36" rx="6" fill="#ffffff" stroke="#c0392b"/>
+  <text x="185" y="233" text-anchor="middle" font-size="13" fill="#1a1a2e">LVS / Nginx (L4+L7)</text>
+  <rect x="320" y="210" width="230" height="36" rx="6" fill="#ffffff" stroke="#c0392b"/>
+  <text x="435" y="233" text-anchor="middle" font-size="13" fill="#1a1a2e">Envoy 网关（鉴权/限流/路由）</text>
+  <rect x="570" y="210" width="230" height="36" rx="6" fill="#ffffff" stroke="#c0392b"/>
+  <text x="685" y="233" text-anchor="middle" font-size="13" fill="#1a1a2e">JWT (RS256) 双令牌鉴权</text>
+  <rect x="820" y="210" width="210" height="36" rx="6" fill="#ffffff" stroke="#c0392b"/>
+  <text x="925" y="233" text-anchor="middle" font-size="13" fill="#1a1a2e">分布式限流（令牌桶）</text>
+
+  <!-- Connection layer -->
+  <rect x="40" y="280" width="1020" height="100" rx="10" fill="#eafaf1" stroke="#27ae60" stroke-width="2"/>
+  <text x="70" y="310" font-size="16" font-weight="bold" fill="#1e8449">连接会话层</text>
+  <rect x="70" y="320" width="300" height="44" rx="6" fill="#ffffff" stroke="#27ae60"/>
+  <text x="220" y="347" text-anchor="middle" font-size="13" fill="#1a1a2e">Connection Manager（长连接池）</text>
+  <rect x="390" y="320" width="300" height="44" rx="6" fill="#ffffff" stroke="#27ae60"/>
+  <text x="540" y="347" text-anchor="middle" font-size="13" fill="#1a1a2e">Redis 一致性哈希（user_router）</text>
+  <rect x="710" y="320" width="320" height="44" rx="6" fill="#ffffff" stroke="#27ae60"/>
+  <text x="870" y="347" text-anchor="middle" font-size="13" fill="#1a1a2e">会话粘性 / 心跳保活 / 广播</text>
+
+  <!-- Orchestration layer -->
+  <rect x="40" y="400" width="1020" height="150" rx="10" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
+  <text x="70" y="430" font-size="16" font-weight="bold" fill="#9a7d0a">Agent 编排层</text>
+  <rect x="70" y="440" width="220" height="44" rx="6" fill="#ffffff" stroke="#f39c12"/>
+  <text x="180" y="467" text-anchor="middle" font-size="13" fill="#1a1a2e">Planner（任务分解）</text>
+  <rect x="305" y="440" width="220" height="44" rx="6" fill="#ffffff" stroke="#f39c12"/>
+  <text x="415" y="467" text-anchor="middle" font-size="13" fill="#1a1a2e">DAG 执行引擎</text>
+  <rect x="540" y="440" width="220" height="44" rx="6" fill="#ffffff" stroke="#f39c12"/>
+  <text x="650" y="467" text-anchor="middle" font-size="13" fill="#1a1a2e">Tool Executor（工具调用）</text>
+  <rect x="775" y="440" width="255" height="44" rx="6" fill="#ffffff" stroke="#f39c12"/>
+  <text x="902" y="467" text-anchor="middle" font-size="13" fill="#1a1a2e">Memory（工作记忆/长期记忆）</text>
+  <rect x="70" y="494" width="475" height="44" rx="6" fill="#ffffff" stroke="#f39c12"/>
+  <text x="307" y="521" text-anchor="middle" font-size="13" fill="#1a1a2e">状态机 + Checkpoint + 超时/重试/熔断</text>
+  <rect x="560" y="494" width="470" height="44" rx="6" fill="#ffffff" stroke="#f39c12"/>
+  <text x="795" y="521" text-anchor="middle" font-size="13" fill="#1a1a2e">Guard（权限/内容安全/预算）</text>
+
+  <!-- Model & infra layer -->
+  <rect x="40" y="570" width="1020" height="160" rx="10" fill="#f4ecf7" stroke="#8e44ad" stroke-width="2"/>
+  <text x="70" y="600" font-size="16" font-weight="bold" fill="#6c3483">模型与基础设施层</text>
+  <rect x="70" y="610" width="230" height="50" rx="6" fill="#ffffff" stroke="#8e44ad"/>
+  <text x="185" y="633" text-anchor="middle" font-size="13" font-weight="bold" fill="#6c3483">LLM Gateway</text>
+  <text x="185" y="650" text-anchor="middle" font-size="11" fill="#555">模型路由 / 熔断 / 降级</text>
+  <rect x="315" y="610" width="230" height="50" rx="6" fill="#ffffff" stroke="#8e44ad"/>
+  <text x="430" y="633" text-anchor="middle" font-size="13" font-weight="bold" fill="#6c3483">Redis Cluster</text>
+  <text x="430" y="650" text-anchor="middle" font-size="11" fill="#555">会话/状态/限流/缓存</text>
+  <rect x="560" y="610" width="230" height="50" rx="6" fill="#ffffff" stroke="#8e44ad"/>
+  <text x="675" y="633" text-anchor="middle" font-size="13" font-weight="bold" fill="#6c3483">Kafka</text>
+  <text x="675" y="650" text-anchor="middle" font-size="11" fill="#555">异步事件/消息/日志</text>
+  <rect x="805" y="610" width="225" height="50" rx="6" fill="#ffffff" stroke="#8e44ad"/>
+  <text x="917" y="633" text-anchor="middle" font-size="13" font-weight="bold" fill="#6c3483">PostgreSQL / ES</text>
+  <text x="917" y="650" text-anchor="middle" font-size="11" fill="#555">持久化/检索/审计</text>
+  <rect x="70" y="672" width="960" height="44" rx="6" fill="#ffffff" stroke="#8e44ad"/>
+  <text x="550" y="699" text-anchor="middle" font-size="13" fill="#1a1a2e">向量数据库（Milvus/Qdrant）→ 语义记忆检索 | 可观测性（Prometheus + Grafana + OTel 链路追踪）</text>
+
+  <!-- Flow arrows -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+  <line x1="550" y1="150" x2="550" y2="170" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="260" x2="550" y2="280" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="380" x2="550" y2="400" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="550" x2="550" y2="570" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+</svg>

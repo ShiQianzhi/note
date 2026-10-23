@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 540" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+  <rect width="1100" height="540" fill="#ffffff"/>
+  <text x="550" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a1a2e">万级长连接：一致性哈希 + 会话粘性路由</text>
+
+  <!-- Client cluster -->
+  <rect x="30" y="80" width="180" height="380" rx="10" fill="#e8f4fd" stroke="#2980b9" stroke-width="2"/>
+  <text x="120" y="108" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a5276">客户端集群</text>
+  <circle cx="70" cy="150" r="14" fill="#fff" stroke="#2980b9"/>
+  <text x="70" y="155" text-anchor="middle" font-size="11" fill="#1a5276">U1</text>
+  <circle cx="120" cy="150" r="14" fill="#fff" stroke="#2980b9"/>
+  <text x="120" y="155" text-anchor="middle" font-size="11" fill="#1a5276">U2</text>
+  <circle cx="170" cy="150" r="14" fill="#fff" stroke="#2980b9"/>
+  <text x="170" y="155" text-anchor="middle" font-size="11" fill="#1a5276">U3</text>
+  <circle cx="70" cy="200" r="14" fill="#fff" stroke="#2980b9"/>
+  <text x="70" y="205" text-anchor="middle" font-size="11" fill="#1a5276">U4</text>
+  <circle cx="120" cy="200" r="14" fill="#fff" stroke="#2980b9"/>
+  <text x="120" y="205" text-anchor="middle" font-size="11" fill="#1a5276">U5</text>
+  <circle cx="170" cy="200" r="14" fill="#fff" stroke="#2980b9"/>
+  <text x="170" y="205" text-anchor="middle" font-size="11" fill="#1a5276">U6</text>
+  <text x="120" y="245" text-anchor="middle" font-size="12" fill="#555">10,000+ 并发用户</text>
+  <text x="120" y="265" text-anchor="middle" font-size="12" fill="#555">每人保持 1 条长连接</text>
+
+  <!-- arrows from users to gateway -->
+  <defs>
+    <marker id="ch" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- Gateway -->
+  <rect x="260" y="80" width="200" height="120" rx="10" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="360" y="110" text-anchor="middle" font-size="15" font-weight="bold" fill="#922b21">API Gateway</text>
+  <text x="360" y="135" text-anchor="middle" font-size="12" fill="#555">L4 LVS + L7 Nginx</text>
+  <text x="360" y="155" text-anchor="middle" font-size="12" fill="#555">TLS / 鉴权 / 限流</text>
+  <text x="360" y="175" text-anchor="middle" font-size="12" fill="#555">→ 转发到连接节点</text>
+
+  <line x1="210" y1="175" x2="260" y2="140" stroke="#555" stroke-width="1.5" marker-end="url(#ch)"/>
+  <line x1="210" y1="175" x2="260" y2="160" stroke="#555" stroke-width="1.5" marker-end="url(#ch)"/>
+
+  <!-- Hash ring -->
+  <rect x="510" y="60" width="300" height="160" rx="10" fill="#f4ecf7" stroke="#8e44ad" stroke-width="2"/>
+  <text x="660" y="90" text-anchor="middle" font-size="15" font-weight="bold" fill="#6c3483">一致性哈希环</text>
+  <circle cx="660" cy="135" r="55" fill="none" stroke="#8e44ad" stroke-width="3" stroke-dasharray="4,3"/>
+  <circle cx="660" cy="80" r="6" fill="#c0392b"/>
+  <text x="672" y="84" font-size="11" fill="#922b21">Node1</text>
+  <circle cx="710" cy="160" r="6" fill="#2980b9"/>
+  <text x="720" y="164" font-size="11" fill="#1a5276">Node2</text>
+  <circle cx="610" cy="160" r="6" fill="#27ae60"/>
+  <text x="568" y="164" font-size="11" fill="#1e8449">Node3</text>
+  <text x="660" y="200" text-anchor="middle" font-size="12" fill="#555">hash(user_id) % ring</text>
+
+  <line x1="460" y1="140" x2="510" y2="140" stroke="#555" stroke-width="1.8" marker-end="url(#ch)"/>
+
+  <!-- Redis -->
+  <rect x="860" y="80" width="210" height="120" rx="10" fill="#fef5e7" stroke="#e67e22" stroke-width="2"/>
+  <text x="965" y="110" text-anchor="middle" font-size="15" font-weight="bold" fill="#9a7d0a">Redis Cluster</text>
+  <text x="965" y="135" text-anchor="middle" font-size="12" fill="#555">Hash: user_router</text>
+  <text x="965" y="155" text-anchor="middle" font-size="12" fill="#555">user_id → node_id</text>
+  <text x="965" y="175" text-anchor="middle" font-size="12" fill="#555">TTL: 心跳刷新</text>
+
+  <line x1="810" y1="110" x2="860" y2="140" stroke="#8e44ad" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#ch)"/>
+  <text x="835" y="100" text-anchor="middle" font-size="11" fill="#6c3483">写入映射</text>
+
+  <!-- Connection nodes -->
+  <rect x="260" y="250" width="200" height="90" rx="10" fill="#eafaf1" stroke="#27ae60" stroke-width="2"/>
+  <text x="360" y="278" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e8449">Conn Node 1</text>
+  <text x="360" y="300" text-anchor="middle" font-size="12" fill="#555">承载 U1, U4, U7...</text>
+  <text x="360" y="320" text-anchor="middle" font-size="12" fill="#555">~3,300 连接</text>
+
+  <rect x="510" y="250" width="200" height="90" rx="10" fill="#eafaf1" stroke="#27ae60" stroke-width="2"/>
+  <text x="610" y="278" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e8449">Conn Node 2</text>
+  <text x="610" y="300" text-anchor="middle" font-size="12" fill="#555">承载 U2, U5, U8...</text>
+  <text x="610" y="320" text-anchor="middle" font-size="12" fill="#555">~3,300 连接</text>
+
+  <rect x="760" y="250" width="200" height="90" rx="10" fill="#eafaf1" stroke="#27ae60" stroke-width="2"/>
+  <text x="860" y="278" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e8449">Conn Node 3</text>
+  <text x="860" y="300" text-anchor="middle" font-size="12" fill="#555">承载 U3, U6, U9...</text>
+  <text x="860" y="320" text-anchor="middle" font-size="12" fill="#555">~3,400 连接</text>
+
+  <line x1="360" y1="200" x2="360" y2="250" stroke="#555" stroke-width="1.5" marker-end="url(#ch)"/>
+  <line x1="610" y1="220" x2="610" y2="250" stroke="#555" stroke-width="1.5" marker-end="url(#ch)"/>
+  <line x1="860" y1="200" x2="860" y2="250" stroke="#555" stroke-width="1.5" marker-end="url(#ch)"/>
+
+  <!-- Agent service -->
+  <rect x="260" y="380" width="700" height="120" rx="10" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
+  <text x="610" y="408" text-anchor="middle" font-size="15" font-weight="bold" fill="#9a7d0a">Agent 编排服务集群（无状态，水平扩展）</text>
+  <rect x="290" y="425" width="180" height="55" rx="6" fill="#fff" stroke="#f39c12"/>
+  <text x="380" y="448" text-anchor="middle" font-size="12" fill="#1a1a2e">Agent Worker 1</text>
+  <text x="380" y="466" text-anchor="middle" font-size="11" fill="#555">DAG 执行 / 工具调用</text>
+  <rect x="500" y="425" width="180" height="55" rx="6" fill="#fff" stroke="#f39c12"/>
+  <text x="590" y="448" text-anchor="middle" font-size="12" fill="#1a1a2e">Agent Worker 2</text>
+  <text x="590" y="466" text-anchor="middle" font-size="11" fill="#555">LLM 推理调度</text>
+  <rect x="710" y="425" width="220" height="55" rx="6" fill="#fff" stroke="#f39c12"/>
+  <text x="820" y="448" text-anchor="middle" font-size="12" fill="#1a1a2e">Agent Worker N</text>
+  <text x="820" y="466" text-anchor="middle" font-size="11" fill="#555">按任务队列弹性伸缩</text>
+
+  <line x1="360" y1="340" x2="380" y2="425" stroke="#555" stroke-width="1.5" marker-end="url(#ch)"/>
+  <line x1="610" y1="340" x2="590" y2="425" stroke="#555" stroke-width="1.5" marker-end="url(#ch)"/>
+  <line x1="860" y1="340" x2="820" y2="425" stroke="#555" stroke-width="1.5" marker-end="url(#ch)"/>
+
+  <text x="610" y="525" text-anchor="middle" font-size="12" fill="#27ae60">连接节点有状态（维护连接），Agent Worker 无状态（可随时扩缩容）</text>
+</svg>
