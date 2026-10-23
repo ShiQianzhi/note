@@ -66,11 +66,7 @@
   <text x="917" y="633" text-anchor="middle" font-size="13" font-weight="bold" fill="#6c3483">PostgreSQL / ES</text>
   <text x="917" y="650" text-anchor="middle" font-size="11" fill="#555">持久化/检索/审计</text>
   <rect x="70" y="672" width="960" height="44" rx="6" fill="#ffffff" stroke="#8e44ad"/>
-<<<<<<< HEAD
-  <text x="550" y="699" text-anchor="middle" font-size="13" fill="#1a1a2e">向量数据库（Milvus/Qdrant）→ 语义记忆检索 | 可观测性（Prometheus + Grafana + OTel 链路追踪）</text>
-=======
-  <text x="550" y="699" text-anchor="middle" font-size="13" fill="#1a1a2e">向量数据库（Milvus/Qdrant）→ 语义记忆检索 &nbsp;|&nbsp; 可观测性（Prometheus + Grafana + OTel 链路追踪）</text>
->>>>>>> 0da15c00b013a8bab8d532300a627832c0fa305a
+  <text x="550" y="699" text-anchor="middle" font-size="13" fill="#1a1a2e">向量数据库（Milvus/Qdrant）→ 语义记忆检索 &#160;|&#160; 可观测性（Prometheus + Grafana + OTel 链路追踪）</text>
 
   <!-- Flow arrows -->
   <defs>

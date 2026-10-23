@@ -71,20 +71,12 @@
   <rect x="580" y="280" width="220" height="70" rx="8" fill="#e8f4fd" stroke="#2980b9"/>
   <text x="690" y="305" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a5276">Redis 跨区同步</text>
   <text x="690" y="325" text-anchor="middle" font-size="11" fill="#555">异步复制 + 冲突解决</text>
-<<<<<<< HEAD
   <text x="690" y="343" text-anchor="middle" font-size="11" fill="#555">RPO &lt; 1s</text>
-=======
-  <text x="690" y="343" text-anchor="middle" font-size="11" fill="#555">RPO < 1s</text>
->>>>>>> 0da15c00b013a8bab8d532300a627832c0fa305a
 
   <rect x="820" y="280" width="220" height="70" rx="8" fill="#e8f4fd" stroke="#2980b9"/>
   <text x="930" y="305" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a5276">PG 流复制 / ES 跨区</text>
   <text x="930" y="325" text-anchor="middle" font-size="11" fill="#555">同步/异步流复制</text>
-<<<<<<< HEAD
   <text x="930" y="343" text-anchor="middle" font-size="11" fill="#555">RPO &lt; 1s，RTO &lt; 30s</text>
-=======
-  <text x="930" y="343" text-anchor="middle" font-size="11" fill="#555">RPO < 1s，RTO < 30s</text>
->>>>>>> 0da15c00b013a8bab8d532300a627832c0fa305a
 
   <rect x="580" y="375" width="460" height="55" rx="8" fill="#fef5e7" stroke="#e67e22"/>
   <text x="810" y="398" text-anchor="middle" font-size="12" font-weight="bold" fill="#9a7d0a">全局负载均衡（GSLB / DNS 智能调度）</text>
