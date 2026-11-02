@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480">
+  <defs>
+    <marker id="a3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title{font:700 26px Arial,sans-serif;fill:#0f172a}
+      .h{font:700 18px Arial,sans-serif;fill:#1e293b}
+      .t{font:14px Arial,sans-serif;fill:#334155}
+      .small{font:12px Arial,sans-serif;fill:#64748b}
+      .lbl{font:700 14px Arial,sans-serif;fill:#0f172a}
+    </style>
+  </defs>
+  <rect width="1200" height="480" fill="#ffffff"/>
+  <text x="600" y="42" class="title" text-anchor="middle">协程（Coroutine）的状态生命周期</text>
+
+  <!-- 状态节点 -->
+  <rect x="80" y="180" width="160" height="100" rx="12" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2.5"/>
+  <text x="160" y="220" class="h" text-anchor="middle">创建（Created）</text>
+  <text x="160" y="248" class="small" text-anchor="middle">async def 定义的函数</text>
+  <text x="160" y="268" class="small" text-anchor="middle">调用后返回 coroutine 对象</text>
+
+  <rect x="340" y="80" width="160" height="100" rx="12" fill="#bbf7d0" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="420" y="120" class="h" text-anchor="middle">运行中（Running）</text>
+  <text x="420" y="148" class="small" text-anchor="middle">事件循环正在执行</text>
+  <text x="420" y="168" class="small" text-anchor="middle">协程代码向前推进</text>
+
+  <rect x="600" y="180" width="160" height="100" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+  <text x="680" y="220" class="h" text-anchor="middle">挂起（Suspended）</text>
+  <text x="680" y="248" class="small" text-anchor="middle">遇到 await 让出控制权</text>
+  <text x="680" y="268" class="small" text-anchor="middle">保存现场，等待事件</text>
+
+  <rect x="860" y="80" width="160" height="100" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="940" y="120" class="h" text-anchor="middle">已完成（Done）</text>
+  <text x="940" y="148" class="small" text-anchor="middle">return 或自然结束</text>
+  <text x="940" y="168" class="small" text-anchor="middle">结果写入 Future</text>
+
+  <rect x="860" y="280" width="160" height="100" rx="12" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="940" y="320" class="h" text-anchor="middle">异常（Error）</text>
+  <text x="940" y="348" class="small" text-anchor="middle">抛出未捕获异常</text>
+  <text x="940" y="368" class="small" text-anchor="middle">异常写入 Future</text>
+
+  <!-- 转换箭头 -->
+  <path d="M240 230 C280 180, 300 130, 340 130" stroke="#4f46e5" stroke-width="2.5" fill="none" marker-end="url(#a3)"/>
+  <text x="280" y="130" class="small" text-anchor="middle">事件循环调度</text>
+
+  <path d="M500 130 C540 180, 560 200, 600 230" stroke="#16a34a" stroke-width="2.5" fill="none" marker-end="url(#a3)"/>
+  <text x="560" y="160" class="small" text-anchor="middle">await I/O / sleep</text>
+
+  <path d="M600 230 C560 200, 540 180, 500 130" stroke="#d97706" stroke-width="2.5" fill="none" marker-end="url(#a3)"/>
+  <text x="520" y="210" class="small" text-anchor="middle">事件就绪，恢复</text>
+
+  <path d="M760 200 C800 150, 820 130, 860 130" stroke="#16a34a" stroke-width="2.5" fill="none" marker-end="url(#a3)"/>
+  <text x="810" y="140" class="small" text-anchor="middle">执行完毕</text>
+
+  <path d="M760 260 C800 300, 820 320, 860 320" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#a3)"/>
+  <text x="810" y="320" class="small" text-anchor="middle">抛出异常</text>
+
+  <!-- 底部说明 -->
+  <rect x="80" y="340" width="700" height="110" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="100" y="370" class="lbl">要点说明</text>
+  <text x="100" y="398" class="t">• 协程本身只是一个可暂停的函数对象，不调用 await 就不会真正执行。</text>
+  <text x="100" y="422" class="t">• 状态切换由事件循环驱动，开发者只需用 async/await 描述"哪里可以让出"。</text>
+  <text x="100" y="446" class="t">• 挂起时会保存执行现场（栈、局部变量），恢复时从上次暂停点继续。</text>
+</svg>

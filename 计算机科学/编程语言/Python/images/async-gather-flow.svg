@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500">
+  <defs>
+    <marker id="a4" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title{font:700 26px Arial,sans-serif;fill:#0f172a}
+      .h{font:700 18px Arial,sans-serif;fill:#1e293b}
+      .t{font:14px Arial,sans-serif;fill:#334155}
+      .small{font:12px Arial,sans-serif;fill:#64748b}
+      .lbl{font:700 14px Arial,sans-serif;fill:#0f172a}
+    </style>
+  </defs>
+  <rect width="1200" height="500" fill="#ffffff"/>
+  <text x="600" y="42" class="title" text-anchor="middle">asyncio.gather 并发执行与结果聚合</text>
+
+  <!-- 调用方 -->
+  <rect x="440" y="70" width="320" height="60" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="600" y="100" class="lbl" text-anchor="middle">调用方 await gather(coro1, coro2, coro3)</text>
+  <text x="600" y="120" class="small" text-anchor="middle">调用方协程被挂起</text>
+
+  <!-- 箭头向下 -->
+  <path d="M600 130 V160" stroke="#2563eb" stroke-width="2.5" marker-end="url(#a4)"/>
+
+  <!-- gather 调度器 -->
+  <rect x="420" y="165" width="360" height="55" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="600" y="195" class="lbl" text-anchor="middle">gather 内部聚合器（_GatheringFuture）</text>
+  <text x="600" y="213" class="small" text-anchor="middle">为每个协程创建 Task 并注册回调</text>
+
+  <!-- 三个任务分支 -->
+  <path d="M500 220 C420 240, 360 260, 320 280" stroke="#16a34a" stroke-width="2" fill="none" marker-end="url(#a4)"/>
+  <path d="M600 220 V280" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a4)"/>
+  <path d="M700 220 C780 240, 840 260, 880 280" stroke="#db2777" stroke-width="2" fill="none" marker-end="url(#a4)"/>
+
+  <!-- 任务1 -->
+  <rect x="140" y="285" width="180" height="120" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="230" y="315" class="lbl" text-anchor="middle">Task 1</text>
+  <rect x="160" y="330" width="60" height="30" rx="4" fill="#bbf7d0" stroke="#16a34a"/>
+  <text x="190" y="350" class="small" text-anchor="middle">run</text>
+  <rect x="230" y="330" width="60" height="30" rx="4" fill="#fef3c7" stroke="#d97706" stroke-dasharray="4 3"/>
+  <text x="260" y="350" class="small" text-anchor="middle">await</text>
+  <rect x="160" y="368" width="130" height="30" rx="4" fill="#bbf7d0" stroke="#16a34a"/>
+  <text x="225" y="388" class="small" text-anchor="middle">完成 → 结果1</text>
+
+  <!-- 任务2 -->
+  <rect x="510" y="285" width="180" height="120" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="600" y="315" class="lbl" text-anchor="middle">Task 2</text>
+  <rect x="530" y="330" width="60" height="30" rx="4" fill="#bfdbfe" stroke="#2563eb"/>
+  <text x="560" y="350" class="small" text-anchor="middle">run</text>
+  <rect x="600" y="330" width="60" height="30" rx="4" fill="#fef3c7" stroke="#d97706" stroke-dasharray="4 3"/>
+  <text x="630" y="350" class="small" text-anchor="middle">await</text>
+  <rect x="530" y="368" width="130" height="30" rx="4" fill="#bfdbfe" stroke="#2563eb"/>
+  <text x="595" y="388" class="small" text-anchor="middle">完成 → 结果2</text>
+
+  <!-- 任务3 -->
+  <rect x="880" y="285" width="180" height="120" rx="10" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+  <text x="970" y="315" class="lbl" text-anchor="middle">Task 3</text>
+  <rect x="900" y="330" width="60" height="30" rx="4" fill="#fbcfe8" stroke="#db2777"/>
+  <text x="930" y="350" class="small" text-anchor="middle">run</text>
+  <rect x="970" y="330" width="60" height="30" rx="4" fill="#fef3c7" stroke="#d97706" stroke-dasharray="4 3"/>
+  <text x="1000" y="350" class="small" text-anchor="middle">await</text>
+  <rect x="900" y="368" width="130" height="30" rx="4" fill="#fbcfe8" stroke="#db2777"/>
+  <text x="965" y="388" class="small" text-anchor="middle">完成 → 结果3</text>
+
+  <!-- 聚合 -->
+  <path d="M230 405 C230 440, 600 440, 600 440" stroke="#94a3b8" stroke-width="2" fill="none"/>
+  <path d="M600 405 V440" stroke="#94a3b8" stroke-width="2" fill="none"/>
+  <path d="M970 405 C970 440, 600 440, 600 440" stroke="#94a3b8" stroke-width="2" fill="none"/>
+
+  <rect x="440" y="440" width="320" height="45" rx="10" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+  <text x="600" y="468" class="lbl" text-anchor="middle">返回 [结果1, 结果2, 结果3]</text>
+
+  <text x="60" y="468" class="small">特点：按入参顺序返回结果；任一任务抛异常会立即中断（return_exceptions=True 可改为收集异常）。</text>
+</svg>

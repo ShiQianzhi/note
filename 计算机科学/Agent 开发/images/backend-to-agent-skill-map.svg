@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <marker id="arrowMap" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#4f46e5"/>
+    </marker>
+    <filter id="shadowMap" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="#ffffff"/>
+
+  <text x="600" y="54" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700" fill="#0f172a">后端能力到 Agent 能力的迁移地图</text>
+  <text x="600" y="88" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" fill="#475569">你不是从零开始：右侧每一项新能力，都能在左侧找到已经练过多年的工程肌肉</text>
+
+  <!-- 列标题 -->
+  <rect x="60" y="118" width="470" height="52" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="295" y="151" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="19" font-weight="700" fill="#0f172a">你已经掌握的后端能力</text>
+
+  <rect x="670" y="118" width="470" height="52" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="905" y="151" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="19" font-weight="700" fill="#312e81">Agent 开发中的对应能力</text>
+
+  <!-- 行 1 -->
+  <rect x="60" y="194" width="470" height="68" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadowMap)"/>
+  <text x="84" y="224" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#0f172a">HTTP / RPC 客户端治理</text>
+  <text x="84" y="248" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#475569">超时、重试、熔断、备用机房</text>
+  <line x1="544" y1="228" x2="656" y2="228" stroke="#4f46e5" stroke-width="2.5" marker-end="url(#arrowMap)"/>
+  <rect x="670" y="194" width="470" height="68" rx="10" fill="#ffffff" stroke="#818cf8" stroke-width="1.5" filter="url(#shadowMap)"/>
+  <text x="694" y="224" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#312e81">LLM 调用治理</text>
+  <text x="694" y="248" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#475569">Timeout、Retry、备用模型 Fallback</text>
+
+  <!-- 行 2 -->
+  <rect x="60" y="278" width="470" height="68" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadowMap)"/>
+  <text x="84" y="308" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#0f172a">函数、接口与 OpenAPI 契约</text>
+  <text x="84" y="332" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#475569">入参出参、文档即契约</text>
+  <line x1="544" y1="312" x2="656" y2="312" stroke="#4f46e5" stroke-width="2.5" marker-end="url(#arrowMap)"/>
+  <rect x="670" y="278" width="470" height="68" rx="10" fill="#ffffff" stroke="#818cf8" stroke-width="1.5" filter="url(#shadowMap)"/>
+  <text x="694" y="308" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#312e81">Tool 工具定义</text>
+  <text x="694" y="332" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#475569">名称、描述与 JSON Schema 参数契约</text>
+
+  <!-- 行 3 -->
+  <rect x="60" y="362" width="470" height="68" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadowMap)"/>
+  <text x="84" y="392" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#0f172a">Redis 缓存 + 数据库存储</text>
+  <text x="84" y="416" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#475569">热数据与会话态、冷数据持久化</text>
+  <line x1="544" y1="396" x2="656" y2="396" stroke="#4f46e5" stroke-width="2.5" marker-end="url(#arrowMap)"/>
+  <rect x="670" y="362" width="470" height="68" rx="10" fill="#ffffff" stroke="#818cf8" stroke-width="1.5" filter="url(#shadowMap)"/>
+  <text x="694" y="392" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#312e81">短期记忆 + 长期向量记忆</text>
+  <text x="694" y="416" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#475569">消息历史 / 摘要 / 向量库按需检索</text>
+
+  <!-- 行 4 -->
+  <rect x="60" y="446" width="470" height="68" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadowMap)"/>
+  <text x="84" y="476" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#0f172a">状态机 / 工作流引擎（DAG）</text>
+  <text x="84" y="500" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#475569">节点、转移条件、断点恢复</text>
+  <line x1="544" y1="480" x2="656" y2="480" stroke="#4f46e5" stroke-width="2.5" marker-end="url(#arrowMap)"/>
+  <rect x="670" y="446" width="470" height="68" rx="10" fill="#ffffff" stroke="#818cf8" stroke-width="1.5" filter="url(#shadowMap)"/>
+  <text x="694" y="476" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#312e81">Agent Loop 与多 Agent 编排</text>
+  <text x="694" y="500" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#475569">感知、决策、行动的循环与分工</text>
+
+  <!-- 行 5 -->
+  <rect x="60" y="530" width="470" height="68" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadowMap)"/>
+  <text x="84" y="560" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#0f172a">日志、指标、分布式链路追踪</text>
+  <text x="84" y="584" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#475569">排障靠 Trace，不靠猜</text>
+  <line x1="544" y1="564" x2="656" y2="564" stroke="#4f46e5" stroke-width="2.5" marker-end="url(#arrowMap)"/>
+  <rect x="670" y="530" width="470" height="68" rx="10" fill="#ffffff" stroke="#818cf8" stroke-width="1.5" filter="url(#shadowMap)"/>
+  <text x="694" y="560" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#312e81">LLM Trace 与 Token 成本看板</text>
+  <text x="694" y="584" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#475569">每一步输入输出、耗时、花费可复盘</text>
+
+  <!-- 行 6 -->
+  <rect x="60" y="614" width="470" height="68" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadowMap)"/>
+  <text x="84" y="644" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#0f172a">参数校验、鉴权、审计</text>
+  <text x="84" y="668" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#475569">Validator、最小权限、操作留痕</text>
+  <line x1="544" y1="648" x2="656" y2="648" stroke="#4f46e5" stroke-width="2.5" marker-end="url(#arrowMap)"/>
+  <rect x="670" y="614" width="470" height="68" rx="10" fill="#ffffff" stroke="#818cf8" stroke-width="1.5" filter="url(#shadowMap)"/>
+  <text x="694" y="644" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#312e81">输出校验、注入防御、工具权限</text>
+  <text x="694" y="668" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#475569">JSON Schema、Prompt 注入检测、审批</text>
+
+  <!-- 行 7 -->
+  <rect x="60" y="698" width="470" height="68" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadowMap)"/>
+  <text x="84" y="728" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#0f172a">单元测试、灰度发布、回滚</text>
+  <text x="84" y="752" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#475569">用测试集守护确定性回归</text>
+  <line x1="544" y1="732" x2="656" y2="732" stroke="#4f46e5" stroke-width="2.5" marker-end="url(#arrowMap)"/>
+  <rect x="670" y="698" width="470" height="68" rx="10" fill="#ffffff" stroke="#818cf8" stroke-width="1.5" filter="url(#shadowMap)"/>
+  <text x="694" y="728" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#312e81">Eval 评测集、Prompt 版本化、A/B</text>
+  <text x="694" y="752" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#475569">没有评测的 Prompt 改动等于裸奔上线</text>
+
+  <!-- 底部共同底座 -->
+  <rect x="60" y="798" width="1080" height="66" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="600" y="826" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="18" font-weight="700" fill="#065f46">共同的底层能力：把不可靠组件组合成可靠系统</text>
+  <text x="600" y="850" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="14.5" fill="#047857">边界划分、契约设计、故障兜底、容量与成本意识、可观测性 —— 这些在 Agent 时代不仅没过时，反而更值钱</text>
+</svg>

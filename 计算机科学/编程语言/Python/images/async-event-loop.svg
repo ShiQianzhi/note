@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <defs>
+    <marker id="arr2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <marker id="arr3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#16a34a"/>
+    </marker>
+    <style>
+      .title{font:700 26px Arial,sans-serif;fill:#0f172a}
+      .h{font:700 18px Arial,sans-serif;fill:#1e293b}
+      .t{font:14px Arial,sans-serif;fill:#334155}
+      .small{font:12px Arial,sans-serif;fill:#64748b}
+      .lbl{font:700 13px Arial,sans-serif;fill:#0f172a}
+      .num{font:700 14px Arial,sans-serif;fill:#ffffff}
+    </style>
+  </defs>
+  <rect width="1200" height="620" fill="#ffffff"/>
+  <text x="600" y="42" class="title" text-anchor="middle">asyncio 事件循环调度模型</text>
+
+  <!-- 事件循环主体 -->
+  <rect x="280" y="80" width="640" height="460" rx="20" fill="#f8fafc" stroke="#475569" stroke-width="2.5"/>
+  <text x="600" y="115" class="h" text-anchor="middle">事件循环（Event Loop）</text>
+
+  <!-- 就绪队列 -->
+  <rect x="340" y="150" width="220" height="120" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="450" y="180" class="lbl" text-anchor="middle">就绪队列（Ready Queue）</text>
+  <text x="450" y="205" class="t" text-anchor="middle">等待运行的协程</text>
+  <rect x="360" y="220" width="50" height="35" rx="4" fill="#bbf7d0" stroke="#16a34a"/>
+  <text x="385" y="243" class="lbl" text-anchor="middle">T1</text>
+  <rect x="420" y="220" width="50" height="35" rx="4" fill="#bfdbfe" stroke="#2563eb"/>
+  <text x="445" y="243" class="lbl" text-anchor="middle">T2</text>
+  <rect x="480" y="220" width="50" height="35" rx="4" fill="#fbcfe8" stroke="#db2777"/>
+  <text x="505" y="243" class="lbl" text-anchor="middle">T3</text>
+
+  <!-- 选择执行 -->
+  <text x="450" y="305" class="lbl" text-anchor="middle">取出队首协程执行</text>
+  <path d="M450 270 V295" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arr2)"/>
+
+  <!-- 当前协程 -->
+  <rect x="360" y="310" width="180" height="80" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+  <text x="450" y="345" class="lbl" text-anchor="middle">当前运行的协程</text>
+  <text x="450" y="370" class="t" text-anchor="middle">执行至 await 暂停</text>
+
+  <!-- 等待区 -->
+  <rect x="640" y="150" width="220" height="180" rx="10" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+  <text x="750" y="180" class="lbl" text-anchor="middle">等待区（Waiters）</text>
+  <text x="750" y="205" class="t" text-anchor="middle">I/O / 定时器 / 信号</text>
+  <rect x="660" y="220" width="60" height="40" rx="4" fill="#c7d2fe" stroke="#4f46e5"/>
+  <text x="690" y="245" class="lbl" text-anchor="middle">I/O</text>
+  <rect x="730" y="220" width="60" height="40" rx="4" fill="#c7d2fe" stroke="#4f46e5"/>
+  <text x="760" y="245" class="lbl" text-anchor="middle">sleep</text>
+  <rect x="800" y="220" width="45" height="40" rx="4" fill="#c7d2fe" stroke="#4f46e5"/>
+  <text x="822" y="245" class="lbl" text-anchor="middle">信号</text>
+  <text x="750" y="285" class="small" text-anchor="middle">由底层 select/poll/epoll 监听</text>
+  <text x="750" y="305" class="small" text-anchor="middle">事件到达时重新进入就绪队列</text>
+
+  <!-- 箭头：运行协程 -> 等待区 -->
+  <path d="M540 350 H630" stroke="#d97706" stroke-width="2.5" marker-end="url(#arr2)"/>
+  <text x="585" y="335" class="small" text-anchor="middle">await 让出</text>
+
+  <!-- 箭头：等待区 -> 就绪队列 -->
+  <path d="M640 200 C580 200, 560 160, 560 160" stroke="#16a34a" stroke-width="2.5" fill="none" marker-end="url(#arr3)"/>
+  <text x="560" y="135" class="small" fill="#16a34a" text-anchor="middle">事件就绪，重新入队</text>
+
+  <!-- 回调/完成 -->
+  <rect x="360" y="420" width="500" height="90" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="610" y="450" class="lbl" text-anchor="middle">协程完成 / 异常</text>
+  <text x="610" y="475" class="t" text-anchor="middle">将结果写入对应的 Future / Task，唤醒等待者</text>
+  <text x="610" y="495" class="small" text-anchor="middle">所有任务结束后事件循环退出</text>
+
+  <!-- 步骤标注 -->
+  <g transform="translate(60,120)">
+    <circle cx="20" cy="20" r="18" fill="#2563eb"/>
+    <text x="20" y="25" class="num" text-anchor="middle">1</text>
+    <text x="50" y="25" class="lbl">创建协程并封装为 Task</text>
+  </g>
+  <g transform="translate(60,170)">
+    <circle cx="20" cy="20" r="18" fill="#2563eb"/>
+    <text x="20" y="25" class="num" text-anchor="middle">2</text>
+    <text x="50" y="25" class="lbl">加入就绪队列</text>
+  </g>
+  <g transform="translate(60,220)">
+    <circle cx="20" cy="20" r="18" fill="#2563eb"/>
+    <text x="20" y="25" class="num" text-anchor="middle">3</text>
+    <text x="50" y="25" class="lbl">事件循环取出并运行</text>
+  </g>
+  <g transform="translate(60,270)">
+    <circle cx="20" cy="20" r="18" fill="#2563eb"/>
+    <text x="20" y="25" class="num" text-anchor="middle">4</text>
+    <text x="50" y="25" class="lbl">await 时挂起到等待区</text>
+  </g>
+  <g transform="translate(60,320)">
+    <circle cx="20" cy="20" r="18" fill="#2563eb"/>
+    <text x="20" y="25" class="num" text-anchor="middle">5</text>
+    <text x="50" y="25" class="lbl">事件就绪后回到就绪队列</text>
+  </g>
+  <g transform="translate(60,370)">
+    <circle cx="20" cy="20" r="18" fill="#2563eb"/>
+    <text x="20" y="25" class="num" text-anchor="middle">6</text>
+    <text x="50" y="25" class="lbl">全部完成则结束循环</text>
+  </g>
+
+  <!-- 外部说明 -->
+  <rect x="900" y="120" width="260" height="380" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="1030" y="155" class="lbl" text-anchor="middle">关键特性</text>
+  <text x="920" y="190" class="t">• 单线程协作式调度</text>
+  <text x="920" y="220" class="t">• 无抢占，由 await 主动让出</text>
+  <text x="920" y="250" class="t">• 天然无锁竞争（同线程）</text>
+  <text x="920" y="280" class="t">• 适合 I/O 密集型任务</text>
+  <text x="920" y="310" class="t">• CPU 密集型会阻塞事件循环</text>
+  <text x="920" y="340" class="t">• 底层使用 select/epoll/kqueue</text>
+  <text x="920" y="370" class="t">• 任务之间切换开销极低</text>
+  <text x="920" y="400" class="t">• 通过 Task 封装协程</text>
+  <text x="920" y="430" class="t">• Future 表示异步结果</text>
+  <text x="920" y="470" class="small">核心：把"等待"变成"注册回调"</text>
+</svg>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title{font:700 26px Arial,sans-serif;fill:#0f172a}
+      .h{font:700 18px Arial,sans-serif;fill:#1e293b}
+      .t{font:14px Arial,sans-serif;fill:#334155}
+      .small{font:12px Arial,sans-serif;fill:#64748b}
+      .lbl{font:700 13px Arial,sans-serif;fill:#0f172a}
+    </style>
+  </defs>
+  <rect width="1200" height="520" fill="#ffffff"/>
+  <text x="600" y="42" class="title" text-anchor="middle">同步 I/O 与异步 I/O 的执行时间线对比</text>
+
+  <!-- 同步模型 -->
+  <text x="80" y="90" class="h">同步（阻塞）模型</text>
+  <rect x="80" y="110" width="1040" height="140" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="100" y="140" class="lbl">线程 A</text>
+  <line x1="170" y1="135" x2="1090" y2="135" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 请求1 -->
+  <rect x="180" y="150" width="120" height="40" rx="4" fill="#fecaca" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="240" y="175" class="lbl" text-anchor="middle">请求1 CPU</text>
+  <!-- 等待1 -->
+  <rect x="300" y="150" width="200" height="40" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="400" y="175" class="lbl" text-anchor="middle">等待 I/O（阻塞）</text>
+  <!-- 请求2 -->
+  <rect x="500" y="150" width="120" height="40" rx="4" fill="#fecaca" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="560" y="175" class="lbl" text-anchor="middle">请求2 CPU</text>
+  <!-- 等待2 -->
+  <rect x="620" y="150" width="200" height="40" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="720" y="175" class="lbl" text-anchor="middle">等待 I/O（阻塞）</text>
+  <!-- 请求3 -->
+  <rect x="820" y="150" width="120" height="40" rx="4" fill="#fecaca" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="880" y="175" class="lbl" text-anchor="middle">请求3 CPU</text>
+  <!-- 等待3 -->
+  <rect x="940" y="150" width="120" height="40" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="1000" y="175" class="lbl" text-anchor="middle">等待</text>
+
+  <text x="100" y="225" class="small">关键问题：I/O 等待期间线程被挂起，CPU 处于空转，无法处理其他请求。</text>
+
+  <!-- 异步模型 -->
+  <text x="80" y="280" class="h">异步（非阻塞）模型</text>
+  <rect x="80" y="300" width="1040" height="170" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="100" y="330" class="lbl">事件循环线程</text>
+  <line x1="210" y1="325" x2="1090" y2="325" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 任务1 -->
+  <rect x="180" y="345" width="80" height="40" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="220" y="370" class="lbl" text-anchor="middle">任务1</text>
+  <!-- 任务2 -->
+  <rect x="260" y="345" width="80" height="40" rx="4" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="300" y="370" class="lbl" text-anchor="middle">任务2</text>
+  <!-- 任务3 -->
+  <rect x="340" y="345" width="80" height="40" rx="4" fill="#fbcfe8" stroke="#db2777" stroke-width="1.5"/>
+  <text x="380" y="370" class="lbl" text-anchor="middle">任务3</text>
+
+  <!-- 任务1 等待 -->
+  <rect x="420" y="345" width="60" height="40" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="450" y="370" class="small" text-anchor="middle">等1</text>
+  <!-- 任务2 等待 -->
+  <rect x="480" y="345" width="60" height="40" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="510" y="370" class="small" text-anchor="middle">等2</text>
+  <!-- 任务3 等待 -->
+  <rect x="540" y="345" width="60" height="40" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="570" y="370" class="small" text-anchor="middle">等3</text>
+
+  <!-- 恢复执行 -->
+  <rect x="600" y="345" width="80" height="40" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="640" y="370" class="lbl" text-anchor="middle">任务1</text>
+  <rect x="680" y="345" width="80" height="40" rx="4" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="720" y="370" class="lbl" text-anchor="middle">任务2</text>
+  <rect x="760" y="345" width="80" height="40" rx="4" fill="#fbcfe8" stroke="#db2777" stroke-width="1.5"/>
+  <text x="800" y="370" class="lbl" text-anchor="middle">任务3</text>
+  <rect x="840" y="345" width="220" height="40" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="950" y="370" class="lbl" text-anchor="middle">后续处理 / 全部完成</text>
+
+  <text x="100" y="430" class="small">关键优势：I/O 等待时立即让出控制权，事件循环去调度其他任务，CPU 始终保持忙碌。</text>
+
+  <!-- 时间轴 -->
+  <text x="95" y="480" class="small">时间 →</text>
+  <line x1="170" y1="475" x2="1090" y2="475" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- 图例 -->
+  <g transform="translate(80,495)">
+    <rect x="0" y="-12" width="14" height="14" fill="#fecaca" stroke="#dc2626" stroke-width="1"/>
+    <text x="20" y="0" class="small">CPU 计算</text>
+    <rect x="100" y="-12" width="14" height="14" fill="#fef3c7" stroke="#d97706" stroke-width="1" stroke-dasharray="4 3"/>
+    <text x="120" y="0" class="small">I/O 等待（阻塞/挂起）</text>
+    <rect x="280" y="-12" width="14" height="14" fill="#bbf7d0" stroke="#16a34a" stroke-width="1"/>
+    <text x="300" y="0" class="small">协程运行（非阻塞）</text>
+  </g>
+</svg>

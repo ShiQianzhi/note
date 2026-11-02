@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <defs>
+    <marker id="arG6" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
+      <path d="M0,0 L11,5.5 L0,11 Z" fill="#0f172a"/>
+    </marker>
+    <marker id="arG6d" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#dc2626"/>
+    </marker>
+    <filter id="shG6" x="-8%" y="-12%" width="116%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.09"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <text x="600" y="48" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="28" font-weight="700" fill="#0f172a">生产级 Agent 的六道护栏</text>
+  <text x="600" y="80" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="15" fill="#475569">模型可以概率性出错，系统必须确定性兜底——这些护栏全是你做后端安全与稳定性时的老手艺</text>
+
+  <!-- 顶部三张护栏卡 -->
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" filter="url(#shG6)">
+    <rect x="40" y="116" width="340" height="150" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+    <text x="62" y="150" font-size="17" font-weight="700" fill="#991b1b">① 输入护栏</text>
+    <text x="62" y="180" font-size="13.5" fill="#7f1d1d">• 身份鉴权与租户隔离</text>
+    <text x="62" y="204" font-size="13.5" fill="#7f1d1d">• Prompt 注入特征检测</text>
+    <text x="62" y="228" font-size="13.5" fill="#7f1d1d">• 长度、频次、敏感词限制</text>
+    <text x="62" y="252" font-size="13.5" fill="#7f1d1d">类比：API 网关的入站 WAF</text>
+
+    <rect x="430" y="116" width="340" height="150" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+    <text x="452" y="150" font-size="17" font-weight="700" fill="#9a3412">② 循环护栏</text>
+    <text x="452" y="180" font-size="13.5" fill="#7c2d12">• 最大工具调用轮数（硬上限）</text>
+    <text x="452" y="204" font-size="13.5" fill="#7c2d12">• 重复调用指纹检测，防死循环</text>
+    <text x="452" y="228" font-size="13.5" fill="#7c2d12">• 总超时预算与取消信号传播</text>
+    <text x="452" y="252" font-size="13.5" fill="#7c2d12">类比：带 TTL 的状态机实例</text>
+
+    <rect x="820" y="116" width="340" height="150" rx="12" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+    <text x="842" y="150" font-size="17" font-weight="700" fill="#854d0e">③ 成本护栏</text>
+    <text x="842" y="180" font-size="13.5" fill="#713f12">• 按租户 / 用户设 Token 预算</text>
+    <text x="842" y="204" font-size="13.5" fill="#713f12">• 限流、配额熔断、语义缓存</text>
+    <text x="842" y="228" font-size="13.5" fill="#713f12">• 模型分级路由：小模型优先</text>
+    <text x="842" y="252" font-size="13.5" fill="#713f12">类比：下游调用计费与配额中心</text>
+  </g>
+
+  <!-- 中间主链路 -->
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <rect x="70" y="356" width="130" height="56" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="1.8"/>
+    <text x="135" y="390" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0f172a">用户输入</text>
+
+    <line x1="204" y1="384" x2="284" y2="384" stroke="#0f172a" stroke-width="2.2" marker-end="url(#arG6)"/>
+
+    <rect x="290" y="356" width="130" height="56" rx="10" fill="#0f172a"/>
+    <text x="355" y="390" text-anchor="middle" font-size="14.5" font-weight="700" fill="#ffffff">Agent 编排</text>
+
+    <line x1="424" y1="384" x2="504" y2="384" stroke="#0f172a" stroke-width="2.2" marker-end="url(#arG6)"/>
+
+    <rect x="510" y="356" width="130" height="56" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+    <text x="575" y="390" text-anchor="middle" font-size="14.5" font-weight="700" fill="#92400e">工具执行</text>
+
+    <line x1="644" y1="384" x2="724" y2="384" stroke="#0f172a" stroke-width="2.2" marker-end="url(#arG6)"/>
+
+    <rect x="730" y="356" width="130" height="56" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/>
+    <text x="795" y="390" text-anchor="middle" font-size="14.5" font-weight="700" fill="#5b21b6">模型输出</text>
+
+    <line x1="864" y1="384" x2="944" y2="384" stroke="#0f172a" stroke-width="2.2" marker-end="url(#arG6)"/>
+
+    <rect x="950" y="356" width="150" height="56" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="1.8"/>
+    <text x="1025" y="390" text-anchor="middle" font-size="14.5" font-weight="700" fill="#065f46">送达用户</text>
+  </g>
+
+  <!-- 连接虚线 -->
+  <g stroke="#dc2626" stroke-width="1.6" stroke-dasharray="6 5" fill="none">
+    <line x1="210" y1="266" x2="210" y2="350" marker-end="url(#arG6d)"/>
+    <line x1="600" y1="266" x2="575" y2="350" marker-end="url(#arG6d)"/>
+    <line x1="990" y1="266" x2="1025" y2="350" marker-end="url(#arG6d)"/>
+    <line x1="210" y1="418" x2="355" y2="470" marker-end="url(#arG6d)"/>
+    <line x1="600" y1="418" x2="600" y2="470" marker-end="url(#arG6d)"/>
+    <line x1="990" y1="418" x2="795" y2="470" marker-end="url(#arG6d)"/>
+  </g>
+
+  <!-- 底部三张护栏卡 -->
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" filter="url(#shG6)">
+    <rect x="40" y="476" width="340" height="150" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="62" y="510" font-size="17" font-weight="700" fill="#1e40af">④ 工具护栏</text>
+    <text x="62" y="540" font-size="13.5" fill="#1e3a8a">• 最小权限：只读工具与写工具分离</text>
+    <text x="62" y="564" font-size="13.5" fill="#1e3a8a">• 参数 Schema 校验 + 幂等键</text>
+    <text x="62" y="588" font-size="13.5" fill="#1e3a8a">• 写 / 删除操作二次确认</text>
+    <text x="62" y="612" font-size="13.5" fill="#1e3a8a">类比：对外 OpenAPI 的鉴权与审计</text>
+
+    <rect x="430" y="476" width="340" height="150" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+    <text x="452" y="510" font-size="17" font-weight="700" fill="#5b21b6">⑤ 输出护栏</text>
+    <text x="452" y="540" font-size="13.5" fill="#4c1d95">• 结构化输出 + JSON Schema 校验</text>
+    <text x="452" y="564" font-size="13.5" fill="#4c1d95">• 校验失败自动重试，超限降级</text>
+    <text x="452" y="588" font-size="13.5" fill="#4c1d95">• 敏感信息脱敏、引用来源强制</text>
+    <text x="452" y="612" font-size="13.5" fill="#4c1d95">类比：出站响应校验与 DTO 转换</text>
+
+    <rect x="820" y="476" width="340" height="150" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+    <text x="842" y="510" font-size="17" font-weight="700" fill="#166534">⑥ 人工兜底（HITL）</text>
+    <text x="842" y="540" font-size="13.5" fill="#14532d">• 高危动作转人工审批后再执行</text>
+    <text x="842" y="564" font-size="13.5" fill="#14532d">• 低置信度 / 多轮未完成转人工</text>
+    <text x="842" y="588" font-size="13.5" fill="#14532d">• 运行可中断、状态可快照恢复</text>
+    <text x="842" y="612" font-size="13.5" fill="#14532d">类比：工作流引擎的人工审批节点</text>
+  </g>
+
+  <!-- 底部横切：可观测 -->
+  <rect x="40" y="660" width="1120" height="64" rx="12" fill="#f8fafc" stroke="#0f172a" stroke-width="1.8"/>
+  <text x="600" y="688" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#0f172a">横切所有环节：LLM 可观测性</text>
+  <text x="600" y="712" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="13.5" fill="#334155">每次推理的完整输入输出、工具调用链、耗时、Token 数与费用全链路留痕 —— 这就是 Agent 世界的分布式链路追踪</text>
+</svg>

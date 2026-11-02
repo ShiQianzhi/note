@@ -19,6 +19,7 @@
 
 - [Python 装饰器（Decorator）总结](./Python%20装饰器（Decorator）总结.md)
 - [Python @staticmethod 的静态方法和普通函数的区别](./Python%20@staticmethod%20的静态方法和普通函数的区别.md)
+- [异步编程](./异步编程.md) - 从 asyncio 原理到 async/await 实战，含事件循环、并发原语、完整爬虫案例与面试问答
 
 ## 常用第三方库
 
