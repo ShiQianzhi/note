@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720" role="img" aria-labelledby="title desc">
+  <title id="title">互联网的组成与端到端路径</title>
+  <desc id="desc">数据从用户终端经过局域网、接入网络、骨干网络和数据中心，最终到达服务器。</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#075985"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#15803d"/>
+    </marker>
+    <style>
+      text { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; fill: #0f172a; }
+      .title { font-size: 32px; font-weight: 700; }
+      .heading { font-size: 23px; font-weight: 700; }
+      .label { font-size: 17px; }
+      .small { font-size: 15px; fill: #334155; }
+      .box-blue { fill: #e0f2fe; stroke: #0369a1; stroke-width: 3; }
+      .box-green { fill: #dcfce7; stroke: #15803d; stroke-width: 3; }
+      .box-amber { fill: #fef3c7; stroke: #b45309; stroke-width: 3; }
+      .box-red { fill: #fee2e2; stroke: #b91c1c; stroke-width: 3; }
+      .path { fill: none; stroke: #075985; stroke-width: 5; marker-end: url(#arrow-blue); }
+      .return { fill: none; stroke: #15803d; stroke-width: 4; stroke-dasharray: 10 8; marker-end: url(#arrow-green); }
+    </style>
+  </defs>
+  <rect width="1400" height="720" fill="#ffffff"/>
+  <text x="700" y="55" text-anchor="middle" class="title">互联网：由许多独立网络互联而成的“网络之网”</text>
+
+  <rect x="35" y="105" width="260" height="450" rx="12" class="box-blue"/>
+  <text x="165" y="145" text-anchor="middle" class="heading">用户与局域网</text>
+  <rect x="75" y="185" width="180" height="70" rx="8" fill="#ffffff" stroke="#0369a1" stroke-width="2"/>
+  <text x="165" y="215" text-anchor="middle" class="label">手机 / 电脑</text>
+  <text x="165" y="241" text-anchor="middle" class="small">应用产生数据</text>
+  <rect x="75" y="300" width="180" height="70" rx="8" fill="#ffffff" stroke="#0369a1" stroke-width="2"/>
+  <text x="165" y="330" text-anchor="middle" class="label">Wi-Fi AP / 交换机</text>
+  <text x="165" y="356" text-anchor="middle" class="small">局域网内转发</text>
+  <rect x="75" y="415" width="180" height="80" rx="8" fill="#ffffff" stroke="#0369a1" stroke-width="2"/>
+  <text x="165" y="447" text-anchor="middle" class="label">家庭路由器</text>
+  <text x="165" y="474" text-anchor="middle" class="small">网关 / NAT / 防火墙</text>
+
+  <rect x="350" y="105" width="245" height="450" rx="12" class="box-green"/>
+  <text x="472" y="145" text-anchor="middle" class="heading">接入网络</text>
+  <circle cx="472" cy="245" r="68" fill="#ffffff" stroke="#15803d" stroke-width="3"/>
+  <text x="472" y="237" text-anchor="middle" class="label">本地 ISP</text>
+  <text x="472" y="265" text-anchor="middle" class="small">提供互联网接入</text>
+  <rect x="390" y="370" width="165" height="85" rx="8" fill="#ffffff" stroke="#15803d" stroke-width="2"/>
+  <text x="472" y="404" text-anchor="middle" class="label">边缘路由器</text>
+  <text x="472" y="432" text-anchor="middle" class="small">汇聚用户流量</text>
+
+  <rect x="650" y="105" width="410" height="450" rx="12" class="box-amber"/>
+  <text x="855" y="145" text-anchor="middle" class="heading">全球互联网骨干</text>
+  <circle cx="735" cy="245" r="55" fill="#ffffff" stroke="#b45309" stroke-width="3"/>
+  <text x="735" y="239" text-anchor="middle" class="label">AS 64501</text>
+  <text x="735" y="265" text-anchor="middle" class="small">运营商 A</text>
+  <circle cx="965" cy="245" r="55" fill="#ffffff" stroke="#b45309" stroke-width="3"/>
+  <text x="965" y="239" text-anchor="middle" class="label">AS 64502</text>
+  <text x="965" y="265" text-anchor="middle" class="small">运营商 B</text>
+  <circle cx="850" cy="410" r="65" fill="#ffffff" stroke="#b45309" stroke-width="3"/>
+  <text x="850" y="402" text-anchor="middle" class="label">交换中心</text>
+  <text x="850" y="429" text-anchor="middle" class="small">IXP / 对等互联</text>
+  <path d="M785 245 H905 M762 292 L817 355 M938 292 L883 355" fill="none" stroke="#b45309" stroke-width="4"/>
+  <text x="855" y="515" text-anchor="middle" class="small">BGP 在自治系统之间交换网络可达性</text>
+
+  <rect x="1115" y="105" width="250" height="450" rx="12" class="box-red"/>
+  <text x="1240" y="145" text-anchor="middle" class="heading">内容与服务</text>
+  <rect x="1155" y="185" width="170" height="72" rx="8" fill="#ffffff" stroke="#b91c1c" stroke-width="2"/>
+  <text x="1240" y="215" text-anchor="middle" class="label">CDN 边缘节点</text>
+  <text x="1240" y="241" text-anchor="middle" class="small">就近缓存内容</text>
+  <rect x="1155" y="300" width="170" height="72" rx="8" fill="#ffffff" stroke="#b91c1c" stroke-width="2"/>
+  <text x="1240" y="330" text-anchor="middle" class="label">负载均衡器</text>
+  <text x="1240" y="356" text-anchor="middle" class="small">分配请求</text>
+  <rect x="1155" y="415" width="170" height="80" rx="8" fill="#ffffff" stroke="#b91c1c" stroke-width="2"/>
+  <text x="1240" y="447" text-anchor="middle" class="label">应用服务器</text>
+  <text x="1240" y="474" text-anchor="middle" class="small">处理业务并响应</text>
+
+  <path d="M295 330 H340" class="path"/>
+  <path d="M595 330 H640" class="path"/>
+  <path d="M1060 330 H1105" class="path"/>
+  <path d="M1240 580 C1030 675 355 675 165 580" class="return"/>
+  <text x="700" y="615" text-anchor="middle" class="label">请求逐跳转发，响应沿可达路径返回；往返路径不一定完全相同</text>
+  <text x="700" y="675" text-anchor="middle" class="small">端点负责业务语义，中间网络主要负责把 IP 数据包继续交给下一跳</text>
+</svg>

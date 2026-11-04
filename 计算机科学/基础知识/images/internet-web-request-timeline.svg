@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">从输入 URL 到网页呈现的时间线</title>
+  <desc id="desc">展示浏览器、DNS、网络和服务器在一次 HTTPS 网页访问中的协作顺序。</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="11" markerHeight="11" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="11" markerHeight="11" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#15803d"/>
+    </marker>
+    <style>
+      text { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; fill: #111827; }
+      .title { font-size: 32px; font-weight: 700; }
+      .actor { font-size: 21px; font-weight: 700; }
+      .label { font-size: 17px; }
+      .small { font-size: 15px; fill: #374151; }
+      .life { stroke: #64748b; stroke-width: 2; stroke-dasharray: 8 7; }
+      .request { stroke: #1d4ed8; stroke-width: 3; fill: none; marker-end: url(#arrow-blue); }
+      .response { stroke: #15803d; stroke-width: 3; fill: none; marker-end: url(#arrow-green); }
+    </style>
+  </defs>
+  <rect width="1400" height="900" fill="#ffffff"/>
+  <text x="700" y="50" text-anchor="middle" class="title">一次 HTTPS 网页访问：参与者与时间顺序</text>
+
+  <rect x="70" y="80" width="210" height="62" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+  <text x="175" y="119" text-anchor="middle" class="actor">浏览器</text>
+  <rect x="365" y="80" width="210" height="62" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
+  <text x="470" y="119" text-anchor="middle" class="actor">操作系统</text>
+  <rect x="660" y="80" width="210" height="62" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="3"/>
+  <text x="765" y="119" text-anchor="middle" class="actor">DNS 解析器</text>
+  <rect x="955" y="80" width="210" height="62" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <text x="1060" y="119" text-anchor="middle" class="actor">互联网路径</text>
+  <rect x="1200" y="80" width="150" height="62" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="3"/>
+  <text x="1275" y="119" text-anchor="middle" class="actor">服务器</text>
+
+  <line x1="175" y1="142" x2="175" y2="845" class="life"/>
+  <line x1="470" y1="142" x2="470" y2="845" class="life"/>
+  <line x1="765" y1="142" x2="765" y2="845" class="life"/>
+  <line x1="1060" y1="142" x2="1060" y2="845" class="life"/>
+  <line x1="1275" y1="142" x2="1275" y2="845" class="life"/>
+
+  <circle cx="175" cy="185" r="24" fill="#1d4ed8"/>
+  <text x="175" y="192" text-anchor="middle" font-size="18" fill="#ffffff">1</text>
+  <text x="215" y="191" class="label">解析 URL、检查缓存与策略</text>
+
+  <path d="M175 245 H755" class="request"/>
+  <text x="465" y="233" text-anchor="middle" class="label">2. 查询 www.example.com</text>
+  <path d="M765 300 H185" class="response"/>
+  <text x="475" y="288" text-anchor="middle" class="label">3. 返回 A / AAAA 地址与 TTL</text>
+
+  <path d="M175 355 H460" class="request"/>
+  <text x="317" y="343" text-anchor="middle" class="label">4. 创建 Socket</text>
+  <circle cx="470" cy="400" r="24" fill="#0369a1"/>
+  <text x="470" y="407" text-anchor="middle" font-size="18" fill="#ffffff">5</text>
+  <text x="510" y="406" class="label">查路由表、解析下一跳链路地址</text>
+
+  <path d="M470 470 H1265" class="request"/>
+  <text x="868" y="449" text-anchor="middle" class="label">6. TCP 三次握手（经多台路由器逐跳转发）</text>
+  <text x="868" y="497" text-anchor="middle" class="small">客户端与服务器确认双向通信能力</text>
+
+  <path d="M175 540 H1265" class="request"/>
+  <text x="720" y="519" text-anchor="middle" class="label">7. TLS 握手：验证证书并协商会话密钥</text>
+  <text x="720" y="567" text-anchor="middle" class="small">建立经过身份认证的加密通道</text>
+
+  <path d="M175 610 H1265" class="request"/>
+  <text x="720" y="599" text-anchor="middle" class="label">8. 加密发送 HTTP 请求</text>
+
+  <circle cx="1275" cy="665" r="24" fill="#b91c1c"/>
+  <text x="1275" y="672" text-anchor="middle" font-size="18" fill="#ffffff">9</text>
+  <text x="1235" y="670" text-anchor="end" class="label">路由、执行业务、读取缓存或数据库</text>
+
+  <path d="M1275 730 H185" class="response"/>
+  <text x="730" y="718" text-anchor="middle" class="label">10. 返回加密的 HTTP 响应</text>
+
+  <circle cx="175" cy="795" r="24" fill="#15803d"/>
+  <text x="175" y="802" text-anchor="middle" font-size="18" fill="#ffffff">11</text>
+  <text x="215" y="785" class="label">解析 HTML、CSS 和 JavaScript</text>
+  <text x="215" y="811" class="small">继续请求子资源，完成布局、绘制与合成</text>
+
+  <text x="700" y="872" text-anchor="middle" class="small">蓝色表示请求方向，绿色表示响应方向；HTTP/3 会用 QUIC 替代 TCP + 独立 TLS 建连过程</text>
+</svg>

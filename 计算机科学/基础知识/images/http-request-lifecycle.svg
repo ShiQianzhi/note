@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1d4ed8"/>
+    </marker>
+    <style>
+      .title { font: 700 30px Arial, "PingFang SC", sans-serif; fill: #111827; }
+      .sub { font: 16px Arial, "PingFang SC", sans-serif; fill: #374151; }
+      .box-title { font: 700 19px Arial, "PingFang SC", sans-serif; fill: #111827; }
+      .box-text { font: 15px Arial, "PingFang SC", sans-serif; fill: #374151; }
+      .step { font: 700 15px Arial, "PingFang SC", sans-serif; fill: #ffffff; }
+      .arrow { stroke: #1d4ed8; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1280" height="760" fill="#ffffff"/>
+  <text x="640" y="48" text-anchor="middle" class="title">一次 HTTPS 请求的完整链路</text>
+  <text x="640" y="76" text-anchor="middle" class="sub">从 URL 到页面资源：HTTP 语义运行在 DNS、传输连接与 TLS 之上</text>
+
+  <g transform="translate(60 125)">
+    <rect width="210" height="130" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+    <circle cx="28" cy="28" r="17" fill="#1d4ed8"/><text x="28" y="34" text-anchor="middle" class="step">1</text>
+    <text x="105" y="42" text-anchor="middle" class="box-title">浏览器</text>
+    <text x="20" y="76" class="box-text">解析 URL</text>
+    <text x="20" y="101" class="box-text">检查缓存与连接池</text>
+  </g>
+  <path d="M270 190 H350" class="arrow"/>
+
+  <g transform="translate(350 125)">
+    <rect width="210" height="130" rx="8" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+    <circle cx="28" cy="28" r="17" fill="#15803d"/><text x="28" y="34" text-anchor="middle" class="step">2</text>
+    <text x="105" y="42" text-anchor="middle" class="box-title">DNS</text>
+    <text x="20" y="76" class="box-text">域名解析为 IP 地址</text>
+    <text x="20" y="101" class="box-text">可返回 CDN 边缘节点</text>
+  </g>
+  <path d="M560 190 H640" class="arrow"/>
+
+  <g transform="translate(640 125)">
+    <rect width="240" height="130" rx="8" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+    <circle cx="28" cy="28" r="17" fill="#c2410c"/><text x="28" y="34" text-anchor="middle" class="step">3</text>
+    <text x="120" y="42" text-anchor="middle" class="box-title">建立传输连接</text>
+    <text x="20" y="76" class="box-text">HTTP/1.1、HTTP/2：TCP</text>
+    <text x="20" y="101" class="box-text">HTTP/3：QUIC</text>
+  </g>
+  <path d="M880 190 H960" class="arrow"/>
+
+  <g transform="translate(960 125)">
+    <rect width="250" height="130" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+    <circle cx="28" cy="28" r="17" fill="#b91c1c"/><text x="28" y="34" text-anchor="middle" class="step">4</text>
+    <text x="125" y="42" text-anchor="middle" class="box-title">TLS 安全通道</text>
+    <text x="20" y="76" class="box-text">验证证书与服务器身份</text>
+    <text x="20" y="101" class="box-text">协商密钥和 HTTP 版本</text>
+  </g>
+
+  <path d="M1085 255 V330 H940" class="arrow"/>
+
+  <g transform="translate(710 330)">
+    <rect width="230" height="140" rx="8" fill="#faf5ff" stroke="#7e22ce" stroke-width="2"/>
+    <circle cx="28" cy="28" r="17" fill="#7e22ce"/><text x="28" y="34" text-anchor="middle" class="step">5</text>
+    <text x="115" y="42" text-anchor="middle" class="box-title">CDN / 反向代理</text>
+    <text x="20" y="76" class="box-text">检查共享缓存</text>
+    <text x="20" y="101" class="box-text">路由、限流、TLS 终止</text>
+    <text x="20" y="126" class="box-text">未命中时转发至源站</text>
+  </g>
+  <path d="M710 400 H620" class="arrow"/>
+
+  <g transform="translate(360 330)">
+    <rect width="260" height="140" rx="8" fill="#ecfeff" stroke="#0e7490" stroke-width="2"/>
+    <circle cx="28" cy="28" r="17" fill="#0e7490"/><text x="28" y="34" text-anchor="middle" class="step">6</text>
+    <text x="130" y="42" text-anchor="middle" class="box-title">应用服务器</text>
+    <text x="20" y="76" class="box-text">认证、授权与业务处理</text>
+    <text x="20" y="101" class="box-text">访问缓存、数据库和服务</text>
+    <text x="20" y="126" class="box-text">生成状态码、字段与内容</text>
+  </g>
+
+  <path d="M490 470 V550 H650" class="arrow"/>
+  <g transform="translate(650 520)">
+    <rect width="270" height="150" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+    <circle cx="28" cy="28" r="17" fill="#334155"/><text x="28" y="34" text-anchor="middle" class="step">7</text>
+    <text x="135" y="42" text-anchor="middle" class="box-title">响应返回与渲染</text>
+    <text x="20" y="78" class="box-text">代理与浏览器更新缓存</text>
+    <text x="20" y="103" class="box-text">浏览器解析 HTML</text>
+    <text x="20" y="128" class="box-text">继续请求 CSS、JS、图片</text>
+  </g>
+
+  <path d="M650 595 H235 V270" class="arrow"/>
+  <rect x="62" y="700" width="1150" height="38" rx="6" fill="#f3f4f6"/>
+  <text x="637" y="725" text-anchor="middle" class="sub">每一层都可能命中缓存或复用已有连接，因此一次访问不一定完整执行所有步骤</text>
+</svg>

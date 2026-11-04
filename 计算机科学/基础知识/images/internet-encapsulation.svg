@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">互联网协议栈的封装与解封装</title>
+  <desc id="desc">发送端从应用消息逐层封装为传输层、网络层、链路层数据，再由接收端反向解封装。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1d4ed8"/>
+    </marker>
+    <style>
+      text { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; fill: #111827; }
+      .title { font-size: 32px; font-weight: 700; }
+      .head { font-size: 23px; font-weight: 700; }
+      .label { font-size: 17px; }
+      .small { font-size: 15px; fill: #374151; }
+      .arrow { stroke: #1d4ed8; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1400" height="760" fill="#ffffff"/>
+  <text x="700" y="52" text-anchor="middle" class="title">发送端逐层封装，接收端逐层解封装</text>
+  <text x="280" y="105" text-anchor="middle" class="head">发送端</text>
+  <text x="1120" y="105" text-anchor="middle" class="head">接收端</text>
+
+  <g>
+    <rect x="80" y="135" width="400" height="82" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+    <text x="280" y="168" text-anchor="middle" class="head">应用层：HTTP 消息</text>
+    <text x="280" y="197" text-anchor="middle" class="small">定义请求、响应和业务数据</text>
+
+    <rect x="80" y="245" width="400" height="82" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+    <rect x="92" y="258" width="105" height="56" rx="5" fill="#15803d"/>
+    <text x="144" y="292" text-anchor="middle" font-size="16" fill="#ffffff">TCP 首部</text>
+    <text x="326" y="292" text-anchor="middle" class="label">应用数据</text>
+
+    <rect x="80" y="355" width="400" height="82" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="3"/>
+    <rect x="92" y="368" width="90" height="56" rx="5" fill="#b45309"/>
+    <text x="137" y="402" text-anchor="middle" font-size="16" fill="#ffffff">IP 首部</text>
+    <rect x="182" y="368" width="95" height="56" fill="#bbf7d0" stroke="#15803d"/>
+    <text x="229" y="402" text-anchor="middle" font-size="15">TCP</text>
+    <text x="374" y="402" text-anchor="middle" class="label">应用数据</text>
+
+    <rect x="80" y="465" width="400" height="82" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="3"/>
+    <rect x="92" y="478" width="90" height="56" rx="5" fill="#b91c1c"/>
+    <text x="137" y="512" text-anchor="middle" font-size="15" fill="#ffffff">帧首部</text>
+    <rect x="182" y="478" width="80" height="56" fill="#fde68a" stroke="#b45309"/>
+    <text x="222" y="512" text-anchor="middle" font-size="15">IP</text>
+    <text x="354" y="512" text-anchor="middle" class="label">TCP + 应用数据</text>
+
+    <rect x="80" y="575" width="400" height="82" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="3"/>
+    <text x="280" y="608" text-anchor="middle" class="head">物理层：信号</text>
+    <text x="280" y="638" text-anchor="middle" class="small">电信号 / 光信号 / 无线电波</text>
+
+    <path d="M280 220 V238 M280 330 V348 M280 440 V458 M280 550 V568" class="arrow"/>
+    <text x="510" y="290" class="small">添加端口、序号</text>
+    <text x="510" y="400" class="small">添加源/目标 IP</text>
+    <text x="510" y="510" class="small">添加本链路地址</text>
+  </g>
+
+  <path d="M500 616 C620 705 780 705 900 616" stroke="#374151" stroke-width="5" fill="none" marker-end="url(#arrow)"/>
+  <text x="700" y="705" text-anchor="middle" class="label">在物理介质上传输比特</text>
+
+  <g>
+    <rect x="920" y="575" width="400" height="82" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="3"/>
+    <text x="1120" y="608" text-anchor="middle" class="head">物理层：接收信号</text>
+    <text x="1120" y="638" text-anchor="middle" class="small">恢复为比特流</text>
+
+    <rect x="920" y="465" width="400" height="82" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="3"/>
+    <text x="1120" y="499" text-anchor="middle" class="head">链路层：检查帧</text>
+    <text x="1120" y="528" text-anchor="middle" class="small">验证并移除当前链路的帧首部</text>
+
+    <rect x="920" y="355" width="400" height="82" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="3"/>
+    <text x="1120" y="389" text-anchor="middle" class="head">网际层：处理 IP 包</text>
+    <text x="1120" y="418" text-anchor="middle" class="small">确认目标地址并移除 IP 首部</text>
+
+    <rect x="920" y="245" width="400" height="82" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+    <text x="1120" y="279" text-anchor="middle" class="head">传输层：重组字节流</text>
+    <text x="1120" y="308" text-anchor="middle" class="small">按端口交给正确的应用进程</text>
+
+    <rect x="920" y="135" width="400" height="82" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+    <text x="1120" y="168" text-anchor="middle" class="head">应用层：读取 HTTP</text>
+    <text x="1120" y="197" text-anchor="middle" class="small">解释请求或响应的业务含义</text>
+
+    <path d="M1120 572 V554 M1120 462 V444 M1120 352 V334 M1120 242 V224" class="arrow"/>
+  </g>
+</svg>

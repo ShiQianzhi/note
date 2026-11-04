@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="820" viewBox="0 0 1280 820">
+  <defs>
+    <style>
+      .title { font: 700 30px Arial, "PingFang SC", sans-serif; fill: #111827; }
+      .sub { font: 16px Arial, "PingFang SC", sans-serif; fill: #4b5563; }
+      .head { font: 700 22px Arial, "PingFang SC", sans-serif; fill: #ffffff; }
+      .label { font: 700 16px Arial, "PingFang SC", sans-serif; fill: #111827; }
+      .small { font: 14px Arial, "PingFang SC", sans-serif; fill: #374151; }
+      .stream { font: 700 13px Arial, "PingFang SC", sans-serif; fill: #ffffff; }
+    </style>
+  </defs>
+  <rect width="1280" height="820" fill="#ffffff"/>
+  <text x="640" y="48" text-anchor="middle" class="title">HTTP 各版本的传输模型</text>
+  <text x="640" y="76" text-anchor="middle" class="sub">方法、状态码和缓存语义保持稳定；连接、帧与丢包影响范围持续演进</text>
+
+  <g transform="translate(45 115)">
+    <rect width="370" height="620" rx="8" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+    <rect width="370" height="58" rx="8" fill="#1d4ed8"/><rect y="50" width="370" height="8" fill="#1d4ed8"/>
+    <text x="185" y="38" text-anchor="middle" class="head">HTTP/1.1 + TCP</text>
+    <text x="185" y="92" text-anchor="middle" class="label">并发通常依赖多条连接</text>
+
+    <text x="28" y="135" class="small">TCP 连接 A</text>
+    <rect x="28" y="150" width="314" height="52" rx="5" fill="#dbeafe" stroke="#60a5fa"/>
+    <rect x="42" y="163" width="85" height="26" rx="4" fill="#1d4ed8"/><text x="84" y="181" text-anchor="middle" class="stream">请求 1</text>
+    <rect x="139" y="163" width="85" height="26" rx="4" fill="#2563eb"/><text x="181" y="181" text-anchor="middle" class="stream">响应 1</text>
+    <rect x="236" y="163" width="85" height="26" rx="4" fill="#3b82f6"/><text x="278" y="181" text-anchor="middle" class="stream">请求 2</text>
+
+    <text x="28" y="240" class="small">TCP 连接 B</text>
+    <rect x="28" y="255" width="314" height="52" rx="5" fill="#dbeafe" stroke="#60a5fa"/>
+    <rect x="42" y="268" width="85" height="26" rx="4" fill="#1d4ed8"/><text x="84" y="286" text-anchor="middle" class="stream">请求 3</text>
+    <rect x="139" y="268" width="85" height="26" rx="4" fill="#2563eb"/><text x="181" y="286" text-anchor="middle" class="stream">响应 3</text>
+
+    <rect x="28" y="350" width="314" height="86" rx="6" fill="#fef2f2" stroke="#b91c1c"/>
+    <text x="185" y="381" text-anchor="middle" class="label">主要限制</text>
+    <text x="185" y="410" text-anchor="middle" class="small">无通用多路复用；多连接成本高</text>
+    <text x="185" y="463" text-anchor="middle" class="label">线路表示</text>
+    <text x="185" y="493" text-anchor="middle" class="small">文本起始行与首部字段</text>
+    <text x="185" y="540" text-anchor="middle" class="label">丢包影响</text>
+    <text x="185" y="570" text-anchor="middle" class="small">阻塞发生丢包的 TCP 连接</text>
+  </g>
+
+  <g transform="translate(455 115)">
+    <rect width="370" height="620" rx="8" fill="#ffffff" stroke="#7e22ce" stroke-width="2"/>
+    <rect width="370" height="58" rx="8" fill="#7e22ce"/><rect y="50" width="370" height="8" fill="#7e22ce"/>
+    <text x="185" y="38" text-anchor="middle" class="head">HTTP/2 + TCP</text>
+    <text x="185" y="92" text-anchor="middle" class="label">一条连接承载多个 HTTP/2 流</text>
+
+    <rect x="28" y="125" width="314" height="182" rx="6" fill="#faf5ff" stroke="#a855f7"/>
+    <text x="42" y="151" class="small">单一 TCP 字节流</text>
+    <rect x="42" y="170" width="76" height="34" rx="4" fill="#7e22ce"/><text x="80" y="192" text-anchor="middle" class="stream">流 1</text>
+    <rect x="126" y="170" width="76" height="34" rx="4" fill="#0e7490"/><text x="164" y="192" text-anchor="middle" class="stream">流 3</text>
+    <rect x="210" y="170" width="76" height="34" rx="4" fill="#c2410c"/><text x="248" y="192" text-anchor="middle" class="stream">流 5</text>
+    <rect x="294" y="170" width="34" height="34" rx="4" fill="#7e22ce"/>
+    <rect x="42" y="216" width="76" height="34" rx="4" fill="#0e7490"/><text x="80" y="238" text-anchor="middle" class="stream">流 3</text>
+    <rect x="126" y="216" width="76" height="34" rx="4" fill="#7e22ce"/><text x="164" y="238" text-anchor="middle" class="stream">流 1</text>
+    <rect x="210" y="216" width="76" height="34" rx="4" fill="#c2410c"/><text x="248" y="238" text-anchor="middle" class="stream">流 5</text>
+    <text x="185" y="282" text-anchor="middle" class="small">二进制帧按流标识交错传输</text>
+
+    <rect x="28" y="350" width="314" height="86" rx="6" fill="#fef2f2" stroke="#b91c1c"/>
+    <text x="185" y="381" text-anchor="middle" class="label">主要限制</text>
+    <text x="185" y="410" text-anchor="middle" class="small">TCP 丢包会暂停连接上的全部流</text>
+    <text x="185" y="463" text-anchor="middle" class="label">线路表示</text>
+    <text x="185" y="493" text-anchor="middle" class="small">二进制帧 + HPACK 字段压缩</text>
+    <text x="185" y="540" text-anchor="middle" class="label">核心收益</text>
+    <text x="185" y="570" text-anchor="middle" class="small">多路复用，减少连接数量</text>
+  </g>
+
+  <g transform="translate(865 115)">
+    <rect width="370" height="620" rx="8" fill="#ffffff" stroke="#15803d" stroke-width="2"/>
+    <rect width="370" height="58" rx="8" fill="#15803d"/><rect y="50" width="370" height="8" fill="#15803d"/>
+    <text x="185" y="38" text-anchor="middle" class="head">HTTP/3 + QUIC</text>
+    <text x="185" y="92" text-anchor="middle" class="label">一条连接包含多个独立可靠流</text>
+
+    <rect x="28" y="125" width="314" height="54" rx="6" fill="#dcfce7" stroke="#4ade80"/>
+    <rect x="42" y="137" width="260" height="30" rx="4" fill="#7e22ce"/><text x="172" y="157" text-anchor="middle" class="stream">QUIC 流 1：HEADERS + DATA</text>
+    <rect x="28" y="193" width="314" height="54" rx="6" fill="#ecfeff" stroke="#22d3ee"/>
+    <rect x="42" y="205" width="260" height="30" rx="4" fill="#0e7490"/><text x="172" y="225" text-anchor="middle" class="stream">QUIC 流 3：HEADERS + DATA</text>
+    <rect x="28" y="261" width="314" height="54" rx="6" fill="#fff7ed" stroke="#fb923c"/>
+    <rect x="42" y="273" width="260" height="30" rx="4" fill="#c2410c"/><text x="172" y="293" text-anchor="middle" class="stream">QUIC 流 5：HEADERS + DATA</text>
+
+    <rect x="28" y="350" width="314" height="86" rx="6" fill="#f0fdf4" stroke="#15803d"/>
+    <text x="185" y="381" text-anchor="middle" class="label">丢包隔离</text>
+    <text x="185" y="410" text-anchor="middle" class="small">某流丢包通常不阻塞其他流</text>
+    <text x="185" y="463" text-anchor="middle" class="label">线路表示</text>
+    <text x="185" y="493" text-anchor="middle" class="small">QUIC 流 + QPACK 字段压缩</text>
+    <text x="185" y="540" text-anchor="middle" class="label">其他能力</text>
+    <text x="185" y="570" text-anchor="middle" class="small">TLS 1.3 集成、连接迁移、低延迟建连</text>
+  </g>
+
+  <rect x="200" y="765" width="880" height="36" rx="6" fill="#f3f4f6"/>
+  <text x="640" y="789" text-anchor="middle" class="sub">版本升级改变“怎么传”，不会改变 GET、404、Cache-Control 等核心 HTTP 语义</text>
+</svg>

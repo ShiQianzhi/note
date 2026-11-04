@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720" role="img" aria-labelledby="title desc">
+  <title id="title">网络故障的分层定位路径</title>
+  <desc id="desc">从物理链路、地址配置、DNS、网络可达性、传输层、TLS 到 HTTP 应用逐层排查。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#334155"/>
+    </marker>
+    <style>
+      text { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; fill: #111827; }
+      .title { font-size: 32px; font-weight: 700; }
+      .step { font-size: 21px; font-weight: 700; }
+      .label { font-size: 16px; }
+      .small { font-size: 14px; fill: #374151; }
+      .arrow { stroke: #334155; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1400" height="720" fill="#ffffff"/>
+  <text x="700" y="55" text-anchor="middle" class="title">网络排障：从底层事实逐步走向应用语义</text>
+
+  <g>
+    <rect x="55" y="130" width="210" height="135" rx="9" fill="#f1f5f9" stroke="#334155" stroke-width="3"/>
+    <text x="160" y="170" text-anchor="middle" class="step">1. 物理与链路</text>
+    <text x="160" y="205" text-anchor="middle" class="label">网卡 / 网线 / Wi-Fi</text>
+    <text x="160" y="235" text-anchor="middle" class="small">接口是否已连接？</text>
+
+    <rect x="300" y="130" width="210" height="135" rx="9" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+    <text x="405" y="170" text-anchor="middle" class="step">2. 地址与路由</text>
+    <text x="405" y="205" text-anchor="middle" class="label">IP / 网关 / 路由表</text>
+    <text x="405" y="235" text-anchor="middle" class="small">下一跳是否正确？</text>
+
+    <rect x="545" y="130" width="210" height="135" rx="9" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
+    <text x="650" y="170" text-anchor="middle" class="step">3. DNS</text>
+    <text x="650" y="205" text-anchor="middle" class="label">域名 → IP 地址</text>
+    <text x="650" y="235" text-anchor="middle" class="small">解析结果是否正确？</text>
+
+    <rect x="790" y="130" width="210" height="135" rx="9" fill="#fef3c7" stroke="#b45309" stroke-width="3"/>
+    <text x="895" y="170" text-anchor="middle" class="step">4. 网络可达性</text>
+    <text x="895" y="205" text-anchor="middle" class="label">IP / ICMP / 路径</text>
+    <text x="895" y="235" text-anchor="middle" class="small">包在哪一段停止？</text>
+
+    <rect x="1035" y="130" width="210" height="135" rx="9" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+    <text x="1140" y="170" text-anchor="middle" class="step">5. 传输层</text>
+    <text x="1140" y="205" text-anchor="middle" class="label">TCP / UDP / 端口</text>
+    <text x="1140" y="235" text-anchor="middle" class="small">端口是否监听？</text>
+
+    <path d="M265 198 H282" class="arrow"/>
+    <path d="M510 198 H527" class="arrow"/>
+    <path d="M755 198 H772" class="arrow"/>
+    <path d="M1000 198 H1017" class="arrow"/>
+  </g>
+
+  <path d="M1140 275 V325 H895 V355" class="arrow"/>
+
+  <g>
+    <rect x="790" y="365" width="210" height="135" rx="9" fill="#fce7f3" stroke="#be185d" stroke-width="3"/>
+    <text x="895" y="405" text-anchor="middle" class="step">6. TLS</text>
+    <text x="895" y="440" text-anchor="middle" class="label">证书 / 域名 / 时间</text>
+    <text x="895" y="470" text-anchor="middle" class="small">安全握手是否成功？</text>
+
+    <rect x="545" y="365" width="210" height="135" rx="9" fill="#fee2e2" stroke="#b91c1c" stroke-width="3"/>
+    <text x="650" y="405" text-anchor="middle" class="step">7. HTTP</text>
+    <text x="650" y="440" text-anchor="middle" class="label">方法 / 状态码 / 代理</text>
+    <text x="650" y="470" text-anchor="middle" class="small">协议交互是否正确？</text>
+
+    <rect x="300" y="365" width="210" height="135" rx="9" fill="#ede9fe" stroke="#6d28d9" stroke-width="3"/>
+    <text x="405" y="405" text-anchor="middle" class="step">8. 应用与依赖</text>
+    <text x="405" y="440" text-anchor="middle" class="label">日志 / 数据库 / 缓存</text>
+    <text x="405" y="470" text-anchor="middle" class="small">业务是否正确处理？</text>
+
+    <path d="M790 432 H765 M545 432 H520" class="arrow"/>
+  </g>
+
+  <rect x="75" y="575" width="1250" height="85" rx="9" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+  <text x="700" y="610" text-anchor="middle" class="step">原则：先证明低层正常，再检查高层；每一步都用命令、日志或抓包获取证据</text>
+  <text x="700" y="642" text-anchor="middle" class="label">同一个“打不开网页”可能来自 Wi-Fi 断开、DNS 错误、端口被拦、证书过期或应用异常</text>
+</svg>

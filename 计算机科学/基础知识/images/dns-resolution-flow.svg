@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">DNS 递归与迭代解析完整链路</title>
+  <desc id="desc">展示客户端、递归解析器、根服务器、顶级域服务器和权威服务器之间的请求与响应</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#111827"/>
+    </marker>
+    <style>
+      .title{font:700 30px Arial,"PingFang SC",sans-serif;fill:#111827}
+      .lane{font:700 18px Arial,"PingFang SC",sans-serif;fill:#111827}
+      .small{font:14px Arial,"PingFang SC",sans-serif;fill:#374151}
+      .step{font:15px Arial,"PingFang SC",sans-serif;fill:#111827}
+      .line{stroke:#111827;stroke-width:2.5;marker-end:url(#arrow)}
+      .life{stroke:#9ca3af;stroke-width:2;stroke-dasharray:7 7}
+    </style>
+  </defs>
+  <rect width="1400" height="760" fill="#ffffff"/>
+  <text x="700" y="42" text-anchor="middle" class="title">首次解析 www.example.com 的完整链路</text>
+  <text x="700" y="70" text-anchor="middle" class="small">客户端只发一个递归请求；递归解析器对外执行多次迭代查询</text>
+
+  <g>
+    <rect x="45" y="92" width="210" height="68" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+    <text x="150" y="121" text-anchor="middle" class="lane">应用 / 存根解析器</text>
+    <text x="150" y="145" text-anchor="middle" class="small">Stub Resolver</text>
+    <line x1="150" y1="160" x2="150" y2="710" class="life"/>
+
+    <rect x="315" y="92" width="210" height="68" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="3"/>
+    <text x="420" y="121" text-anchor="middle" class="lane">递归解析器</text>
+    <text x="420" y="145" text-anchor="middle" class="small">Recursive Resolver</text>
+    <line x1="420" y1="160" x2="420" y2="710" class="life"/>
+
+    <rect x="585" y="92" width="210" height="68" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+    <text x="690" y="121" text-anchor="middle" class="lane">根服务器</text>
+    <text x="690" y="145" text-anchor="middle" class="small">Root Server</text>
+    <line x1="690" y1="160" x2="690" y2="710" class="life"/>
+
+    <rect x="855" y="92" width="210" height="68" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-width="3"/>
+    <text x="960" y="121" text-anchor="middle" class="lane">.com 服务器</text>
+    <text x="960" y="145" text-anchor="middle" class="small">TLD Server</text>
+    <line x1="960" y1="160" x2="960" y2="710" class="life"/>
+
+    <rect x="1125" y="92" width="230" height="68" rx="6" fill="#fee2e2" stroke="#b91c1c" stroke-width="3"/>
+    <text x="1240" y="121" text-anchor="middle" class="lane">example.com 权威</text>
+    <text x="1240" y="145" text-anchor="middle" class="small">Authoritative Server</text>
+    <line x1="1240" y1="160" x2="1240" y2="710" class="life"/>
+  </g>
+
+  <line x1="150" y1="210" x2="420" y2="210" class="line"/>
+  <text x="285" y="199" text-anchor="middle" class="step">1. 递归查询 A，RD=1</text>
+
+  <rect x="330" y="236" width="180" height="48" rx="5" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+  <text x="420" y="258" text-anchor="middle" class="step">2. 检查缓存</text>
+  <text x="420" y="277" text-anchor="middle" class="small">未命中</text>
+
+  <line x1="420" y1="320" x2="690" y2="320" class="line"/>
+  <text x="555" y="309" text-anchor="middle" class="step">3. 查询 www.example.com A</text>
+  <line x1="690" y1="368" x2="420" y2="368" class="line"/>
+  <text x="555" y="357" text-anchor="middle" class="step">4. 转介 .com NS + 胶水地址</text>
+
+  <line x1="420" y1="416" x2="960" y2="416" class="line"/>
+  <text x="690" y="405" text-anchor="middle" class="step">5. 查询 www.example.com A</text>
+  <line x1="960" y1="464" x2="420" y2="464" class="line"/>
+  <text x="690" y="453" text-anchor="middle" class="step">6. 转介 example.com NS + 胶水地址</text>
+
+  <line x1="420" y1="512" x2="1240" y2="512" class="line"/>
+  <text x="830" y="501" text-anchor="middle" class="step">7. 查询 www.example.com A</text>
+  <line x1="1240" y1="560" x2="420" y2="560" class="line"/>
+  <text x="830" y="549" text-anchor="middle" class="step">8. 权威答案：192.0.2.10，TTL=300</text>
+
+  <rect x="330" y="585" width="180" height="48" rx="5" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+  <text x="420" y="607" text-anchor="middle" class="step">9. 写入缓存</text>
+  <text x="420" y="626" text-anchor="middle" class="small">按 TTL 倒计时</text>
+
+  <line x1="420" y1="670" x2="150" y2="670" class="line"/>
+  <text x="285" y="659" text-anchor="middle" class="step">10. 返回最终地址</text>
+</svg>

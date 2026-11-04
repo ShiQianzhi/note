@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760">
+  <defs>
+    <style>
+      .title { font: 700 30px Arial, "PingFang SC", sans-serif; fill: #111827; }
+      .sub { font: 16px Arial, "PingFang SC", sans-serif; fill: #4b5563; }
+      .head { font: 700 21px Arial, "PingFang SC", sans-serif; fill: #ffffff; }
+      .label { font: 700 17px Arial, "PingFang SC", sans-serif; fill: #111827; }
+      .code { font: 15px Menlo, Consolas, monospace; fill: #111827; }
+      .note { font: 15px Arial, "PingFang SC", sans-serif; fill: #374151; }
+    </style>
+  </defs>
+  <rect width="1280" height="760" fill="#ffffff"/>
+  <text x="640" y="48" text-anchor="middle" class="title">HTTP/1.1 请求与响应报文结构</text>
+  <text x="640" y="76" text-anchor="middle" class="sub">起始行 + 字段区 + 空行 + 可选消息体；HTTP/2 与 HTTP/3 保留语义但改用二进制帧</text>
+
+  <g transform="translate(60 115)">
+    <rect width="550" height="560" rx="8" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+    <rect width="550" height="52" rx="8" fill="#1d4ed8"/>
+    <rect y="44" width="550" height="8" fill="#1d4ed8"/>
+    <text x="275" y="34" text-anchor="middle" class="head">请求 Request</text>
+
+    <rect x="20" y="76" width="510" height="78" rx="6" fill="#dbeafe" stroke="#60a5fa"/>
+    <text x="38" y="101" class="label">请求行</text>
+    <text x="38" y="132" class="code">POST /api/orders HTTP/1.1</text>
+
+    <rect x="20" y="170" width="510" height="190" rx="6" fill="#eff6ff" stroke="#93c5fd"/>
+    <text x="38" y="196" class="label">请求字段</text>
+    <text x="38" y="226" class="code">Host: api.example.com</text>
+    <text x="38" y="254" class="code">Content-Type: application/json</text>
+    <text x="38" y="282" class="code">Accept: application/json</text>
+    <text x="38" y="310" class="code">Content-Length: 32</text>
+    <text x="38" y="338" class="code">Authorization: Bearer &lt;token&gt;</text>
+
+    <rect x="20" y="376" width="510" height="48" rx="6" fill="#f3f4f6" stroke="#9ca3af"/>
+    <text x="275" y="406" text-anchor="middle" class="label">空行 CRLF：字段区结束</text>
+
+    <rect x="20" y="440" width="510" height="96" rx="6" fill="#f0fdf4" stroke="#4ade80"/>
+    <text x="38" y="468" class="label">可选消息体</text>
+    <text x="38" y="502" class="code">{"product_id":42,"quantity":2}</text>
+  </g>
+
+  <g transform="translate(670 115)">
+    <rect width="550" height="560" rx="8" fill="#ffffff" stroke="#b91c1c" stroke-width="2"/>
+    <rect width="550" height="52" rx="8" fill="#b91c1c"/>
+    <rect y="44" width="550" height="8" fill="#b91c1c"/>
+    <text x="275" y="34" text-anchor="middle" class="head">响应 Response</text>
+
+    <rect x="20" y="76" width="510" height="78" rx="6" fill="#fee2e2" stroke="#f87171"/>
+    <text x="38" y="101" class="label">状态行</text>
+    <text x="38" y="132" class="code">HTTP/1.1 201 Created</text>
+
+    <rect x="20" y="170" width="510" height="190" rx="6" fill="#fef2f2" stroke="#fca5a5"/>
+    <text x="38" y="196" class="label">响应字段</text>
+    <text x="38" y="226" class="code">Content-Type: application/json</text>
+    <text x="38" y="254" class="code">Location: /api/orders/981</text>
+    <text x="38" y="282" class="code">Cache-Control: no-store</text>
+    <text x="38" y="310" class="code">ETag: "order-981-v1"</text>
+    <text x="38" y="338" class="code">Content-Length: 26</text>
+
+    <rect x="20" y="376" width="510" height="48" rx="6" fill="#f3f4f6" stroke="#9ca3af"/>
+    <text x="275" y="406" text-anchor="middle" class="label">空行 CRLF：字段区结束</text>
+
+    <rect x="20" y="440" width="510" height="96" rx="6" fill="#fff7ed" stroke="#fb923c"/>
+    <text x="38" y="468" class="label">可选消息体</text>
+    <text x="38" y="502" class="code">{"id":981,"status":"paid"}</text>
+  </g>
+
+  <rect x="180" y="705" width="920" height="34" rx="6" fill="#f3f4f6"/>
+  <text x="640" y="728" text-anchor="middle" class="note">消息体长度由 Content-Length、chunked 编码、连接关闭或消息语义共同确定</text>
+</svg>

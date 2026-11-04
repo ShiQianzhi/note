@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">DNS 报文结构</title>
+  <desc id="desc">展示 DNS 12 字节固定头部以及 Question、Answer、Authority 和 Additional 区段</desc>
+  <defs>
+    <style>
+      .title{font:700 30px Arial,"PingFang SC",sans-serif;fill:#111827}
+      .label{font:700 17px Arial,"PingFang SC",sans-serif;fill:#111827}
+      .small{font:14px Arial,"PingFang SC",sans-serif;fill:#374151}
+      .bit{font:13px Menlo,monospace;fill:#374151}
+      .box{stroke:#111827;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1200" height="820" fill="#ffffff"/>
+  <text x="600" y="45" text-anchor="middle" class="title">DNS 报文：固定头部 + 四个可变长区段</text>
+  <text x="600" y="73" text-anchor="middle" class="small">查询和响应使用相同外形，由计数字段说明后续各区段记录数</text>
+
+  <text x="130" y="110" class="bit">0</text>
+  <text x="590" y="110" class="bit">15</text>
+  <text x="610" y="110" class="bit">16</text>
+  <text x="1052" y="110" class="bit">31</text>
+
+  <rect x="130" y="120" width="470" height="64" fill="#dbeafe" class="box"/>
+  <rect x="600" y="120" width="470" height="64" fill="#dbeafe" class="box"/>
+  <text x="365" y="149" text-anchor="middle" class="label">ID（16 位）</text>
+  <text x="365" y="171" text-anchor="middle" class="small">匹配查询与响应</text>
+  <text x="835" y="149" text-anchor="middle" class="label">Flags（16 位）</text>
+  <text x="835" y="171" text-anchor="middle" class="small">QR / OPCODE / AA / TC / RD / RA / AD / CD / RCODE</text>
+
+  <rect x="130" y="184" width="235" height="64" fill="#dcfce7" class="box"/>
+  <rect x="365" y="184" width="235" height="64" fill="#dcfce7" class="box"/>
+  <rect x="600" y="184" width="235" height="64" fill="#dcfce7" class="box"/>
+  <rect x="835" y="184" width="235" height="64" fill="#dcfce7" class="box"/>
+  <text x="247" y="211" text-anchor="middle" class="label">QDCOUNT</text>
+  <text x="247" y="233" text-anchor="middle" class="small">问题数量</text>
+  <text x="482" y="211" text-anchor="middle" class="label">ANCOUNT</text>
+  <text x="482" y="233" text-anchor="middle" class="small">回答数量</text>
+  <text x="717" y="211" text-anchor="middle" class="label">NSCOUNT</text>
+  <text x="717" y="233" text-anchor="middle" class="small">权威记录数量</text>
+  <text x="952" y="211" text-anchor="middle" class="label">ARCOUNT</text>
+  <text x="952" y="233" text-anchor="middle" class="small">附加记录数量</text>
+
+  <rect x="130" y="285" width="940" height="92" rx="5" fill="#fef3c7" class="box"/>
+  <text x="600" y="318" text-anchor="middle" class="label">Question Section</text>
+  <text x="600" y="346" text-anchor="middle" class="small">QNAME（查询名称） + QTYPE（记录类型） + QCLASS（类别）</text>
+  <text x="600" y="367" text-anchor="middle" class="small">例如：www.example.com. + A + IN</text>
+
+  <rect x="130" y="397" width="940" height="92" rx="5" fill="#fee2e2" class="box"/>
+  <text x="600" y="430" text-anchor="middle" class="label">Answer Section</text>
+  <text x="600" y="458" text-anchor="middle" class="small">直接回答问题的资源记录：NAME + TYPE + CLASS + TTL + RDLENGTH + RDATA</text>
+  <text x="600" y="479" text-anchor="middle" class="small">例如：www.example.com. 300 IN A 192.0.2.10</text>
+
+  <rect x="130" y="509" width="940" height="92" rx="5" fill="#ede9fe" class="box"/>
+  <text x="600" y="542" text-anchor="middle" class="label">Authority Section</text>
+  <text x="600" y="570" text-anchor="middle" class="small">权威依据、SOA，或用于继续查询的 NS 转介信息</text>
+  <text x="600" y="591" text-anchor="middle" class="small">根和 TLD 服务器通常在这里返回下一层名称服务器</text>
+
+  <rect x="130" y="621" width="940" height="92" rx="5" fill="#cffafe" class="box"/>
+  <text x="600" y="654" text-anchor="middle" class="label">Additional Section</text>
+  <text x="600" y="682" text-anchor="middle" class="small">胶水 A/AAAA、EDNS OPT 伪记录，以及减少后续查询所需的补充信息</text>
+  <text x="600" y="703" text-anchor="middle" class="small">OPT 的 TYPE=41，不属于区域数据，不能像普通 RR 一样缓存</text>
+
+  <text x="600" y="758" text-anchor="middle" class="label">网络字节序：高位字节先传输（Big-Endian）</text>
+  <text x="600" y="785" text-anchor="middle" class="small">TCP 传输时，完整 DNS 报文前还有一个 2 字节长度字段</text>
+</svg>

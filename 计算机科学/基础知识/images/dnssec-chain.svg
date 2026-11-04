@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="700" viewBox="0 0 1320 700" role="img" aria-labelledby="title desc">
+  <title id="title">DNSSEC 信任链</title>
+  <desc id="desc">展示从本地根信任锚，经父区域 DS 和子区域 DNSKEY，验证目标记录签名的过程</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#111827"/>
+    </marker>
+    <style>
+      .title{font:700 30px Arial,"PingFang SC",sans-serif;fill:#111827}
+      .node{font:700 20px Arial,"PingFang SC",sans-serif;fill:#111827}
+      .small{font:15px Arial,"PingFang SC",sans-serif;fill:#374151}
+      .arrow{stroke:#111827;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .verify{font:700 15px Arial,"PingFang SC",sans-serif;fill:#166534}
+    </style>
+  </defs>
+  <rect width="1320" height="700" fill="#ffffff"/>
+  <text x="660" y="45" text-anchor="middle" class="title">DNSSEC：从信任锚到目标 RRset 的验证链</text>
+  <text x="660" y="75" text-anchor="middle" class="small">父区域使用 DS 承诺子区域密钥，子区域使用 DNSKEY 验证本区域签名</text>
+
+  <rect x="55" y="145" width="230" height="130" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+  <text x="170" y="184" text-anchor="middle" class="node">根信任锚</text>
+  <text x="170" y="217" text-anchor="middle" class="small">本地可信 DNSKEY</text>
+  <text x="170" y="244" text-anchor="middle" class="small">验证从这里开始</text>
+
+  <rect x="365" y="145" width="250" height="130" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <text x="490" y="184" text-anchor="middle" class="node">根区域</text>
+  <text x="490" y="217" text-anchor="middle" class="small">.com DS RRset</text>
+  <text x="490" y="244" text-anchor="middle" class="small">RRSIG(DS)</text>
+
+  <rect x="695" y="145" width="250" height="130" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="3"/>
+  <text x="820" y="184" text-anchor="middle" class="node">.com 区域</text>
+  <text x="820" y="217" text-anchor="middle" class="small">example.com DS RRset</text>
+  <text x="820" y="244" text-anchor="middle" class="small">DNSKEY + RRSIG</text>
+
+  <rect x="1025" y="145" width="250" height="130" rx="6" fill="#fee2e2" stroke="#b91c1c" stroke-width="3"/>
+  <text x="1150" y="184" text-anchor="middle" class="node">example.com 区域</text>
+  <text x="1150" y="217" text-anchor="middle" class="small">DNSKEY RRset</text>
+  <text x="1150" y="244" text-anchor="middle" class="small">RRSIG(DNSKEY)</text>
+
+  <path d="M285 210 L365 210" class="arrow"/>
+  <text x="325" y="194" text-anchor="middle" class="verify">验证签名</text>
+  <path d="M615 210 L695 210" class="arrow"/>
+  <text x="655" y="194" text-anchor="middle" class="verify">摘要匹配</text>
+  <path d="M945 210 L1025 210" class="arrow"/>
+  <text x="985" y="194" text-anchor="middle" class="verify">摘要匹配</text>
+
+  <path d="M1150 275 L1150 388" class="arrow"/>
+  <text x="1172" y="338" class="verify">使用区域公钥验证</text>
+
+  <rect x="975" y="390" width="350" height="135" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-width="3"/>
+  <text x="1150" y="430" text-anchor="middle" class="node">目标 A RRset</text>
+  <text x="1150" y="463" text-anchor="middle" class="small">www.example.com. A 192.0.2.10</text>
+  <text x="1150" y="492" text-anchor="middle" class="small">RRSIG(A) 数字签名</text>
+
+  <rect x="365" y="390" width="470" height="200" rx="6" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <text x="600" y="430" text-anchor="middle" class="node">验证结果</text>
+  <circle cx="420" cy="472" r="10" fill="#16a34a"/>
+  <text x="445" y="478" class="small">Secure：签名链完整且有效</text>
+  <circle cx="420" cy="512" r="10" fill="#dc2626"/>
+  <text x="445" y="518" class="small">Bogus：签名错误、摘要不匹配或过期</text>
+  <circle cx="420" cy="552" r="10" fill="#6b7280"/>
+  <text x="445" y="558" class="small">Insecure：合法的未签名委派，不等于伪造</text>
+
+  <text x="660" y="646" text-anchor="middle" class="node">DNSSEC 认证数据，不加密数据</text>
+  <text x="660" y="675" text-anchor="middle" class="small">查询内容仍可能被观察；传输隐私需要 DoT、DoH 或 DoQ</text>
+</svg>
