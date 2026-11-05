@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">端到端请求延迟预算</title>
+  <desc id="desc">一个请求的总延迟由网络、排队、应用计算、下游依赖、序列化和传输等阶段共同组成。</desc>
+  <rect width="1200" height="560" fill="#ffffff"/>
+  <text x="600" y="52" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="32" font-weight="700" fill="#111827">端到端请求延迟预算</text>
+  <g font-family="Microsoft YaHei, sans-serif">
+    <rect x="70" y="110" width="1060" height="95" rx="8" fill="#152238"/>
+    <text x="600" y="150" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">用户看到的总延迟（T_total）</text>
+    <text x="600" y="184" text-anchor="middle" font-size="18" fill="#dbeafe">从客户端发出请求，到收到完整且正确的响应</text>
+    <path d="M600 205 V255" stroke="#374151" stroke-width="3"/>
+    <polygon points="600,270 591,252 609,252" fill="#374151"/>
+    <g font-size="20" font-weight="700">
+      <rect x="45" y="280" width="190" height="100" rx="8" fill="#e8f1ff" stroke="#1769aa" stroke-width="3"/>
+      <text x="140" y="320" text-anchor="middle" fill="#0b3d66">网络</text>
+      <text x="140" y="350" text-anchor="middle" font-size="16" font-weight="400" fill="#172033">DNS、建连、RTT</text>
+      <rect x="275" y="280" width="190" height="100" rx="8" fill="#fff4df" stroke="#b25e09" stroke-width="3"/>
+      <text x="370" y="320" text-anchor="middle" fill="#7a3d00">排队</text>
+      <text x="370" y="350" text-anchor="middle" font-size="16" font-weight="400" fill="#172033">线程、连接、CPU</text>
+      <rect x="505" y="280" width="190" height="100" rx="8" fill="#e9f8ef" stroke="#18794e" stroke-width="3"/>
+      <text x="600" y="320" text-anchor="middle" fill="#0f5132">应用计算</text>
+      <text x="600" y="350" text-anchor="middle" font-size="16" font-weight="400" fill="#172033">业务逻辑、锁、GC</text>
+      <rect x="735" y="280" width="190" height="100" rx="8" fill="#f3ebff" stroke="#7048a8" stroke-width="3"/>
+      <text x="830" y="320" text-anchor="middle" fill="#4d2c7a">下游依赖</text>
+      <text x="830" y="350" text-anchor="middle" font-size="16" font-weight="400" fill="#172033">数据库、缓存、RPC</text>
+      <rect x="965" y="280" width="190" height="100" rx="8" fill="#fff0f0" stroke="#b42318" stroke-width="3"/>
+      <text x="1060" y="320" text-anchor="middle" fill="#7a271a">序列化与传输</text>
+      <text x="1060" y="350" text-anchor="middle" font-size="16" font-weight="400" fill="#172033">编码、压缩、响应体</text>
+    </g>
+    <line x1="140" y1="380" x2="140" y2="422" stroke="#374151" stroke-width="2"/>
+    <line x1="370" y1="380" x2="370" y2="422" stroke="#374151" stroke-width="2"/>
+    <line x1="600" y1="380" x2="600" y2="422" stroke="#374151" stroke-width="2"/>
+    <line x1="830" y1="380" x2="830" y2="422" stroke="#374151" stroke-width="2"/>
+    <line x1="1060" y1="380" x2="1060" y2="422" stroke="#374151" stroke-width="2"/>
+    <line x1="140" y1="422" x2="1060" y2="422" stroke="#374151" stroke-width="3"/>
+    <path d="M600 422 V455" stroke="#374151" stroke-width="3"/>
+    <polygon points="600,470 591,452 609,452" fill="#374151"/>
+    <rect x="315" y="470" width="570" height="58" rx="8" fill="#ffffff" stroke="#374151" stroke-width="3"/>
+    <text x="600" y="507" text-anchor="middle" font-size="20" font-weight="700" fill="#1f2937">先定位预算消耗最大的阶段，再选择优化手段</text>
+  </g>
+</svg>

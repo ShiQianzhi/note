@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">高性能服务的判定模型</title>
+  <desc id="desc">高性能服务由业务负载、服务目标、资源预算和持续时间共同约束，并以延迟、吞吐、正确性、可用性、饱和度和成本衡量。</desc>
+  <rect width="1200" height="620" fill="#ffffff"/>
+  <text x="600" y="54" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="32" font-weight="700" fill="#111827">高性能服务的判定模型</text>
+  <g font-family="Microsoft YaHei, sans-serif">
+    <rect x="65" y="105" width="245" height="86" rx="8" fill="#e8f1ff" stroke="#1769aa" stroke-width="3"/>
+    <text x="187" y="140" text-anchor="middle" font-size="23" font-weight="700" fill="#0b3d66">业务负载</text>
+    <text x="187" y="172" text-anchor="middle" font-size="17" fill="#172033">请求类型、数据规模、流量形态</text>
+    <rect x="335" y="105" width="245" height="86" rx="8" fill="#e9f8ef" stroke="#18794e" stroke-width="3"/>
+    <text x="457" y="140" text-anchor="middle" font-size="23" font-weight="700" fill="#0f5132">服务目标</text>
+    <text x="457" y="172" text-anchor="middle" font-size="17" fill="#172033">延迟、吞吐、错误、可用性</text>
+    <rect x="605" y="105" width="245" height="86" rx="8" fill="#fff4df" stroke="#b25e09" stroke-width="3"/>
+    <text x="727" y="140" text-anchor="middle" font-size="23" font-weight="700" fill="#7a3d00">资源预算</text>
+    <text x="727" y="172" text-anchor="middle" font-size="17" fill="#172033">CPU、内存、机器、费用</text>
+    <rect x="875" y="105" width="245" height="86" rx="8" fill="#f3ebff" stroke="#7048a8" stroke-width="3"/>
+    <text x="997" y="140" text-anchor="middle" font-size="23" font-weight="700" fill="#4d2c7a">持续时间</text>
+    <text x="997" y="172" text-anchor="middle" font-size="17" fill="#172033">峰值、稳定负载、长期运行</text>
+    <path d="M187 191 V240 H600" fill="none" stroke="#374151" stroke-width="3"/>
+    <path d="M457 191 V220 H600" fill="none" stroke="#374151" stroke-width="3"/>
+    <path d="M727 191 V220 H600" fill="none" stroke="#374151" stroke-width="3"/>
+    <path d="M997 191 V240 H600" fill="none" stroke="#374151" stroke-width="3"/>
+    <path d="M600 220 V267" fill="none" stroke="#374151" stroke-width="3"/>
+    <polygon points="600,280 591,263 609,263" fill="#374151"/>
+    <rect x="395" y="280" width="410" height="105" rx="8" fill="#152238" stroke="#0b1220" stroke-width="3"/>
+    <text x="600" y="323" text-anchor="middle" font-size="30" font-weight="700" fill="#ffffff">可验证、可持续的有效业务产出</text>
+    <text x="600" y="360" text-anchor="middle" font-size="19" fill="#dbeafe">所有约束同时满足，局部指标优秀不代表整体高性能</text>
+    <path d="M600 385 V434" fill="none" stroke="#374151" stroke-width="3"/>
+    <polygon points="600,448 591,431 609,431" fill="#374151"/>
+    <g font-size="20" font-weight="700">
+      <rect x="70" y="458" width="160" height="74" rx="8" fill="#ffffff" stroke="#1769aa" stroke-width="3"/>
+      <text x="150" y="503" text-anchor="middle" fill="#0b3d66">延迟分布</text>
+      <rect x="250" y="458" width="160" height="74" rx="8" fill="#ffffff" stroke="#18794e" stroke-width="3"/>
+      <text x="330" y="503" text-anchor="middle" fill="#0f5132">有效吞吐</text>
+      <rect x="430" y="458" width="160" height="74" rx="8" fill="#ffffff" stroke="#b25e09" stroke-width="3"/>
+      <text x="510" y="503" text-anchor="middle" fill="#7a3d00">正确性</text>
+      <rect x="610" y="458" width="160" height="74" rx="8" fill="#ffffff" stroke="#7048a8" stroke-width="3"/>
+      <text x="690" y="503" text-anchor="middle" fill="#4d2c7a">可用性</text>
+      <rect x="790" y="458" width="160" height="74" rx="8" fill="#ffffff" stroke="#b42318" stroke-width="3"/>
+      <text x="870" y="503" text-anchor="middle" fill="#7a271a">饱和度</text>
+      <rect x="970" y="458" width="160" height="74" rx="8" fill="#ffffff" stroke="#374151" stroke-width="3"/>
+      <text x="1050" y="503" text-anchor="middle" fill="#1f2937">单位成本</text>
+    </g>
+    <text x="600" y="582" text-anchor="middle" font-size="18" fill="#4b5563">只有在同一工作负载和约束下，性能数据才具有比较意义</text>
+  </g>
+</svg>
