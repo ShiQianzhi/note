@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第一课：企业级 Agent 最短学习路线</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+  <main>
+    <h1>第一课：企业级 Agent 最短学习路线</h1>
+    <p class="lead">目标不是“会调用大模型”，而是能把概率性模型放进一个可靠、可控、可审计的后端系统。</p>
+
+    <div class="callout">
+      <strong>最短路径：</strong>先手写一次 Agent Loop，再用框架重写；先完成单 Agent 工单闭环，再学习多 Agent。
+    </div>
+
+    <h2>一条贯穿项目</h2>
+    <p>八周只做一个“企业工单助手”：读取员工问题，查询知识库和工单系统，生成处理方案；普通查询自动完成，写操作必须经过权限检查和人工审批。</p>
+
+    <div class="roadmap">
+      <section class="stage">
+        <strong>阶段 1：协议与最小循环</strong>
+        <h3>第 1-2 周</h3>
+        <p>掌握消息、Token、结构化输出、工具调用和流式响应。不用 Agent 框架，手写带最大轮数、总超时和重复调用检测的循环。</p>
+        <p><b>验收：</b>模型能自主查询工单，并在没有更多工具调用时正常退出。</p>
+      </section>
+      <section class="stage">
+        <strong>阶段 2：业务能力</strong>
+        <h3>第 3-4 周</h3>
+        <p>实现工具契约、权限、幂等、会话记忆和带引用的 RAG。工具返回结构化错误，不把异常文本直接交给用户。</p>
+        <p><b>验收：</b>回答可追溯到知识来源，重复写请求不会产生重复工单。</p>
+      </section>
+      <section class="stage">
+        <strong>阶段 3：可靠性</strong>
+        <h3>第 5-6 周</h3>
+        <p>补齐追踪、评测、成本预算、模型降级和安全护栏；随后使用 LangGraph 或 Eino 重写状态管理与检查点。</p>
+        <p><b>验收：</b>20 条固定评测可重复运行，每次回归能看到质量、延迟和成本变化。</p>
+      </section>
+      <section class="stage">
+        <strong>阶段 4：企业上线</strong>
+        <h3>第 7-8 周</h3>
+        <p>加入人工审批、断点恢复、租户隔离、SSE 流式接口、Redis/PostgreSQL 状态存储、容器化和发布策略。</p>
+        <p><b>验收：</b>进程重启后任务可恢复，高风险操作未经审批不能执行。</p>
+      </section>
+    </div>
+
+    <h2>每天如何学得更快</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>时间</th>
+          <th>动作</th>
+          <th>产出</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>20 分钟</td>
+          <td>阅读一段官方资料，只记协议和边界</td>
+          <td>三个要点</td>
+        </tr>
+        <tr>
+          <td>60 分钟</td>
+          <td>给贯穿项目增加一个可运行能力</td>
+          <td>代码与测试</td>
+        </tr>
+        <tr>
+          <td>20 分钟</td>
+          <td>构造超时、越权、幻觉或重复调用</td>
+          <td>失败证据</td>
+        </tr>
+        <tr>
+          <td>10 分钟</td>
+          <td>记录本次设计取舍与指标变化</td>
+          <td>短复盘</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>第一周只学这些</h2>
+    <ol>
+      <li>大模型调用不是普通函数调用：输出具有概率性。</li>
+      <li>工具调用（Tool Calling）只是模型提出调用申请，真正执行工具的是你的代码。</li>
+      <li>结构化输出必须经过 Schema 和业务规则校验。</li>
+      <li>Agent Loop 必须有最大轮数、总超时、预算和退出条件。</li>
+      <li>任何写操作都必须经过权限检查、幂等保护和审计。</li>
+    </ol>
+
+    <h2>不要过早学习</h2>
+    <ul>
+      <li>多 Agent 角色扮演</li>
+      <li>复杂 Prompt 技巧合集</li>
+      <li>同时学习多个 Agent 框架</li>
+      <li>在没有评测集时反复“调感觉”</li>
+      <li>把大模型直接连接生产数据库</li>
+    </ul>
+
+    <h2>检索练习</h2>
+    <div class="checklist">
+      <p>不查看答案，判断下面哪些逻辑必须由确定性后端执行：</p>
+      <label><input type="checkbox"> 判断用户问题属于哪个工单类型</label>
+      <label><input type="checkbox"> 校验用户是否有权关闭工单</label>
+      <label><input type="checkbox"> 生成一段面向用户的解释</label>
+      <label><input type="checkbox"> 保证关闭工单操作只执行一次</label>
+      <label><input type="checkbox"> 判断是否需要检索知识库</label>
+    </div>
+    <details class="answer">
+      <summary>查看答案</summary>
+      <p>权限校验和幂等保证必须由确定性后端执行。分类、解释和检索决策可以交给模型，但要有置信度、范围和失败兜底。</p>
+    </details>
+
+    <h2>课后任务</h2>
+    <p>完成一个不依赖框架的最小工单 Agent：提供 <code>get_ticket</code> 与 <code>search_kb</code> 两个只读工具，限制最多调用 5 轮，总执行时间不超过 30 秒，并输出每轮工具名称、参数、耗时和结果摘要。</p>
+
+    <p>主阅读材料：<a href="../Go-Python后端工程师转Agent开发实战教程.md">Go/Python 后端工程师转 Agent 开发实战教程第三章</a>。官方补充：<a href="https://www.anthropic.com/research/building-effective-agents">Anthropic: Building effective agents</a>。</p>
+
+    <p>完成练习后，把代码或运行日志交给 Agent 复核；下一课将针对工具调用循环中的真实错误继续推进。</p>
+  </main>
+</body>
+</html>

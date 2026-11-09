@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="880" viewBox="0 0 1400 880" role="img" aria-labelledby="title desc">
+  <title id="title">Agent Run 创建与流式返回时序</title>
+  <desc id="desc">客户端、Go 网关、PostgreSQL、Kafka、Python Worker、模型工具和 Redis 的调用时序</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M1 1 L7 4 L1 7 Z" fill="#31594a"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .actor { fill: #f6f8f7; stroke: #64756d; stroke-width: 2; rx: 8; }
+      .focus { fill: #e7f7ee; stroke: #08783f; stroke-width: 3; rx: 8; }
+      .life { stroke: #9aaba3; stroke-width: 2; stroke-dasharray: 7 7; }
+      .call { fill: none; stroke: #31594a; stroke-width: 2.5; marker-end: url(#arrow); }
+      .return { fill: none; stroke: #08783f; stroke-width: 2.5; stroke-dasharray: 8 6; marker-end: url(#arrow); }
+      .title { font: 700 28px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #17211b; }
+      .label { font: 600 17px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #17211b; }
+      .msg { font: 15px -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; fill: #26342d; }
+    </style>
+  </defs>
+  <rect class="bg" width="1400" height="880"/>
+  <text class="title" x="50" y="48">Agent Run 创建、异步执行与 SSE 返回</text>
+
+  <rect class="actor" x="40" y="80" width="140" height="58"/>
+  <rect class="focus" x="230" y="80" width="160" height="58"/>
+  <rect class="actor" x="440" y="80" width="160" height="58"/>
+  <rect class="actor" x="650" y="80" width="140" height="58"/>
+  <rect class="actor" x="840" y="80" width="180" height="58"/>
+  <rect class="actor" x="1070" y="80" width="150" height="58"/>
+  <rect class="actor" x="1260" y="80" width="100" height="58"/>
+
+  <text class="label" x="110" y="115" text-anchor="middle">Client</text>
+  <text class="label" x="310" y="115" text-anchor="middle">Go Gateway</text>
+  <text class="label" x="520" y="115" text-anchor="middle">PostgreSQL</text>
+  <text class="label" x="720" y="115" text-anchor="middle">Kafka</text>
+  <text class="label" x="930" y="115" text-anchor="middle">Python Worker</text>
+  <text class="label" x="1145" y="115" text-anchor="middle">Model / Tools</text>
+  <text class="label" x="1310" y="115" text-anchor="middle">Redis</text>
+
+  <line class="life" x1="110" y1="138" x2="110" y2="830"/>
+  <line class="life" x1="310" y1="138" x2="310" y2="830"/>
+  <line class="life" x1="520" y1="138" x2="520" y2="830"/>
+  <line class="life" x1="720" y1="138" x2="720" y2="830"/>
+  <line class="life" x1="930" y1="138" x2="930" y2="830"/>
+  <line class="life" x1="1145" y1="138" x2="1145" y2="830"/>
+  <line class="life" x1="1310" y1="138" x2="1310" y2="830"/>
+
+  <path class="call" d="M110 190 H302"/>
+  <text class="msg" x="206" y="181" text-anchor="middle">POST /api/v2/agent/runs</text>
+
+  <path class="call" d="M310 260 H512"/>
+  <text class="msg" x="411" y="251" text-anchor="middle">插入 Run 与幂等键</text>
+
+  <path class="call" d="M310 330 H712"/>
+  <text class="msg" x="511" y="321" text-anchor="middle">发布 AgentRunRequestedV1</text>
+
+  <path class="return" d="M310 400 H118"/>
+  <text class="msg" x="214" y="391" text-anchor="middle">202 Accepted + run_id</text>
+
+  <path class="call" d="M110 470 H302"/>
+  <text class="msg" x="206" y="461" text-anchor="middle">GET /events</text>
+
+  <path class="call" d="M720 540 H922"/>
+  <text class="msg" x="821" y="531" text-anchor="middle">消费 Run</text>
+
+  <path class="call" d="M930 610 H1137"/>
+  <text class="msg" x="1034" y="601" text-anchor="middle">模型与工具调用</text>
+
+  <path class="call" d="M930 680 H528"/>
+  <text class="msg" x="729" y="671" text-anchor="middle">保存事件与检查点</text>
+
+  <path class="call" d="M930 750 H1302"/>
+  <text class="msg" x="1116" y="741" text-anchor="middle">发布流式通知</text>
+
+  <path class="return" d="M1310 800 H318"/>
+  <text class="msg" x="814" y="791" text-anchor="middle">订阅事件</text>
+
+  <path class="return" d="M310 840 H118"/>
+  <text class="msg" x="214" y="831" text-anchor="middle">SSE event</text>
+</svg>

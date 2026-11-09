@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Agent 开发学习路线总览</title>
+  <desc id="desc">从工程基础到安全生产化的十阶段 Agent 开发学习路线</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2563eb"/>
+    </marker>
+    <style>
+      .title { font: 700 42px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .subtitle { font: 400 21px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #374151; }
+      .stage { font: 700 25px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #ffffff; }
+      .heading { font: 700 27px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .body { font: 400 20px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1f2937; }
+      .gate { font: 600 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #065f46; }
+      .card { fill: #ffffff; stroke: #111827; stroke-width: 2.5; rx: 10; }
+      .badge { fill: #1d4ed8; rx: 8; }
+      .gate-box { fill: #ecfdf5; stroke: #059669; stroke-width: 1.5; rx: 6; }
+      .connector { fill: none; stroke: #2563eb; stroke-width: 4; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="1500" fill="#ffffff"/>
+  <text x="600" y="66" text-anchor="middle" class="title">Agent 开发学习路线</text>
+  <text x="600" y="105" text-anchor="middle" class="subtitle">基础原理 → 可运行 Agent → 可测试工作流 → 可治理生产系统</text>
+
+  <path class="connector" d="M580 282 H620"/>
+  <path class="connector" d="M880 418 V468"/>
+  <path class="connector" d="M620 586 H580"/>
+  <path class="connector" d="M320 722 V772"/>
+  <path class="connector" d="M580 890 H620"/>
+  <path class="connector" d="M880 1026 V1076"/>
+  <path class="connector" d="M620 1194 H580"/>
+  <path class="connector" d="M320 1330 V1380"/>
+  <path class="connector" d="M580 1428 H620"/>
+
+  <g transform="translate(60 150)">
+    <rect class="card" width="520" height="268"/>
+    <rect class="badge" x="20" y="20" width="92" height="44"/>
+    <text class="stage" x="66" y="51" text-anchor="middle">阶段 0</text>
+    <text class="heading" x="132" y="53">工程前置基础</text>
+    <text class="body" x="26" y="100">后端开发、Git、终端、HTTP 与 REST API</text>
+    <text class="body" x="26" y="136">目标：能实现、测试并部署一个普通 API 服务</text>
+    <rect class="gate-box" x="24" y="178" width="472" height="64"/>
+    <text class="gate" x="42" y="205">验收：完成带鉴权、参数校验、日志和测试的 API</text>
+    <text class="gate" x="42" y="230">并能使用 Git 独立管理变更</text>
+  </g>
+
+  <g transform="translate(620 150)">
+    <rect class="card" width="520" height="268"/>
+    <rect class="badge" x="20" y="20" width="92" height="44"/>
+    <text class="stage" x="66" y="51" text-anchor="middle">阶段 1</text>
+    <text class="heading" x="132" y="53">LLM 基础</text>
+    <text class="body" x="26" y="100">Transformer、Token、上下文窗口、采样参数</text>
+    <text class="body" x="26" y="136">模型类型、流式响应、Embedding、RAG 与成本</text>
+    <rect class="gate-box" x="24" y="178" width="472" height="64"/>
+    <text class="gate" x="42" y="205">验收：解释一次请求的 Token、延迟和费用构成</text>
+    <text class="gate" x="42" y="230">并完成流式与非流式调用实验</text>
+  </g>
+
+  <g transform="translate(620 468)">
+    <rect class="card" width="520" height="254"/>
+    <rect class="badge" x="20" y="20" width="92" height="44"/>
+    <text class="stage" x="66" y="51" text-anchor="middle">阶段 2</text>
+    <text class="heading" x="132" y="53">Agent 101</text>
+    <text class="body" x="26" y="100">感知 → 推理与计划 → 工具行动 → 观察与反思</text>
+    <text class="body" x="26" y="136">理解 Agent Loop、工具边界和适用场景</text>
+    <rect class="gate-box" x="24" y="168" width="472" height="60"/>
+    <text class="gate" x="42" y="195">验收：不用框架手写一个有最大步数限制的循环</text>
+    <text class="gate" x="42" y="220">能区分模型决策与业务系统执行</text>
+  </g>
+
+  <g transform="translate(60 468)">
+    <rect class="card" width="520" height="254"/>
+    <rect class="badge" x="20" y="20" width="92" height="44"/>
+    <text class="stage" x="66" y="51" text-anchor="middle">阶段 3</text>
+    <text class="heading" x="132" y="53">提示词工程</text>
+    <text class="body" x="26" y="100">目标、上下文、约束、示例、输出格式与迭代评测</text>
+    <text class="body" x="26" y="136">把 Prompt 当作需要版本管理的行为配置</text>
+    <rect class="gate-box" x="24" y="168" width="472" height="60"/>
+    <text class="gate" x="42" y="195">验收：建立 20 条固定样例并比较提示词版本</text>
+    <text class="gate" x="42" y="220">输出可被程序稳定解析</text>
+  </g>
+
+  <g transform="translate(60 772)">
+    <rect class="card" width="520" height="254"/>
+    <rect class="badge" x="20" y="20" width="92" height="44"/>
+    <text class="stage" x="66" y="51" text-anchor="middle">阶段 4</text>
+    <text class="heading" x="132" y="53">工具与 MCP</text>
+    <text class="body" x="26" y="100">工具 Schema、参数校验、错误语义、权限和幂等</text>
+    <text class="body" x="26" y="136">MCP Host、Client、Server 与本地/远程部署</text>
+    <rect class="gate-box" x="24" y="168" width="472" height="60"/>
+    <text class="gate" x="42" y="195">验收：实现只读与写入工具各一个</text>
+    <text class="gate" x="42" y="220">写入操作具备授权、审计和重复提交保护</text>
+  </g>
+
+  <g transform="translate(620 772)">
+    <rect class="card" width="520" height="254"/>
+    <rect class="badge" x="20" y="20" width="92" height="44"/>
+    <text class="stage" x="66" y="51" text-anchor="middle">阶段 5</text>
+    <text class="heading" x="132" y="53">Agent 记忆</text>
+    <text class="body" x="26" y="100">短期/长期、情景/语义记忆与用户画像</text>
+    <text class="body" x="26" y="136">RAG、摘要压缩、遗忘策略和数据生命周期</text>
+    <rect class="gate-box" x="24" y="168" width="472" height="60"/>
+    <text class="gate" x="42" y="195">验收：跨会话恢复必要状态</text>
+    <text class="gate" x="42" y="220">证明不相关记忆不会污染当前回答</text>
+  </g>
+
+  <g transform="translate(620 1076)">
+    <rect class="card" width="520" height="254"/>
+    <rect class="badge" x="20" y="20" width="92" height="44"/>
+    <text class="stage" x="66" y="51" text-anchor="middle">阶段 6</text>
+    <text class="heading" x="132" y="53">Agent 架构</text>
+    <text class="body" x="26" y="100">RAG Agent、ReAct、Planner-Executor、DAG</text>
+    <text class="body" x="26" y="136">根据确定性、成本和风险选择编排方式</text>
+    <rect class="gate-box" x="24" y="168" width="472" height="60"/>
+    <text class="gate" x="42" y="195">验收：为同一需求画出两种架构并解释取舍</text>
+    <text class="gate" x="42" y="220">高风险动作必须经过确定性节点</text>
+  </g>
+
+  <g transform="translate(60 1076)">
+    <rect class="card" width="520" height="254"/>
+    <rect class="badge" x="20" y="20" width="92" height="44"/>
+    <text class="stage" x="66" y="51" text-anchor="middle">阶段 7</text>
+    <text class="heading" x="132" y="53">构建 Agent</text>
+    <text class="body" x="26" y="100">先手写循环，再用原生 Tool Calling，最后用框架</text>
+    <text class="body" x="26" y="136">LangGraph、LangChain、LlamaIndex 等按需选用</text>
+    <rect class="gate-box" x="24" y="168" width="472" height="60"/>
+    <text class="gate" x="42" y="195">验收：可暂停、恢复、限步、重试和转人工</text>
+    <text class="gate" x="42" y="220">框架可替换，业务契约不随之漂移</text>
+  </g>
+
+  <g transform="translate(60 1380)">
+    <rect class="card" width="520" height="96"/>
+    <rect class="badge" x="20" y="20" width="92" height="44"/>
+    <text class="stage" x="66" y="51" text-anchor="middle">阶段 8</text>
+    <text class="heading" x="132" y="53">评测、监控与可观测性</text>
+  </g>
+
+  <g transform="translate(620 1380)">
+    <rect class="card" width="520" height="96"/>
+    <rect class="badge" x="20" y="20" width="92" height="44"/>
+    <text class="stage" x="66" y="51" text-anchor="middle">阶段 9</text>
+    <text class="heading" x="132" y="53">安全、伦理与生产治理</text>
+  </g>
+</svg>
